@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,8 +88,7 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement implements \JsonSeri
      * A comment about the image. Typically, this is used to provide an explanation for why the image is included, or to draw the viewer's attention to important features.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getComment()
-    {
+    public function getComment() {
         return $this->comment;
     }
 
@@ -98,8 +97,7 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $comment
      * @return $this
      */
-    public function setComment($comment)
-    {
+    public function setComment($comment) {
         $this->comment = $comment;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement implements \JsonSeri
      * Reference to the image source.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getLink()
-    {
+    public function getLink() {
         return $this->link;
     }
 
@@ -118,8 +115,7 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $link
      * @return $this
      */
-    public function setLink($link)
-    {
+    public function setLink($link) {
         $this->link = $link;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement implements \JsonSeri
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['comment'])) {
+                $this->setComment($data['comment']);
+            }
+            if (isset($data['link'])) {
+                $this->setLink($data['link']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
-        if (null !== $this->link) $json['link'] = json_encode($this->link);
+        if (isset($this->comment)) $json['comment'] = $this->comment;
+        if (isset($this->link)) $json['link'] = $this->link;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement implements \JsonSeri
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<DiagnosticReportImage xmlns="http://hl7.org/fhir"></DiagnosticReportImage>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->comment) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
-        if (null !== $this->link) $this->link->xmlSerialize(true, $sxe->addChild('link'));
+        if (isset($this->comment)) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
+        if (isset($this->link)) $this->link->xmlSerialize(true, $sxe->addChild('link'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

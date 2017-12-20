@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,8 +94,7 @@ class FHIRGroupMember extends FHIRBackboneElement implements \JsonSerializable
      * A reference to the entity that is a member of the group. Must be consistent with Group.type.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getEntity()
-    {
+    public function getEntity() {
         return $this->entity;
     }
 
@@ -104,8 +103,7 @@ class FHIRGroupMember extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $entity
      * @return $this
      */
-    public function setEntity($entity)
-    {
+    public function setEntity($entity) {
         $this->entity = $entity;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRGroupMember extends FHIRBackboneElement implements \JsonSerializable
      * The period that the member was in the group, if known.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
-    {
+    public function getPeriod() {
         return $this->period;
     }
 
@@ -124,8 +121,7 @@ class FHIRGroupMember extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
      * @return $this
      */
-    public function setPeriod($period)
-    {
+    public function setPeriod($period) {
         $this->period = $period;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRGroupMember extends FHIRBackboneElement implements \JsonSerializable
      * A flag to indicate that the member is no longer in the group, but previously may have been a member.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getInactive()
-    {
+    public function getInactive() {
         return $this->inactive;
     }
 
@@ -144,8 +139,7 @@ class FHIRGroupMember extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $inactive
      * @return $this
      */
-    public function setInactive($inactive)
-    {
+    public function setInactive($inactive) {
         $this->inactive = $inactive;
         return $this;
     }
@@ -153,28 +147,45 @@ class FHIRGroupMember extends FHIRBackboneElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['entity'])) {
+                $this->setEntity($data['entity']);
+            }
+            if (isset($data['period'])) {
+                $this->setPeriod($data['period']);
+            }
+            if (isset($data['inactive'])) {
+                $this->setInactive($data['inactive']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->entity) $json['entity'] = json_encode($this->entity);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->inactive) $json['inactive'] = json_encode($this->inactive);
+        if (isset($this->entity)) $json['entity'] = $this->entity;
+        if (isset($this->period)) $json['period'] = $this->period;
+        if (isset($this->inactive)) $json['inactive'] = $this->inactive;
         return $json;
     }
 
@@ -183,13 +194,12 @@ class FHIRGroupMember extends FHIRBackboneElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<GroupMember xmlns="http://hl7.org/fhir"></GroupMember>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->entity) $this->entity->xmlSerialize(true, $sxe->addChild('entity'));
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
-        if (null !== $this->inactive) $this->inactive->xmlSerialize(true, $sxe->addChild('inactive'));
+        if (isset($this->entity)) $this->entity->xmlSerialize(true, $sxe->addChild('entity'));
+        if (isset($this->period)) $this->period->xmlSerialize(true, $sxe->addChild('period'));
+        if (isset($this->inactive)) $this->inactive->xmlSerialize(true, $sxe->addChild('inactive'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

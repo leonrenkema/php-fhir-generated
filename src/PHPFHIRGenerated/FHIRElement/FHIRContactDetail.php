@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ class FHIRContactDetail extends FHIRElement implements \JsonSerializable
      * The contact details for the individual (if a name was provided) or the organization.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
-    public $telecom = array();
+    public $telecom = [];
 
     /**
      * @var string
@@ -89,8 +89,7 @@ class FHIRContactDetail extends FHIRElement implements \JsonSerializable
      * The name of an individual to contact.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -99,8 +98,7 @@ class FHIRContactDetail extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -109,8 +107,7 @@ class FHIRContactDetail extends FHIRElement implements \JsonSerializable
      * The contact details for the individual (if a name was provided) or the organization.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
-    public function getTelecom()
-    {
+    public function getTelecom() {
         return $this->telecom;
     }
 
@@ -119,8 +116,7 @@ class FHIRContactDetail extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
-    public function addTelecom($telecom)
-    {
+    public function addTelecom($telecom) {
         $this->telecom[] = $telecom;
         return $this;
     }
@@ -128,30 +124,50 @@ class FHIRContactDetail extends FHIRElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['telecom'])) {
+                if (is_array($data['telecom'])) {
+                    foreach($data['telecom'] as $d) {
+                        $this->addTelecom($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"telecom" must be array of objects or null, '.gettype($data['telecom']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (isset($this->name)) $json['name'] = $this->name;
         if (0 < count($this->telecom)) {
             $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = json_encode($telecom);
+                $json['telecom'][] = $telecom;
             }
         }
         return $json;
@@ -162,11 +178,10 @@ class FHIRContactDetail extends FHIRElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ContactDetail xmlns="http://hl7.org/fhir"></ContactDetail>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (0 < count($this->telecom)) {
             foreach($this->telecom as $telecom) {
                 $telecom->xmlSerialize(true, $sxe->addChild('telecom'));

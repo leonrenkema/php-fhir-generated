@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,8 +88,7 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement implements \JsonSerializa
      * Abstract name given to an origin server in this test script.  The name is provided as a number starting at 1.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public function getIndex()
-    {
+    public function getIndex() {
         return $this->index;
     }
 
@@ -98,8 +97,7 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $index
      * @return $this
      */
-    public function setIndex($index)
-    {
+    public function setIndex($index) {
         $this->index = $index;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement implements \JsonSerializa
      * The type of origin profile the test system supports.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public function getProfile()
-    {
+    public function getProfile() {
         return $this->profile;
     }
 
@@ -118,8 +115,7 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $profile
      * @return $this
      */
-    public function setProfile($profile)
-    {
+    public function setProfile($profile) {
         $this->profile = $profile;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement implements \JsonSerializa
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['index'])) {
+                $this->setIndex($data['index']);
+            }
+            if (isset($data['profile'])) {
+                $this->setProfile($data['profile']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->index) $json['index'] = json_encode($this->index);
-        if (null !== $this->profile) $json['profile'] = json_encode($this->profile);
+        if (isset($this->index)) $json['index'] = $this->index;
+        if (isset($this->profile)) $json['profile'] = $this->profile;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<TestScriptOrigin xmlns="http://hl7.org/fhir"></TestScriptOrigin>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->index) $this->index->xmlSerialize(true, $sxe->addChild('index'));
-        if (null !== $this->profile) $this->profile->xmlSerialize(true, $sxe->addChild('profile'));
+        if (isset($this->index)) $this->index->xmlSerialize(true, $sxe->addChild('index'));
+        if (isset($this->profile)) $this->profile->xmlSerialize(true, $sxe->addChild('profile'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,8 +94,7 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
      * For example: surgeon, anaethetist, endoscopist.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getRole()
-    {
+    public function getRole() {
         return $this->role;
     }
 
@@ -104,8 +103,7 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
-    public function setRole($role)
-    {
+    public function setRole($role) {
         $this->role = $role;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
      * The practitioner who was involved in the procedure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getActor()
-    {
+    public function getActor() {
         return $this->actor;
     }
 
@@ -124,8 +121,7 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $actor
      * @return $this
      */
-    public function setActor($actor)
-    {
+    public function setActor($actor) {
         $this->actor = $actor;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
      * The organization the device or practitioner was acting on behalf of.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getOnBehalfOf()
-    {
+    public function getOnBehalfOf() {
         return $this->onBehalfOf;
     }
 
@@ -144,8 +139,7 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $onBehalfOf
      * @return $this
      */
-    public function setOnBehalfOf($onBehalfOf)
-    {
+    public function setOnBehalfOf($onBehalfOf) {
         $this->onBehalfOf = $onBehalfOf;
         return $this;
     }
@@ -153,28 +147,45 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['role'])) {
+                $this->setRole($data['role']);
+            }
+            if (isset($data['actor'])) {
+                $this->setActor($data['actor']);
+            }
+            if (isset($data['onBehalfOf'])) {
+                $this->setOnBehalfOf($data['onBehalfOf']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->role) $json['role'] = json_encode($this->role);
-        if (null !== $this->actor) $json['actor'] = json_encode($this->actor);
-        if (null !== $this->onBehalfOf) $json['onBehalfOf'] = json_encode($this->onBehalfOf);
+        if (isset($this->role)) $json['role'] = $this->role;
+        if (isset($this->actor)) $json['actor'] = $this->actor;
+        if (isset($this->onBehalfOf)) $json['onBehalfOf'] = $this->onBehalfOf;
         return $json;
     }
 
@@ -183,13 +194,12 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ProcedurePerformer xmlns="http://hl7.org/fhir"></ProcedurePerformer>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->role) $this->role->xmlSerialize(true, $sxe->addChild('role'));
-        if (null !== $this->actor) $this->actor->xmlSerialize(true, $sxe->addChild('actor'));
-        if (null !== $this->onBehalfOf) $this->onBehalfOf->xmlSerialize(true, $sxe->addChild('onBehalfOf'));
+        if (isset($this->role)) $this->role->xmlSerialize(true, $sxe->addChild('role'));
+        if (isset($this->actor)) $this->actor->xmlSerialize(true, $sxe->addChild('actor'));
+        if (isset($this->onBehalfOf)) $this->onBehalfOf->xmlSerialize(true, $sxe->addChild('onBehalfOf'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,8 +88,7 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
      * The assigned lot number of a batch of the specified product.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getLotNumber()
-    {
+    public function getLotNumber() {
         return $this->lotNumber;
     }
 
@@ -98,8 +97,7 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $lotNumber
      * @return $this
      */
-    public function setLotNumber($lotNumber)
-    {
+    public function setLotNumber($lotNumber) {
         $this->lotNumber = $lotNumber;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
      * When this specific batch of product will expire.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getExpirationDate()
-    {
+    public function getExpirationDate() {
         return $this->expirationDate;
     }
 
@@ -118,8 +115,7 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $expirationDate
      * @return $this
      */
-    public function setExpirationDate($expirationDate)
-    {
+    public function setExpirationDate($expirationDate) {
         $this->expirationDate = $expirationDate;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['lotNumber'])) {
+                $this->setLotNumber($data['lotNumber']);
+            }
+            if (isset($data['expirationDate'])) {
+                $this->setExpirationDate($data['expirationDate']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->lotNumber) $json['lotNumber'] = json_encode($this->lotNumber);
-        if (null !== $this->expirationDate) $json['expirationDate'] = json_encode($this->expirationDate);
+        if (isset($this->lotNumber)) $json['lotNumber'] = $this->lotNumber;
+        if (isset($this->expirationDate)) $json['expirationDate'] = $this->expirationDate;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MedicationBatch xmlns="http://hl7.org/fhir"></MedicationBatch>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->lotNumber) $this->lotNumber->xmlSerialize(true, $sxe->addChild('lotNumber'));
-        if (null !== $this->expirationDate) $this->expirationDate->xmlSerialize(true, $sxe->addChild('expirationDate'));
+        if (isset($this->lotNumber)) $this->lotNumber->xmlSerialize(true, $sxe->addChild('lotNumber'));
+        if (isset($this->expirationDate)) $this->expirationDate->xmlSerialize(true, $sxe->addChild('expirationDate'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

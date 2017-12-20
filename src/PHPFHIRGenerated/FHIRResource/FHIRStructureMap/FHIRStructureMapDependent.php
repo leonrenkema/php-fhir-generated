@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,7 +77,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
      * Variable to pass to the rule or group.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $variable = array();
+    public $variable = [];
 
     /**
      * @var string
@@ -88,8 +88,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
      * Name of a rule or group to apply.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -98,8 +97,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
      * Variable to pass to the rule or group.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getVariable()
-    {
+    public function getVariable() {
         return $this->variable;
     }
 
@@ -118,8 +115,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $variable
      * @return $this
      */
-    public function addVariable($variable)
-    {
+    public function addVariable($variable) {
         $this->variable[] = $variable;
         return $this;
     }
@@ -127,30 +123,50 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['variable'])) {
+                if (is_array($data['variable'])) {
+                    foreach($data['variable'] as $d) {
+                        $this->addVariable($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"variable" must be array of objects or null, '.gettype($data['variable']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (isset($this->name)) $json['name'] = $this->name;
         if (0 < count($this->variable)) {
             $json['variable'] = [];
             foreach($this->variable as $variable) {
-                $json['variable'][] = json_encode($variable);
+                $json['variable'][] = $variable;
             }
         }
         return $json;
@@ -161,11 +177,10 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<StructureMapDependent xmlns="http://hl7.org/fhir"></StructureMapDependent>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (0 < count($this->variable)) {
             foreach($this->variable as $variable) {
                 $variable->xmlSerialize(true, $sxe->addChild('variable'));

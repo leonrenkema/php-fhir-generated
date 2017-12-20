@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,8 +88,7 @@ class FHIRExpansionProfileExcludedSystem extends FHIRBackboneElement implements 
      * An absolute URI which is the code system to be excluded.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getSystem()
-    {
+    public function getSystem() {
         return $this->system;
     }
 
@@ -98,8 +97,7 @@ class FHIRExpansionProfileExcludedSystem extends FHIRBackboneElement implements 
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $system
      * @return $this
      */
-    public function setSystem($system)
-    {
+    public function setSystem($system) {
         $this->system = $system;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRExpansionProfileExcludedSystem extends FHIRBackboneElement implements 
      * The version of the code system from which codes in the expansion should be excluded.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getVersion()
-    {
+    public function getVersion() {
         return $this->version;
     }
 
@@ -118,8 +115,7 @@ class FHIRExpansionProfileExcludedSystem extends FHIRBackboneElement implements 
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
-    public function setVersion($version)
-    {
+    public function setVersion($version) {
         $this->version = $version;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRExpansionProfileExcludedSystem extends FHIRBackboneElement implements 
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['system'])) {
+                $this->setSystem($data['system']);
+            }
+            if (isset($data['version'])) {
+                $this->setVersion($data['version']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->system) $json['system'] = json_encode($this->system);
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (isset($this->system)) $json['system'] = $this->system;
+        if (isset($this->version)) $json['version'] = $this->version;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRExpansionProfileExcludedSystem extends FHIRBackboneElement implements 
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ExpansionProfileExcludedSystem xmlns="http://hl7.org/fhir"></ExpansionProfileExcludedSystem>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->system) $this->system->xmlSerialize(true, $sxe->addChild('system'));
-        if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
+        if (isset($this->system)) $this->system->xmlSerialize(true, $sxe->addChild('system'));
+        if (isset($this->version)) $this->version->xmlSerialize(true, $sxe->addChild('version'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

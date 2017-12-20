@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,25 +78,25 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
      * The profile of the required data, specified as the uri of the profile definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public $profile = array();
+    public $profile = [];
 
     /**
      * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available. Note that the value for this element can be a path to allow references to nested elements. In that case, all the elements along the path must be supported.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $mustSupport = array();
+    public $mustSupport = [];
 
     /**
      * Code filters specify additional constraints on the data, specifying the value set of interest for a particular element of the data.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDataRequirement\FHIRDataRequirementCodeFilter[]
      */
-    public $codeFilter = array();
+    public $codeFilter = [];
 
     /**
      * Date filters specify additional constraints on the data in terms of the applicable date range for specific elements.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDataRequirement\FHIRDataRequirementDateFilter[]
      */
-    public $dateFilter = array();
+    public $dateFilter = [];
 
     /**
      * @var string
@@ -107,8 +107,7 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
      * The type of the required data, specified as the type name of a resource. For profiles, this value is set to the type of the base resource of the profile.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -117,8 +116,7 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -127,8 +125,7 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
      * The profile of the required data, specified as the uri of the profile definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public function getProfile()
-    {
+    public function getProfile() {
         return $this->profile;
     }
 
@@ -137,8 +134,7 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $profile
      * @return $this
      */
-    public function addProfile($profile)
-    {
+    public function addProfile($profile) {
         $this->profile[] = $profile;
         return $this;
     }
@@ -147,8 +143,7 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
      * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available. Note that the value for this element can be a path to allow references to nested elements. In that case, all the elements along the path must be supported.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getMustSupport()
-    {
+    public function getMustSupport() {
         return $this->mustSupport;
     }
 
@@ -157,8 +152,7 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $mustSupport
      * @return $this
      */
-    public function addMustSupport($mustSupport)
-    {
+    public function addMustSupport($mustSupport) {
         $this->mustSupport[] = $mustSupport;
         return $this;
     }
@@ -167,8 +161,7 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
      * Code filters specify additional constraints on the data, specifying the value set of interest for a particular element of the data.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRDataRequirement\FHIRDataRequirementCodeFilter[]
      */
-    public function getCodeFilter()
-    {
+    public function getCodeFilter() {
         return $this->codeFilter;
     }
 
@@ -177,8 +170,7 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRDataRequirement\FHIRDataRequirementCodeFilter $codeFilter
      * @return $this
      */
-    public function addCodeFilter($codeFilter)
-    {
+    public function addCodeFilter($codeFilter) {
         $this->codeFilter[] = $codeFilter;
         return $this;
     }
@@ -187,8 +179,7 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
      * Date filters specify additional constraints on the data in terms of the applicable date range for specific elements.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRDataRequirement\FHIRDataRequirementDateFilter[]
      */
-    public function getDateFilter()
-    {
+    public function getDateFilter() {
         return $this->dateFilter;
     }
 
@@ -197,8 +188,7 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRDataRequirement\FHIRDataRequirementDateFilter $dateFilter
      * @return $this
      */
-    public function addDateFilter($dateFilter)
-    {
+    public function addDateFilter($dateFilter) {
         $this->dateFilter[] = $dateFilter;
         return $this;
     }
@@ -206,48 +196,95 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['profile'])) {
+                if (is_array($data['profile'])) {
+                    foreach($data['profile'] as $d) {
+                        $this->addProfile($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"profile" must be array of objects or null, '.gettype($data['profile']).' seen.');
+                }
+            }
+            if (isset($data['mustSupport'])) {
+                if (is_array($data['mustSupport'])) {
+                    foreach($data['mustSupport'] as $d) {
+                        $this->addMustSupport($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"mustSupport" must be array of objects or null, '.gettype($data['mustSupport']).' seen.');
+                }
+            }
+            if (isset($data['codeFilter'])) {
+                if (is_array($data['codeFilter'])) {
+                    foreach($data['codeFilter'] as $d) {
+                        $this->addCodeFilter($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"codeFilter" must be array of objects or null, '.gettype($data['codeFilter']).' seen.');
+                }
+            }
+            if (isset($data['dateFilter'])) {
+                if (is_array($data['dateFilter'])) {
+                    foreach($data['dateFilter'] as $d) {
+                        $this->addDateFilter($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"dateFilter" must be array of objects or null, '.gettype($data['dateFilter']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (isset($this->type)) $json['type'] = $this->type;
         if (0 < count($this->profile)) {
             $json['profile'] = [];
             foreach($this->profile as $profile) {
-                $json['profile'][] = json_encode($profile);
+                $json['profile'][] = $profile;
             }
         }
         if (0 < count($this->mustSupport)) {
             $json['mustSupport'] = [];
             foreach($this->mustSupport as $mustSupport) {
-                $json['mustSupport'][] = json_encode($mustSupport);
+                $json['mustSupport'][] = $mustSupport;
             }
         }
         if (0 < count($this->codeFilter)) {
             $json['codeFilter'] = [];
             foreach($this->codeFilter as $codeFilter) {
-                $json['codeFilter'][] = json_encode($codeFilter);
+                $json['codeFilter'][] = $codeFilter;
             }
         }
         if (0 < count($this->dateFilter)) {
             $json['dateFilter'] = [];
             foreach($this->dateFilter as $dateFilter) {
-                $json['dateFilter'][] = json_encode($dateFilter);
+                $json['dateFilter'][] = $dateFilter;
             }
         }
         return $json;
@@ -258,11 +295,10 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<DataRequirement xmlns="http://hl7.org/fhir"></DataRequirement>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (0 < count($this->profile)) {
             foreach($this->profile as $profile) {
                 $profile->xmlSerialize(true, $sxe->addChild('profile'));

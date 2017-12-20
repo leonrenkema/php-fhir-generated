@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,8 +88,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
      * A coded identifier of the operation, supported by the system.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSystemRestfulInteraction
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -98,8 +97,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSystemRestfulInteraction $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
      * Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDocumentation()
-    {
+    public function getDocumentation() {
         return $this->documentation;
     }
 
@@ -118,8 +115,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $documentation
      * @return $this
      */
-    public function setDocumentation($documentation)
-    {
+    public function setDocumentation($documentation) {
         $this->documentation = $documentation;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['documentation'])) {
+                $this->setDocumentation($data['documentation']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->documentation)) $json['documentation'] = $this->documentation;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<CapabilityStatementInteraction1 xmlns="http://hl7.org/fhir"></CapabilityStatementInteraction1>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->documentation) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->documentation)) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,8 +94,7 @@ class FHIRResearchStudyArm extends FHIRBackboneElement implements \JsonSerializa
      * Unique, human-readable label for this arm of the study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -104,8 +103,7 @@ class FHIRResearchStudyArm extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRResearchStudyArm extends FHIRBackboneElement implements \JsonSerializa
      * Categorization of study arm, e.g. experimental, active comparator, placebo comparater.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -124,8 +121,7 @@ class FHIRResearchStudyArm extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRResearchStudyArm extends FHIRBackboneElement implements \JsonSerializa
      * A succinct description of the path through the study that would be followed by a subject adhering to this arm.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -144,8 +139,7 @@ class FHIRResearchStudyArm extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -153,28 +147,45 @@ class FHIRResearchStudyArm extends FHIRBackboneElement implements \JsonSerializa
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->description)) $json['description'] = $this->description;
         return $json;
     }
 
@@ -183,13 +194,12 @@ class FHIRResearchStudyArm extends FHIRBackboneElement implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ResearchStudyArm xmlns="http://hl7.org/fhir"></ResearchStudyArm>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

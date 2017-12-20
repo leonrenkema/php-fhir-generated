@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,7 +72,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
      * An indication of the reason that the entity signed this document. This may be explicitly included as part of the signature information and can be used when determining accountability for various actions concerning the document.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $type = array();
+    public $type = [];
 
     /**
      * When the digital signature was signed.
@@ -81,25 +81,21 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
     public $when = null;
 
     /**
-     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $whoUri = null;
 
     /**
-     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $whoReference = null;
 
     /**
-     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $onBehalfOfUri = null;
 
     /**
-     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $onBehalfOfReference = null;
@@ -125,8 +121,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
      * An indication of the reason that the entity signed this document. This may be explicitly included as part of the signature information and can be used when determining accountability for various actions concerning the document.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -135,8 +130,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $type
      * @return $this
      */
-    public function addType($type)
-    {
+    public function addType($type) {
         $this->type[] = $type;
         return $this;
     }
@@ -145,8 +139,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
      * When the digital signature was signed.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
-    public function getWhen()
-    {
+    public function getWhen() {
         return $this->when;
     }
 
@@ -155,88 +148,71 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $when
      * @return $this
      */
-    public function setWhen($when)
-    {
+    public function setWhen($when) {
         $this->when = $when;
         return $this;
     }
 
     /**
-     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getWhoUri()
-    {
+    public function getWhoUri() {
         return $this->whoUri;
     }
 
     /**
-     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $whoUri
      * @return $this
      */
-    public function setWhoUri($whoUri)
-    {
+    public function setWhoUri($whoUri) {
         $this->whoUri = $whoUri;
         return $this;
     }
 
     /**
-     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getWhoReference()
-    {
+    public function getWhoReference() {
         return $this->whoReference;
     }
 
     /**
-     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $whoReference
      * @return $this
      */
-    public function setWhoReference($whoReference)
-    {
+    public function setWhoReference($whoReference) {
         $this->whoReference = $whoReference;
         return $this;
     }
 
     /**
-     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getOnBehalfOfUri()
-    {
+    public function getOnBehalfOfUri() {
         return $this->onBehalfOfUri;
     }
 
     /**
-     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $onBehalfOfUri
      * @return $this
      */
-    public function setOnBehalfOfUri($onBehalfOfUri)
-    {
+    public function setOnBehalfOfUri($onBehalfOfUri) {
         $this->onBehalfOfUri = $onBehalfOfUri;
         return $this;
     }
 
     /**
-     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getOnBehalfOfReference()
-    {
+    public function getOnBehalfOfReference() {
         return $this->onBehalfOfReference;
     }
 
     /**
-     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $onBehalfOfReference
      * @return $this
      */
-    public function setOnBehalfOfReference($onBehalfOfReference)
-    {
+    public function setOnBehalfOfReference($onBehalfOfReference) {
         $this->onBehalfOfReference = $onBehalfOfReference;
         return $this;
     }
@@ -245,8 +221,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
      * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jwt for JWT, and image/* for a graphical image of a signature, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getContentType()
-    {
+    public function getContentType() {
         return $this->contentType;
     }
 
@@ -255,8 +230,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $contentType
      * @return $this
      */
-    public function setContentType($contentType)
-    {
+    public function setContentType($contentType) {
         $this->contentType = $contentType;
         return $this;
     }
@@ -265,8 +239,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
      * The base64 encoding of the Signature content. When signature is not recorded electronically this element would be empty.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
-    public function getBlob()
-    {
+    public function getBlob() {
         return $this->blob;
     }
 
@@ -275,8 +248,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $blob
      * @return $this
      */
-    public function setBlob($blob)
-    {
+    public function setBlob($blob) {
         $this->blob = $blob;
         return $this;
     }
@@ -284,38 +256,76 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['type'])) {
+                if (is_array($data['type'])) {
+                    foreach($data['type'] as $d) {
+                        $this->addType($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"type" must be array of objects or null, '.gettype($data['type']).' seen.');
+                }
+            }
+            if (isset($data['when'])) {
+                $this->setWhen($data['when']);
+            }
+            if (isset($data['whoUri'])) {
+                $this->setWhoUri($data['whoUri']);
+            }
+            if (isset($data['whoReference'])) {
+                $this->setWhoReference($data['whoReference']);
+            }
+            if (isset($data['onBehalfOfUri'])) {
+                $this->setOnBehalfOfUri($data['onBehalfOfUri']);
+            }
+            if (isset($data['onBehalfOfReference'])) {
+                $this->setOnBehalfOfReference($data['onBehalfOfReference']);
+            }
+            if (isset($data['contentType'])) {
+                $this->setContentType($data['contentType']);
+            }
+            if (isset($data['blob'])) {
+                $this->setBlob($data['blob']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         if (0 < count($this->type)) {
             $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = json_encode($type);
+                $json['type'][] = $type;
             }
         }
-        if (null !== $this->when) $json['when'] = json_encode($this->when);
-        if (null !== $this->whoUri) $json['whoUri'] = json_encode($this->whoUri);
-        if (null !== $this->whoReference) $json['whoReference'] = json_encode($this->whoReference);
-        if (null !== $this->onBehalfOfUri) $json['onBehalfOfUri'] = json_encode($this->onBehalfOfUri);
-        if (null !== $this->onBehalfOfReference) $json['onBehalfOfReference'] = json_encode($this->onBehalfOfReference);
-        if (null !== $this->contentType) $json['contentType'] = json_encode($this->contentType);
-        if (null !== $this->blob) $json['blob'] = json_encode($this->blob);
+        if (isset($this->when)) $json['when'] = $this->when;
+        if (isset($this->whoUri)) $json['whoUri'] = $this->whoUri;
+        if (isset($this->whoReference)) $json['whoReference'] = $this->whoReference;
+        if (isset($this->onBehalfOfUri)) $json['onBehalfOfUri'] = $this->onBehalfOfUri;
+        if (isset($this->onBehalfOfReference)) $json['onBehalfOfReference'] = $this->onBehalfOfReference;
+        if (isset($this->contentType)) $json['contentType'] = $this->contentType;
+        if (isset($this->blob)) $json['blob'] = $this->blob;
         return $json;
     }
 
@@ -324,8 +334,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Signature xmlns="http://hl7.org/fhir"></Signature>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->type)) {
@@ -333,13 +342,13 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
                 $type->xmlSerialize(true, $sxe->addChild('type'));
             }
         }
-        if (null !== $this->when) $this->when->xmlSerialize(true, $sxe->addChild('when'));
-        if (null !== $this->whoUri) $this->whoUri->xmlSerialize(true, $sxe->addChild('whoUri'));
-        if (null !== $this->whoReference) $this->whoReference->xmlSerialize(true, $sxe->addChild('whoReference'));
-        if (null !== $this->onBehalfOfUri) $this->onBehalfOfUri->xmlSerialize(true, $sxe->addChild('onBehalfOfUri'));
-        if (null !== $this->onBehalfOfReference) $this->onBehalfOfReference->xmlSerialize(true, $sxe->addChild('onBehalfOfReference'));
-        if (null !== $this->contentType) $this->contentType->xmlSerialize(true, $sxe->addChild('contentType'));
-        if (null !== $this->blob) $this->blob->xmlSerialize(true, $sxe->addChild('blob'));
+        if (isset($this->when)) $this->when->xmlSerialize(true, $sxe->addChild('when'));
+        if (isset($this->whoUri)) $this->whoUri->xmlSerialize(true, $sxe->addChild('whoUri'));
+        if (isset($this->whoReference)) $this->whoReference->xmlSerialize(true, $sxe->addChild('whoReference'));
+        if (isset($this->onBehalfOfUri)) $this->onBehalfOfUri->xmlSerialize(true, $sxe->addChild('onBehalfOfUri'));
+        if (isset($this->onBehalfOfReference)) $this->onBehalfOfReference->xmlSerialize(true, $sxe->addChild('onBehalfOfReference'));
+        if (isset($this->contentType)) $this->contentType->xmlSerialize(true, $sxe->addChild('contentType'));
+        if (isset($this->blob)) $this->blob->xmlSerialize(true, $sxe->addChild('blob'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

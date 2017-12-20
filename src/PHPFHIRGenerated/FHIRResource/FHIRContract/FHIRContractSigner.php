@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializabl
      * Legally binding Contract DSIG signature contents in Base64.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSignature[]
      */
-    public $signature = array();
+    public $signature = [];
 
     /**
      * @var string
@@ -94,8 +94,7 @@ class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializabl
      * Role of this Contract signer, e.g. notary, grantee.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -104,8 +103,7 @@ class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializabl
      * Party which is a signator to this Contract.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getParty()
-    {
+    public function getParty() {
         return $this->party;
     }
 
@@ -124,8 +121,7 @@ class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $party
      * @return $this
      */
-    public function setParty($party)
-    {
+    public function setParty($party) {
         $this->party = $party;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializabl
      * Legally binding Contract DSIG signature contents in Base64.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSignature[]
      */
-    public function getSignature()
-    {
+    public function getSignature() {
         return $this->signature;
     }
 
@@ -144,8 +139,7 @@ class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSignature $signature
      * @return $this
      */
-    public function addSignature($signature)
-    {
+    public function addSignature($signature) {
         $this->signature[] = $signature;
         return $this;
     }
@@ -153,31 +147,54 @@ class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializabl
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['party'])) {
+                $this->setParty($data['party']);
+            }
+            if (isset($data['signature'])) {
+                if (is_array($data['signature'])) {
+                    foreach($data['signature'] as $d) {
+                        $this->addSignature($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"signature" must be array of objects or null, '.gettype($data['signature']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->party) $json['party'] = json_encode($this->party);
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->party)) $json['party'] = $this->party;
         if (0 < count($this->signature)) {
             $json['signature'] = [];
             foreach($this->signature as $signature) {
-                $json['signature'][] = json_encode($signature);
+                $json['signature'][] = $signature;
             }
         }
         return $json;
@@ -188,12 +205,11 @@ class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializabl
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ContractSigner xmlns="http://hl7.org/fhir"></ContractSigner>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->party) $this->party->xmlSerialize(true, $sxe->addChild('party'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->party)) $this->party->xmlSerialize(true, $sxe->addChild('party'));
         if (0 < count($this->signature)) {
             foreach($this->signature as $signature) {
                 $signature->xmlSerialize(true, $sxe->addChild('signature'));

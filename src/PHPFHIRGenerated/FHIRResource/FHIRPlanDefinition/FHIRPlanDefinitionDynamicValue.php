@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,8 +100,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
      * A brief, natural language description of the intended semantics of the dynamic value.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -110,8 +109,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -120,8 +118,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
      * The path to the element to be customized. This is the path on the resource that will hold the result of the calculation defined by the expression.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPath()
-    {
+    public function getPath() {
         return $this->path;
     }
 
@@ -130,8 +127,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $path
      * @return $this
      */
-    public function setPath($path)
-    {
+    public function setPath($path) {
         $this->path = $path;
         return $this;
     }
@@ -140,8 +136,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
      * The media type of the language for the expression.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getLanguage()
-    {
+    public function getLanguage() {
         return $this->language;
     }
 
@@ -150,8 +145,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $language
      * @return $this
      */
-    public function setLanguage($language)
-    {
+    public function setLanguage($language) {
         $this->language = $language;
         return $this;
     }
@@ -160,8 +154,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
      * An expression specifying the value of the customized element.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getExpression()
-    {
+    public function getExpression() {
         return $this->expression;
     }
 
@@ -170,8 +163,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $expression
      * @return $this
      */
-    public function setExpression($expression)
-    {
+    public function setExpression($expression) {
         $this->expression = $expression;
         return $this;
     }
@@ -179,29 +171,49 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['path'])) {
+                $this->setPath($data['path']);
+            }
+            if (isset($data['language'])) {
+                $this->setLanguage($data['language']);
+            }
+            if (isset($data['expression'])) {
+                $this->setExpression($data['expression']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->path) $json['path'] = json_encode($this->path);
-        if (null !== $this->language) $json['language'] = json_encode($this->language);
-        if (null !== $this->expression) $json['expression'] = json_encode($this->expression);
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->path)) $json['path'] = $this->path;
+        if (isset($this->language)) $json['language'] = $this->language;
+        if (isset($this->expression)) $json['expression'] = $this->expression;
         return $json;
     }
 
@@ -210,14 +222,13 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<PlanDefinitionDynamicValue xmlns="http://hl7.org/fhir"></PlanDefinitionDynamicValue>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->path) $this->path->xmlSerialize(true, $sxe->addChild('path'));
-        if (null !== $this->language) $this->language->xmlSerialize(true, $sxe->addChild('language'));
-        if (null !== $this->expression) $this->expression->xmlSerialize(true, $sxe->addChild('expression'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->path)) $this->path->xmlSerialize(true, $sxe->addChild('path'));
+        if (isset($this->language)) $this->language->xmlSerialize(true, $sxe->addChild('language'));
+        if (isset($this->expression)) $this->expression->xmlSerialize(true, $sxe->addChild('expression'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * Identifier for the category of event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $subtype = array();
+    public $subtype = [];
 
     /**
      * Indicator for type of action performed during the event that generated the audit.
@@ -108,13 +108,13 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * The purposeOfUse (reason) that was used during the event being recorded.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $purposeOfEvent = array();
+    public $purposeOfEvent = [];
 
     /**
      * An actor taking an active role in the event or activity that is logged.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventAgent[]
      */
-    public $agent = array();
+    public $agent = [];
 
     /**
      * The system that is reporting the event.
@@ -126,7 +126,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * Specific instances of data or objects that have been accessed.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventEntity[]
      */
-    public $entity = array();
+    public $entity = [];
 
     /**
      * @var string
@@ -137,8 +137,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * Identifier for a family of the event.  For example, a menu item, program, rule, policy, function code, application name or URL. It identifies the performed function.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -147,8 +146,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -157,8 +155,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * Identifier for the category of event.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public function getSubtype()
-    {
+    public function getSubtype() {
         return $this->subtype;
     }
 
@@ -167,8 +164,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $subtype
      * @return $this
      */
-    public function addSubtype($subtype)
-    {
+    public function addSubtype($subtype) {
         $this->subtype[] = $subtype;
         return $this;
     }
@@ -177,8 +173,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * Indicator for type of action performed during the event that generated the audit.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAuditEventAction
      */
-    public function getAction()
-    {
+    public function getAction() {
         return $this->action;
     }
 
@@ -187,8 +182,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAuditEventAction $action
      * @return $this
      */
-    public function setAction($action)
-    {
+    public function setAction($action) {
         $this->action = $action;
         return $this;
     }
@@ -197,8 +191,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * The time when the event occurred on the source.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
-    public function getRecorded()
-    {
+    public function getRecorded() {
         return $this->recorded;
     }
 
@@ -207,8 +200,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $recorded
      * @return $this
      */
-    public function setRecorded($recorded)
-    {
+    public function setRecorded($recorded) {
         $this->recorded = $recorded;
         return $this;
     }
@@ -217,8 +209,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * Indicates whether the event succeeded or failed.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAuditEventOutcome
      */
-    public function getOutcome()
-    {
+    public function getOutcome() {
         return $this->outcome;
     }
 
@@ -227,8 +218,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAuditEventOutcome $outcome
      * @return $this
      */
-    public function setOutcome($outcome)
-    {
+    public function setOutcome($outcome) {
         $this->outcome = $outcome;
         return $this;
     }
@@ -237,8 +227,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * A free text description of the outcome of the event.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getOutcomeDesc()
-    {
+    public function getOutcomeDesc() {
         return $this->outcomeDesc;
     }
 
@@ -247,8 +236,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $outcomeDesc
      * @return $this
      */
-    public function setOutcomeDesc($outcomeDesc)
-    {
+    public function setOutcomeDesc($outcomeDesc) {
         $this->outcomeDesc = $outcomeDesc;
         return $this;
     }
@@ -257,8 +245,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * The purposeOfUse (reason) that was used during the event being recorded.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getPurposeOfEvent()
-    {
+    public function getPurposeOfEvent() {
         return $this->purposeOfEvent;
     }
 
@@ -267,8 +254,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $purposeOfEvent
      * @return $this
      */
-    public function addPurposeOfEvent($purposeOfEvent)
-    {
+    public function addPurposeOfEvent($purposeOfEvent) {
         $this->purposeOfEvent[] = $purposeOfEvent;
         return $this;
     }
@@ -277,8 +263,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * An actor taking an active role in the event or activity that is logged.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventAgent[]
      */
-    public function getAgent()
-    {
+    public function getAgent() {
         return $this->agent;
     }
 
@@ -287,8 +272,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventAgent $agent
      * @return $this
      */
-    public function addAgent($agent)
-    {
+    public function addAgent($agent) {
         $this->agent[] = $agent;
         return $this;
     }
@@ -297,8 +281,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * The system that is reporting the event.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventSource
      */
-    public function getSource()
-    {
+    public function getSource() {
         return $this->source;
     }
 
@@ -307,8 +290,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventSource $source
      * @return $this
      */
-    public function setSource($source)
-    {
+    public function setSource($source) {
         $this->source = $source;
         return $this;
     }
@@ -317,8 +299,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * Specific instances of data or objects that have been accessed.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventEntity[]
      */
-    public function getEntity()
-    {
+    public function getEntity() {
         return $this->entity;
     }
 
@@ -327,8 +308,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventEntity $entity
      * @return $this
      */
-    public function addEntity($entity)
-    {
+    public function addEntity($entity) {
         $this->entity[] = $entity;
         return $this;
     }
@@ -336,54 +316,116 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['subtype'])) {
+                if (is_array($data['subtype'])) {
+                    foreach($data['subtype'] as $d) {
+                        $this->addSubtype($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"subtype" must be array of objects or null, '.gettype($data['subtype']).' seen.');
+                }
+            }
+            if (isset($data['action'])) {
+                $this->setAction($data['action']);
+            }
+            if (isset($data['recorded'])) {
+                $this->setRecorded($data['recorded']);
+            }
+            if (isset($data['outcome'])) {
+                $this->setOutcome($data['outcome']);
+            }
+            if (isset($data['outcomeDesc'])) {
+                $this->setOutcomeDesc($data['outcomeDesc']);
+            }
+            if (isset($data['purposeOfEvent'])) {
+                if (is_array($data['purposeOfEvent'])) {
+                    foreach($data['purposeOfEvent'] as $d) {
+                        $this->addPurposeOfEvent($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"purposeOfEvent" must be array of objects or null, '.gettype($data['purposeOfEvent']).' seen.');
+                }
+            }
+            if (isset($data['agent'])) {
+                if (is_array($data['agent'])) {
+                    foreach($data['agent'] as $d) {
+                        $this->addAgent($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"agent" must be array of objects or null, '.gettype($data['agent']).' seen.');
+                }
+            }
+            if (isset($data['source'])) {
+                $this->setSource($data['source']);
+            }
+            if (isset($data['entity'])) {
+                if (is_array($data['entity'])) {
+                    foreach($data['entity'] as $d) {
+                        $this->addEntity($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"entity" must be array of objects or null, '.gettype($data['entity']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (isset($this->type)) $json['type'] = $this->type;
         if (0 < count($this->subtype)) {
             $json['subtype'] = [];
             foreach($this->subtype as $subtype) {
-                $json['subtype'][] = json_encode($subtype);
+                $json['subtype'][] = $subtype;
             }
         }
-        if (null !== $this->action) $json['action'] = json_encode($this->action);
-        if (null !== $this->recorded) $json['recorded'] = json_encode($this->recorded);
-        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
-        if (null !== $this->outcomeDesc) $json['outcomeDesc'] = json_encode($this->outcomeDesc);
+        if (isset($this->action)) $json['action'] = $this->action;
+        if (isset($this->recorded)) $json['recorded'] = $this->recorded;
+        if (isset($this->outcome)) $json['outcome'] = $this->outcome;
+        if (isset($this->outcomeDesc)) $json['outcomeDesc'] = $this->outcomeDesc;
         if (0 < count($this->purposeOfEvent)) {
             $json['purposeOfEvent'] = [];
             foreach($this->purposeOfEvent as $purposeOfEvent) {
-                $json['purposeOfEvent'][] = json_encode($purposeOfEvent);
+                $json['purposeOfEvent'][] = $purposeOfEvent;
             }
         }
         if (0 < count($this->agent)) {
             $json['agent'] = [];
             foreach($this->agent as $agent) {
-                $json['agent'][] = json_encode($agent);
+                $json['agent'][] = $agent;
             }
         }
-        if (null !== $this->source) $json['source'] = json_encode($this->source);
+        if (isset($this->source)) $json['source'] = $this->source;
         if (0 < count($this->entity)) {
             $json['entity'] = [];
             foreach($this->entity as $entity) {
-                $json['entity'][] = json_encode($entity);
+                $json['entity'][] = $entity;
             }
         }
         return $json;
@@ -394,20 +436,19 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<AuditEvent xmlns="http://hl7.org/fhir"></AuditEvent>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (0 < count($this->subtype)) {
             foreach($this->subtype as $subtype) {
                 $subtype->xmlSerialize(true, $sxe->addChild('subtype'));
             }
         }
-        if (null !== $this->action) $this->action->xmlSerialize(true, $sxe->addChild('action'));
-        if (null !== $this->recorded) $this->recorded->xmlSerialize(true, $sxe->addChild('recorded'));
-        if (null !== $this->outcome) $this->outcome->xmlSerialize(true, $sxe->addChild('outcome'));
-        if (null !== $this->outcomeDesc) $this->outcomeDesc->xmlSerialize(true, $sxe->addChild('outcomeDesc'));
+        if (isset($this->action)) $this->action->xmlSerialize(true, $sxe->addChild('action'));
+        if (isset($this->recorded)) $this->recorded->xmlSerialize(true, $sxe->addChild('recorded'));
+        if (isset($this->outcome)) $this->outcome->xmlSerialize(true, $sxe->addChild('outcome'));
+        if (isset($this->outcomeDesc)) $this->outcomeDesc->xmlSerialize(true, $sxe->addChild('outcomeDesc'));
         if (0 < count($this->purposeOfEvent)) {
             foreach($this->purposeOfEvent as $purposeOfEvent) {
                 $purposeOfEvent->xmlSerialize(true, $sxe->addChild('purposeOfEvent'));
@@ -418,7 +459,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
                 $agent->xmlSerialize(true, $sxe->addChild('agent'));
             }
         }
-        if (null !== $this->source) $this->source->xmlSerialize(true, $sxe->addChild('source'));
+        if (isset($this->source)) $this->source->xmlSerialize(true, $sxe->addChild('source'));
         if (0 < count($this->entity)) {
             foreach($this->entity as $entity) {
                 $entity->xmlSerialize(true, $sxe->addChild('entity'));

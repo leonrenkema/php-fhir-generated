@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,13 +72,13 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * Identifier assigned by the dispensing facility - this is an identifier assigned outside FHIR.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = array();
+    public $identifier = [];
 
     /**
      * The procedure that the dispense is done because of.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $partOf = array();
+    public $partOf = [];
 
     /**
      * A code specifying the state of the set of dispense events.
@@ -93,13 +93,11 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
     public $category = null;
 
     /**
-     * Identifies the medication being administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $medicationCodeableConcept = null;
 
     /**
-     * Identifies the medication being administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $medicationReference = null;
@@ -120,19 +118,19 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * Additional information that supports the medication being dispensed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $supportingInformation = array();
+    public $supportingInformation = [];
 
     /**
      * Indicates who or what performed the event.  It should be assumed that the performer is the dispenser of the medication.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRMedicationDispense\FHIRMedicationDispensePerformer[]
      */
-    public $performer = array();
+    public $performer = [];
 
     /**
      * Indicates the medication order that is being dispensed against.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $authorizingPrescription = array();
+    public $authorizingPrescription = [];
 
     /**
      * Indicates the type of dispensing event that is performed. For example, Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
@@ -174,19 +172,19 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * Identifies the person who picked up the medication.  This will usually be a patient or their caregiver, but some cases exist where it can be a healthcare professional.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $receiver = array();
+    public $receiver = [];
 
     /**
      * Extra information about the dispense that could not be conveyed in the other attributes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = array();
+    public $note = [];
 
     /**
      * Indicates how the medication is to be used by the patient.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDosage[]
      */
-    public $dosageInstruction = array();
+    public $dosageInstruction = [];
 
     /**
      * Indicates whether or not substitution was made as part of the dispense.  In some cases substitution will be expected but does not happen, in other cases substitution is not expected but does happen.  This block explains what substitution did or did not happen and why.  If nothing is specified, substitution was not done.
@@ -198,7 +196,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * Indicates an actual or potential clinical issue with or between one or more active or proposed clinical actions for a patient; e.g. Drug-drug interaction, duplicate therapy, dosage alert etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $detectedIssue = array();
+    public $detectedIssue = [];
 
     /**
      * True if the dispense was not performed for some reason.
@@ -207,13 +205,11 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
     public $notDone = null;
 
     /**
-     * Indicates the reason why a dispense was not performed. (choose any one of notDoneReason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $notDoneReasonCodeableConcept = null;
 
     /**
-     * Indicates the reason why a dispense was not performed. (choose any one of notDoneReason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $notDoneReasonReference = null;
@@ -222,7 +218,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * A summary of the events of interest that have occurred, such as when the dispense was verified.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $eventHistory = array();
+    public $eventHistory = [];
 
     /**
      * @var string
@@ -233,8 +229,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * Identifier assigned by the dispensing facility - this is an identifier assigned outside FHIR.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -243,8 +238,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function addIdentifier($identifier)
-    {
+    public function addIdentifier($identifier) {
         $this->identifier[] = $identifier;
         return $this;
     }
@@ -253,8 +247,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * The procedure that the dispense is done because of.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getPartOf()
-    {
+    public function getPartOf() {
         return $this->partOf;
     }
 
@@ -263,8 +256,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $partOf
      * @return $this
      */
-    public function addPartOf($partOf)
-    {
+    public function addPartOf($partOf) {
         $this->partOf[] = $partOf;
         return $this;
     }
@@ -273,8 +265,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * A code specifying the state of the set of dispense events.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMedicationDispenseStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -283,8 +274,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMedicationDispenseStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -293,8 +283,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * Indicates type of medication dispense and where the medication is expected to be consumed or administered.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCategory()
-    {
+    public function getCategory() {
         return $this->category;
     }
 
@@ -303,48 +292,39 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
-    public function setCategory($category)
-    {
+    public function setCategory($category) {
         $this->category = $category;
         return $this;
     }
 
     /**
-     * Identifies the medication being administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getMedicationCodeableConcept()
-    {
+    public function getMedicationCodeableConcept() {
         return $this->medicationCodeableConcept;
     }
 
     /**
-     * Identifies the medication being administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
      * @return $this
      */
-    public function setMedicationCodeableConcept($medicationCodeableConcept)
-    {
+    public function setMedicationCodeableConcept($medicationCodeableConcept) {
         $this->medicationCodeableConcept = $medicationCodeableConcept;
         return $this;
     }
 
     /**
-     * Identifies the medication being administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getMedicationReference()
-    {
+    public function getMedicationReference() {
         return $this->medicationReference;
     }
 
     /**
-     * Identifies the medication being administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $medicationReference
      * @return $this
      */
-    public function setMedicationReference($medicationReference)
-    {
+    public function setMedicationReference($medicationReference) {
         $this->medicationReference = $medicationReference;
         return $this;
     }
@@ -353,8 +333,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * A link to a resource representing the person or the group to whom the medication will be given.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getSubject()
-    {
+    public function getSubject() {
         return $this->subject;
     }
 
@@ -363,8 +342,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subject
      * @return $this
      */
-    public function setSubject($subject)
-    {
+    public function setSubject($subject) {
         $this->subject = $subject;
         return $this;
     }
@@ -373,8 +351,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * The encounter or episode of care that establishes the context for this event.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getContext()
-    {
+    public function getContext() {
         return $this->context;
     }
 
@@ -383,8 +360,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $context
      * @return $this
      */
-    public function setContext($context)
-    {
+    public function setContext($context) {
         $this->context = $context;
         return $this;
     }
@@ -393,8 +369,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * Additional information that supports the medication being dispensed.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getSupportingInformation()
-    {
+    public function getSupportingInformation() {
         return $this->supportingInformation;
     }
 
@@ -403,8 +378,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportingInformation
      * @return $this
      */
-    public function addSupportingInformation($supportingInformation)
-    {
+    public function addSupportingInformation($supportingInformation) {
         $this->supportingInformation[] = $supportingInformation;
         return $this;
     }
@@ -413,8 +387,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * Indicates who or what performed the event.  It should be assumed that the performer is the dispenser of the medication.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRMedicationDispense\FHIRMedicationDispensePerformer[]
      */
-    public function getPerformer()
-    {
+    public function getPerformer() {
         return $this->performer;
     }
 
@@ -423,8 +396,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRResource\FHIRMedicationDispense\FHIRMedicationDispensePerformer $performer
      * @return $this
      */
-    public function addPerformer($performer)
-    {
+    public function addPerformer($performer) {
         $this->performer[] = $performer;
         return $this;
     }
@@ -433,8 +405,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * Indicates the medication order that is being dispensed against.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getAuthorizingPrescription()
-    {
+    public function getAuthorizingPrescription() {
         return $this->authorizingPrescription;
     }
 
@@ -443,8 +414,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $authorizingPrescription
      * @return $this
      */
-    public function addAuthorizingPrescription($authorizingPrescription)
-    {
+    public function addAuthorizingPrescription($authorizingPrescription) {
         $this->authorizingPrescription[] = $authorizingPrescription;
         return $this;
     }
@@ -453,8 +423,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * Indicates the type of dispensing event that is performed. For example, Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -463,8 +432,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -473,8 +441,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * The amount of medication that has been dispensed. Includes unit of measure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getQuantity()
-    {
+    public function getQuantity() {
         return $this->quantity;
     }
 
@@ -483,8 +450,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
-    public function setQuantity($quantity)
-    {
+    public function setQuantity($quantity) {
         $this->quantity = $quantity;
         return $this;
     }
@@ -493,8 +459,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * The amount of medication expressed as a timing amount.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getDaysSupply()
-    {
+    public function getDaysSupply() {
         return $this->daysSupply;
     }
 
@@ -503,8 +468,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $daysSupply
      * @return $this
      */
-    public function setDaysSupply($daysSupply)
-    {
+    public function setDaysSupply($daysSupply) {
         $this->daysSupply = $daysSupply;
         return $this;
     }
@@ -513,8 +477,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * The time when the dispensed product was packaged and reviewed.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getWhenPrepared()
-    {
+    public function getWhenPrepared() {
         return $this->whenPrepared;
     }
 
@@ -523,8 +486,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $whenPrepared
      * @return $this
      */
-    public function setWhenPrepared($whenPrepared)
-    {
+    public function setWhenPrepared($whenPrepared) {
         $this->whenPrepared = $whenPrepared;
         return $this;
     }
@@ -533,8 +495,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * The time the dispensed product was provided to the patient or their representative.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getWhenHandedOver()
-    {
+    public function getWhenHandedOver() {
         return $this->whenHandedOver;
     }
 
@@ -543,8 +504,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $whenHandedOver
      * @return $this
      */
-    public function setWhenHandedOver($whenHandedOver)
-    {
+    public function setWhenHandedOver($whenHandedOver) {
         $this->whenHandedOver = $whenHandedOver;
         return $this;
     }
@@ -553,8 +513,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * Identification of the facility/location where the medication was shipped to, as part of the dispense event.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getDestination()
-    {
+    public function getDestination() {
         return $this->destination;
     }
 
@@ -563,8 +522,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $destination
      * @return $this
      */
-    public function setDestination($destination)
-    {
+    public function setDestination($destination) {
         $this->destination = $destination;
         return $this;
     }
@@ -573,8 +531,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * Identifies the person who picked up the medication.  This will usually be a patient or their caregiver, but some cases exist where it can be a healthcare professional.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getReceiver()
-    {
+    public function getReceiver() {
         return $this->receiver;
     }
 
@@ -583,8 +540,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $receiver
      * @return $this
      */
-    public function addReceiver($receiver)
-    {
+    public function addReceiver($receiver) {
         $this->receiver[] = $receiver;
         return $this;
     }
@@ -593,8 +549,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * Extra information about the dispense that could not be conveyed in the other attributes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public function getNote()
-    {
+    public function getNote() {
         return $this->note;
     }
 
@@ -603,8 +558,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
-    public function addNote($note)
-    {
+    public function addNote($note) {
         $this->note[] = $note;
         return $this;
     }
@@ -613,8 +567,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * Indicates how the medication is to be used by the patient.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDosage[]
      */
-    public function getDosageInstruction()
-    {
+    public function getDosageInstruction() {
         return $this->dosageInstruction;
     }
 
@@ -623,8 +576,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDosage $dosageInstruction
      * @return $this
      */
-    public function addDosageInstruction($dosageInstruction)
-    {
+    public function addDosageInstruction($dosageInstruction) {
         $this->dosageInstruction[] = $dosageInstruction;
         return $this;
     }
@@ -633,8 +585,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * Indicates whether or not substitution was made as part of the dispense.  In some cases substitution will be expected but does not happen, in other cases substitution is not expected but does happen.  This block explains what substitution did or did not happen and why.  If nothing is specified, substitution was not done.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution
      */
-    public function getSubstitution()
-    {
+    public function getSubstitution() {
         return $this->substitution;
     }
 
@@ -643,8 +594,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRResource\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution $substitution
      * @return $this
      */
-    public function setSubstitution($substitution)
-    {
+    public function setSubstitution($substitution) {
         $this->substitution = $substitution;
         return $this;
     }
@@ -653,8 +603,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * Indicates an actual or potential clinical issue with or between one or more active or proposed clinical actions for a patient; e.g. Drug-drug interaction, duplicate therapy, dosage alert etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getDetectedIssue()
-    {
+    public function getDetectedIssue() {
         return $this->detectedIssue;
     }
 
@@ -663,8 +612,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $detectedIssue
      * @return $this
      */
-    public function addDetectedIssue($detectedIssue)
-    {
+    public function addDetectedIssue($detectedIssue) {
         $this->detectedIssue[] = $detectedIssue;
         return $this;
     }
@@ -673,8 +621,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * True if the dispense was not performed for some reason.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getNotDone()
-    {
+    public function getNotDone() {
         return $this->notDone;
     }
 
@@ -683,48 +630,39 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $notDone
      * @return $this
      */
-    public function setNotDone($notDone)
-    {
+    public function setNotDone($notDone) {
         $this->notDone = $notDone;
         return $this;
     }
 
     /**
-     * Indicates the reason why a dispense was not performed. (choose any one of notDoneReason*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getNotDoneReasonCodeableConcept()
-    {
+    public function getNotDoneReasonCodeableConcept() {
         return $this->notDoneReasonCodeableConcept;
     }
 
     /**
-     * Indicates the reason why a dispense was not performed. (choose any one of notDoneReason*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $notDoneReasonCodeableConcept
      * @return $this
      */
-    public function setNotDoneReasonCodeableConcept($notDoneReasonCodeableConcept)
-    {
+    public function setNotDoneReasonCodeableConcept($notDoneReasonCodeableConcept) {
         $this->notDoneReasonCodeableConcept = $notDoneReasonCodeableConcept;
         return $this;
     }
 
     /**
-     * Indicates the reason why a dispense was not performed. (choose any one of notDoneReason*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getNotDoneReasonReference()
-    {
+    public function getNotDoneReasonReference() {
         return $this->notDoneReasonReference;
     }
 
     /**
-     * Indicates the reason why a dispense was not performed. (choose any one of notDoneReason*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $notDoneReasonReference
      * @return $this
      */
-    public function setNotDoneReasonReference($notDoneReasonReference)
-    {
+    public function setNotDoneReasonReference($notDoneReasonReference) {
         $this->notDoneReasonReference = $notDoneReasonReference;
         return $this;
     }
@@ -733,8 +671,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * A summary of the events of interest that have occurred, such as when the dispense was verified.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getEventHistory()
-    {
+    public function getEventHistory() {
         return $this->eventHistory;
     }
 
@@ -743,8 +680,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $eventHistory
      * @return $this
      */
-    public function addEventHistory($eventHistory)
-    {
+    public function addEventHistory($eventHistory) {
         $this->eventHistory[] = $eventHistory;
         return $this;
     }
@@ -752,100 +688,246 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['partOf'])) {
+                if (is_array($data['partOf'])) {
+                    foreach($data['partOf'] as $d) {
+                        $this->addPartOf($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"partOf" must be array of objects or null, '.gettype($data['partOf']).' seen.');
+                }
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['category'])) {
+                $this->setCategory($data['category']);
+            }
+            if (isset($data['medicationCodeableConcept'])) {
+                $this->setMedicationCodeableConcept($data['medicationCodeableConcept']);
+            }
+            if (isset($data['medicationReference'])) {
+                $this->setMedicationReference($data['medicationReference']);
+            }
+            if (isset($data['subject'])) {
+                $this->setSubject($data['subject']);
+            }
+            if (isset($data['context'])) {
+                $this->setContext($data['context']);
+            }
+            if (isset($data['supportingInformation'])) {
+                if (is_array($data['supportingInformation'])) {
+                    foreach($data['supportingInformation'] as $d) {
+                        $this->addSupportingInformation($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"supportingInformation" must be array of objects or null, '.gettype($data['supportingInformation']).' seen.');
+                }
+            }
+            if (isset($data['performer'])) {
+                if (is_array($data['performer'])) {
+                    foreach($data['performer'] as $d) {
+                        $this->addPerformer($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"performer" must be array of objects or null, '.gettype($data['performer']).' seen.');
+                }
+            }
+            if (isset($data['authorizingPrescription'])) {
+                if (is_array($data['authorizingPrescription'])) {
+                    foreach($data['authorizingPrescription'] as $d) {
+                        $this->addAuthorizingPrescription($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"authorizingPrescription" must be array of objects or null, '.gettype($data['authorizingPrescription']).' seen.');
+                }
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['quantity'])) {
+                $this->setQuantity($data['quantity']);
+            }
+            if (isset($data['daysSupply'])) {
+                $this->setDaysSupply($data['daysSupply']);
+            }
+            if (isset($data['whenPrepared'])) {
+                $this->setWhenPrepared($data['whenPrepared']);
+            }
+            if (isset($data['whenHandedOver'])) {
+                $this->setWhenHandedOver($data['whenHandedOver']);
+            }
+            if (isset($data['destination'])) {
+                $this->setDestination($data['destination']);
+            }
+            if (isset($data['receiver'])) {
+                if (is_array($data['receiver'])) {
+                    foreach($data['receiver'] as $d) {
+                        $this->addReceiver($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"receiver" must be array of objects or null, '.gettype($data['receiver']).' seen.');
+                }
+            }
+            if (isset($data['note'])) {
+                if (is_array($data['note'])) {
+                    foreach($data['note'] as $d) {
+                        $this->addNote($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"note" must be array of objects or null, '.gettype($data['note']).' seen.');
+                }
+            }
+            if (isset($data['dosageInstruction'])) {
+                if (is_array($data['dosageInstruction'])) {
+                    foreach($data['dosageInstruction'] as $d) {
+                        $this->addDosageInstruction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"dosageInstruction" must be array of objects or null, '.gettype($data['dosageInstruction']).' seen.');
+                }
+            }
+            if (isset($data['substitution'])) {
+                $this->setSubstitution($data['substitution']);
+            }
+            if (isset($data['detectedIssue'])) {
+                if (is_array($data['detectedIssue'])) {
+                    foreach($data['detectedIssue'] as $d) {
+                        $this->addDetectedIssue($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"detectedIssue" must be array of objects or null, '.gettype($data['detectedIssue']).' seen.');
+                }
+            }
+            if (isset($data['notDone'])) {
+                $this->setNotDone($data['notDone']);
+            }
+            if (isset($data['notDoneReasonCodeableConcept'])) {
+                $this->setNotDoneReasonCodeableConcept($data['notDoneReasonCodeableConcept']);
+            }
+            if (isset($data['notDoneReasonReference'])) {
+                $this->setNotDoneReasonReference($data['notDoneReasonReference']);
+            }
+            if (isset($data['eventHistory'])) {
+                if (is_array($data['eventHistory'])) {
+                    foreach($data['eventHistory'] as $d) {
+                        $this->addEventHistory($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"eventHistory" must be array of objects or null, '.gettype($data['eventHistory']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
         if (0 < count($this->partOf)) {
             $json['partOf'] = [];
             foreach($this->partOf as $partOf) {
-                $json['partOf'][] = json_encode($partOf);
+                $json['partOf'][] = $partOf;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->medicationCodeableConcept) $json['medicationCodeableConcept'] = json_encode($this->medicationCodeableConcept);
-        if (null !== $this->medicationReference) $json['medicationReference'] = json_encode($this->medicationReference);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->category)) $json['category'] = $this->category;
+        if (isset($this->medicationCodeableConcept)) $json['medicationCodeableConcept'] = $this->medicationCodeableConcept;
+        if (isset($this->medicationReference)) $json['medicationReference'] = $this->medicationReference;
+        if (isset($this->subject)) $json['subject'] = $this->subject;
+        if (isset($this->context)) $json['context'] = $this->context;
         if (0 < count($this->supportingInformation)) {
             $json['supportingInformation'] = [];
             foreach($this->supportingInformation as $supportingInformation) {
-                $json['supportingInformation'][] = json_encode($supportingInformation);
+                $json['supportingInformation'][] = $supportingInformation;
             }
         }
         if (0 < count($this->performer)) {
             $json['performer'] = [];
             foreach($this->performer as $performer) {
-                $json['performer'][] = json_encode($performer);
+                $json['performer'][] = $performer;
             }
         }
         if (0 < count($this->authorizingPrescription)) {
             $json['authorizingPrescription'] = [];
             foreach($this->authorizingPrescription as $authorizingPrescription) {
-                $json['authorizingPrescription'][] = json_encode($authorizingPrescription);
+                $json['authorizingPrescription'][] = $authorizingPrescription;
             }
         }
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (null !== $this->daysSupply) $json['daysSupply'] = json_encode($this->daysSupply);
-        if (null !== $this->whenPrepared) $json['whenPrepared'] = json_encode($this->whenPrepared);
-        if (null !== $this->whenHandedOver) $json['whenHandedOver'] = json_encode($this->whenHandedOver);
-        if (null !== $this->destination) $json['destination'] = json_encode($this->destination);
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->quantity)) $json['quantity'] = $this->quantity;
+        if (isset($this->daysSupply)) $json['daysSupply'] = $this->daysSupply;
+        if (isset($this->whenPrepared)) $json['whenPrepared'] = $this->whenPrepared;
+        if (isset($this->whenHandedOver)) $json['whenHandedOver'] = $this->whenHandedOver;
+        if (isset($this->destination)) $json['destination'] = $this->destination;
         if (0 < count($this->receiver)) {
             $json['receiver'] = [];
             foreach($this->receiver as $receiver) {
-                $json['receiver'][] = json_encode($receiver);
+                $json['receiver'][] = $receiver;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         if (0 < count($this->dosageInstruction)) {
             $json['dosageInstruction'] = [];
             foreach($this->dosageInstruction as $dosageInstruction) {
-                $json['dosageInstruction'][] = json_encode($dosageInstruction);
+                $json['dosageInstruction'][] = $dosageInstruction;
             }
         }
-        if (null !== $this->substitution) $json['substitution'] = json_encode($this->substitution);
+        if (isset($this->substitution)) $json['substitution'] = $this->substitution;
         if (0 < count($this->detectedIssue)) {
             $json['detectedIssue'] = [];
             foreach($this->detectedIssue as $detectedIssue) {
-                $json['detectedIssue'][] = json_encode($detectedIssue);
+                $json['detectedIssue'][] = $detectedIssue;
             }
         }
-        if (null !== $this->notDone) $json['notDone'] = json_encode($this->notDone);
-        if (null !== $this->notDoneReasonCodeableConcept) $json['notDoneReasonCodeableConcept'] = json_encode($this->notDoneReasonCodeableConcept);
-        if (null !== $this->notDoneReasonReference) $json['notDoneReasonReference'] = json_encode($this->notDoneReasonReference);
+        if (isset($this->notDone)) $json['notDone'] = $this->notDone;
+        if (isset($this->notDoneReasonCodeableConcept)) $json['notDoneReasonCodeableConcept'] = $this->notDoneReasonCodeableConcept;
+        if (isset($this->notDoneReasonReference)) $json['notDoneReasonReference'] = $this->notDoneReasonReference;
         if (0 < count($this->eventHistory)) {
             $json['eventHistory'] = [];
             foreach($this->eventHistory as $eventHistory) {
-                $json['eventHistory'][] = json_encode($eventHistory);
+                $json['eventHistory'][] = $eventHistory;
             }
         }
         return $json;
@@ -856,8 +938,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MedicationDispense xmlns="http://hl7.org/fhir"></MedicationDispense>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->identifier)) {
@@ -870,12 +951,12 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
                 $partOf->xmlSerialize(true, $sxe->addChild('partOf'));
             }
         }
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->category) $this->category->xmlSerialize(true, $sxe->addChild('category'));
-        if (null !== $this->medicationCodeableConcept) $this->medicationCodeableConcept->xmlSerialize(true, $sxe->addChild('medicationCodeableConcept'));
-        if (null !== $this->medicationReference) $this->medicationReference->xmlSerialize(true, $sxe->addChild('medicationReference'));
-        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
-        if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->category)) $this->category->xmlSerialize(true, $sxe->addChild('category'));
+        if (isset($this->medicationCodeableConcept)) $this->medicationCodeableConcept->xmlSerialize(true, $sxe->addChild('medicationCodeableConcept'));
+        if (isset($this->medicationReference)) $this->medicationReference->xmlSerialize(true, $sxe->addChild('medicationReference'));
+        if (isset($this->subject)) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (isset($this->context)) $this->context->xmlSerialize(true, $sxe->addChild('context'));
         if (0 < count($this->supportingInformation)) {
             foreach($this->supportingInformation as $supportingInformation) {
                 $supportingInformation->xmlSerialize(true, $sxe->addChild('supportingInformation'));
@@ -891,12 +972,12 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
                 $authorizingPrescription->xmlSerialize(true, $sxe->addChild('authorizingPrescription'));
             }
         }
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->quantity) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));
-        if (null !== $this->daysSupply) $this->daysSupply->xmlSerialize(true, $sxe->addChild('daysSupply'));
-        if (null !== $this->whenPrepared) $this->whenPrepared->xmlSerialize(true, $sxe->addChild('whenPrepared'));
-        if (null !== $this->whenHandedOver) $this->whenHandedOver->xmlSerialize(true, $sxe->addChild('whenHandedOver'));
-        if (null !== $this->destination) $this->destination->xmlSerialize(true, $sxe->addChild('destination'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->quantity)) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));
+        if (isset($this->daysSupply)) $this->daysSupply->xmlSerialize(true, $sxe->addChild('daysSupply'));
+        if (isset($this->whenPrepared)) $this->whenPrepared->xmlSerialize(true, $sxe->addChild('whenPrepared'));
+        if (isset($this->whenHandedOver)) $this->whenHandedOver->xmlSerialize(true, $sxe->addChild('whenHandedOver'));
+        if (isset($this->destination)) $this->destination->xmlSerialize(true, $sxe->addChild('destination'));
         if (0 < count($this->receiver)) {
             foreach($this->receiver as $receiver) {
                 $receiver->xmlSerialize(true, $sxe->addChild('receiver'));
@@ -912,15 +993,15 @@ class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializ
                 $dosageInstruction->xmlSerialize(true, $sxe->addChild('dosageInstruction'));
             }
         }
-        if (null !== $this->substitution) $this->substitution->xmlSerialize(true, $sxe->addChild('substitution'));
+        if (isset($this->substitution)) $this->substitution->xmlSerialize(true, $sxe->addChild('substitution'));
         if (0 < count($this->detectedIssue)) {
             foreach($this->detectedIssue as $detectedIssue) {
                 $detectedIssue->xmlSerialize(true, $sxe->addChild('detectedIssue'));
             }
         }
-        if (null !== $this->notDone) $this->notDone->xmlSerialize(true, $sxe->addChild('notDone'));
-        if (null !== $this->notDoneReasonCodeableConcept) $this->notDoneReasonCodeableConcept->xmlSerialize(true, $sxe->addChild('notDoneReasonCodeableConcept'));
-        if (null !== $this->notDoneReasonReference) $this->notDoneReasonReference->xmlSerialize(true, $sxe->addChild('notDoneReasonReference'));
+        if (isset($this->notDone)) $this->notDone->xmlSerialize(true, $sxe->addChild('notDone'));
+        if (isset($this->notDoneReasonCodeableConcept)) $this->notDoneReasonCodeableConcept->xmlSerialize(true, $sxe->addChild('notDoneReasonCodeableConcept'));
+        if (isset($this->notDoneReasonReference)) $this->notDoneReasonReference->xmlSerialize(true, $sxe->addChild('notDoneReasonReference'));
         if (0 < count($this->eventHistory)) {
             foreach($this->eventHistory as $eventHistory) {
                 $eventHistory->xmlSerialize(true, $sxe->addChild('eventHistory'));

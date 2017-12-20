@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,7 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $modifier = array();
+    public $modifier = [];
 
     /**
      * The fee charged for the professional service or product.
@@ -101,13 +101,13 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * A list of note references to the notes provided below.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
      */
-    public $noteNumber = array();
+    public $noteNumber = [];
 
     /**
      * The adjudications results.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication[]
      */
-    public $adjudication = array();
+    public $adjudication = [];
 
     /**
      * @var string
@@ -118,8 +118,7 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * The type of reveneu or cost center providing the product and/or service.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getRevenue()
-    {
+    public function getRevenue() {
         return $this->revenue;
     }
 
@@ -128,8 +127,7 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $revenue
      * @return $this
      */
-    public function setRevenue($revenue)
-    {
+    public function setRevenue($revenue) {
         $this->revenue = $revenue;
         return $this;
     }
@@ -138,8 +136,7 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * Health Care Service Type Codes  to identify the classification of service or benefits.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCategory()
-    {
+    public function getCategory() {
         return $this->category;
     }
 
@@ -148,8 +145,7 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
-    public function setCategory($category)
-    {
+    public function setCategory($category) {
         $this->category = $category;
         return $this;
     }
@@ -158,8 +154,7 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * A code to indicate the Professional Service or Product supplied (eg. CTP, HCPCS,USCLS,ICD10, NCPDP,DIN,ACHI,CCI).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getService()
-    {
+    public function getService() {
         return $this->service;
     }
 
@@ -168,8 +163,7 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $service
      * @return $this
      */
-    public function setService($service)
-    {
+    public function setService($service) {
         $this->service = $service;
         return $this;
     }
@@ -178,8 +172,7 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getModifier()
-    {
+    public function getModifier() {
         return $this->modifier;
     }
 
@@ -188,8 +181,7 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $modifier
      * @return $this
      */
-    public function addModifier($modifier)
-    {
+    public function addModifier($modifier) {
         $this->modifier[] = $modifier;
         return $this;
     }
@@ -198,8 +190,7 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * The fee charged for the professional service or product.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public function getFee()
-    {
+    public function getFee() {
         return $this->fee;
     }
 
@@ -208,8 +199,7 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $fee
      * @return $this
      */
-    public function setFee($fee)
-    {
+    public function setFee($fee) {
         $this->fee = $fee;
         return $this;
     }
@@ -218,8 +208,7 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * A list of note references to the notes provided below.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
      */
-    public function getNoteNumber()
-    {
+    public function getNoteNumber() {
         return $this->noteNumber;
     }
 
@@ -228,8 +217,7 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $noteNumber
      * @return $this
      */
-    public function addNoteNumber($noteNumber)
-    {
+    public function addNoteNumber($noteNumber) {
         $this->noteNumber[] = $noteNumber;
         return $this;
     }
@@ -238,8 +226,7 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * The adjudications results.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication[]
      */
-    public function getAdjudication()
-    {
+    public function getAdjudication() {
         return $this->adjudication;
     }
 
@@ -248,8 +235,7 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication $adjudication
      * @return $this
      */
-    public function addAdjudication($adjudication)
-    {
+    public function addAdjudication($adjudication) {
         $this->adjudication[] = $adjudication;
         return $this;
     }
@@ -257,45 +243,92 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['revenue'])) {
+                $this->setRevenue($data['revenue']);
+            }
+            if (isset($data['category'])) {
+                $this->setCategory($data['category']);
+            }
+            if (isset($data['service'])) {
+                $this->setService($data['service']);
+            }
+            if (isset($data['modifier'])) {
+                if (is_array($data['modifier'])) {
+                    foreach($data['modifier'] as $d) {
+                        $this->addModifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"modifier" must be array of objects or null, '.gettype($data['modifier']).' seen.');
+                }
+            }
+            if (isset($data['fee'])) {
+                $this->setFee($data['fee']);
+            }
+            if (isset($data['noteNumber'])) {
+                if (is_array($data['noteNumber'])) {
+                    foreach($data['noteNumber'] as $d) {
+                        $this->addNoteNumber($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"noteNumber" must be array of objects or null, '.gettype($data['noteNumber']).' seen.');
+                }
+            }
+            if (isset($data['adjudication'])) {
+                if (is_array($data['adjudication'])) {
+                    foreach($data['adjudication'] as $d) {
+                        $this->addAdjudication($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"adjudication" must be array of objects or null, '.gettype($data['adjudication']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->revenue) $json['revenue'] = json_encode($this->revenue);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->service) $json['service'] = json_encode($this->service);
+        if (isset($this->revenue)) $json['revenue'] = $this->revenue;
+        if (isset($this->category)) $json['category'] = $this->category;
+        if (isset($this->service)) $json['service'] = $this->service;
         if (0 < count($this->modifier)) {
             $json['modifier'] = [];
             foreach($this->modifier as $modifier) {
-                $json['modifier'][] = json_encode($modifier);
+                $json['modifier'][] = $modifier;
             }
         }
-        if (null !== $this->fee) $json['fee'] = json_encode($this->fee);
+        if (isset($this->fee)) $json['fee'] = $this->fee;
         if (0 < count($this->noteNumber)) {
             $json['noteNumber'] = [];
             foreach($this->noteNumber as $noteNumber) {
-                $json['noteNumber'][] = json_encode($noteNumber);
+                $json['noteNumber'][] = $noteNumber;
             }
         }
         if (0 < count($this->adjudication)) {
             $json['adjudication'] = [];
             foreach($this->adjudication as $adjudication) {
-                $json['adjudication'][] = json_encode($adjudication);
+                $json['adjudication'][] = $adjudication;
             }
         }
         return $json;
@@ -306,19 +339,18 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement implements \Js
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ExplanationOfBenefitDetail1 xmlns="http://hl7.org/fhir"></ExplanationOfBenefitDetail1>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->revenue) $this->revenue->xmlSerialize(true, $sxe->addChild('revenue'));
-        if (null !== $this->category) $this->category->xmlSerialize(true, $sxe->addChild('category'));
-        if (null !== $this->service) $this->service->xmlSerialize(true, $sxe->addChild('service'));
+        if (isset($this->revenue)) $this->revenue->xmlSerialize(true, $sxe->addChild('revenue'));
+        if (isset($this->category)) $this->category->xmlSerialize(true, $sxe->addChild('category'));
+        if (isset($this->service)) $this->service->xmlSerialize(true, $sxe->addChild('service'));
         if (0 < count($this->modifier)) {
             foreach($this->modifier as $modifier) {
                 $modifier->xmlSerialize(true, $sxe->addChild('modifier'));
             }
         }
-        if (null !== $this->fee) $this->fee->xmlSerialize(true, $sxe->addChild('fee'));
+        if (isset($this->fee)) $this->fee->xmlSerialize(true, $sxe->addChild('fee'));
         if (0 < count($this->noteNumber)) {
             foreach($this->noteNumber as $noteNumber) {
                 $noteNumber->xmlSerialize(true, $sxe->addChild('noteNumber'));

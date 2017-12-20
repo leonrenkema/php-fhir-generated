@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,8 +98,7 @@ class FHIRResource implements \JsonSerializable
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -108,8 +107,7 @@ class FHIRResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $id
      * @return $this
      */
-    public function setId($id)
-    {
+    public function setId($id) {
         $this->id = $id;
         return $this;
     }
@@ -118,8 +116,7 @@ class FHIRResource implements \JsonSerializable
      * The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content may not always be associated with version changes to the resource.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
-    public function getMeta()
-    {
+    public function getMeta() {
         return $this->meta;
     }
 
@@ -128,8 +125,7 @@ class FHIRResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMeta $meta
      * @return $this
      */
-    public function setMeta($meta)
-    {
+    public function setMeta($meta) {
         $this->meta = $meta;
         return $this;
     }
@@ -138,8 +134,7 @@ class FHIRResource implements \JsonSerializable
      * A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getImplicitRules()
-    {
+    public function getImplicitRules() {
         return $this->implicitRules;
     }
 
@@ -148,8 +143,7 @@ class FHIRResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $implicitRules
      * @return $this
      */
-    public function setImplicitRules($implicitRules)
-    {
+    public function setImplicitRules($implicitRules) {
         $this->implicitRules = $implicitRules;
         return $this;
     }
@@ -158,8 +152,7 @@ class FHIRResource implements \JsonSerializable
      * The base language in which the resource is written.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getLanguage()
-    {
+    public function getLanguage() {
         return $this->language;
     }
 
@@ -168,8 +161,7 @@ class FHIRResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $language
      * @return $this
      */
-    public function setLanguage($language)
-    {
+    public function setLanguage($language) {
         $this->language = $language;
         return $this;
     }
@@ -177,29 +169,48 @@ class FHIRResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['id'])) {
+                $this->setId($data['id']);
+            }
+            if (isset($data['meta'])) {
+                $this->setMeta($data['meta']);
+            }
+            if (isset($data['implicitRules'])) {
+                $this->setImplicitRules($data['implicitRules']);
+            }
+            if (isset($data['language'])) {
+                $this->setLanguage($data['language']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return (string)$this->getId();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = [];
-        if (null !== $this->id) $json['id'] = json_encode($this->id);
-        if (null !== $this->meta) $json['meta'] = json_encode($this->meta);
-        if (null !== $this->implicitRules) $json['implicitRules'] = json_encode($this->implicitRules);
-        if (null !== $this->language) $json['language'] = json_encode($this->language);
+        if (isset($this->id)) $json['id'] = $this->id;
+        if (isset($this->meta)) $json['meta'] = $this->meta;
+        if (isset($this->implicitRules)) $json['implicitRules'] = $this->implicitRules;
+        if (isset($this->language)) $json['language'] = $this->language;
         return $json;
     }
 
@@ -208,13 +219,12 @@ class FHIRResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Resource xmlns="http://hl7.org/fhir"></Resource>');
-        if (null !== $this->id) $this->id->xmlSerialize(true, $sxe->addChild('id'));
-        if (null !== $this->meta) $this->meta->xmlSerialize(true, $sxe->addChild('meta'));
-        if (null !== $this->implicitRules) $this->implicitRules->xmlSerialize(true, $sxe->addChild('implicitRules'));
-        if (null !== $this->language) $this->language->xmlSerialize(true, $sxe->addChild('language'));
+        if (isset($this->id)) $this->id->xmlSerialize(true, $sxe->addChild('id'));
+        if (isset($this->meta)) $this->meta->xmlSerialize(true, $sxe->addChild('meta'));
+        if (isset($this->implicitRules)) $this->implicitRules->xmlSerialize(true, $sxe->addChild('implicitRules'));
+        if (isset($this->language)) $this->language->xmlSerialize(true, $sxe->addChild('language'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

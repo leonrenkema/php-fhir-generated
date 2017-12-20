@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * Identifies a particular constituent of interest in the product.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationIngredient[]
      */
-    public $ingredient = array();
+    public $ingredient = [];
 
     /**
      * Information that only applies to packages (not products).
@@ -120,7 +120,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * Photo(s) or graphic representation(s) of the medication.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
-    public $image = array();
+    public $image = [];
 
     /**
      * @var string
@@ -131,8 +131,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * A code (or set of codes) that specify this medication, or a textual description if no code is available. Usage note: This could be a standard medication code such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary code, optionally with translations to other code systems.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -141,8 +140,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -151,8 +149,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * A code to indicate if the medication is in active use.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMedicationStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -161,8 +158,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMedicationStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -171,8 +167,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * Set to true if the item is attributable to a specific manufacturer.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getIsBrand()
-    {
+    public function getIsBrand() {
         return $this->isBrand;
     }
 
@@ -181,8 +176,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $isBrand
      * @return $this
      */
-    public function setIsBrand($isBrand)
-    {
+    public function setIsBrand($isBrand) {
         $this->isBrand = $isBrand;
         return $this;
     }
@@ -191,8 +185,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * Set to true if the medication can be obtained without an order from a prescriber.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getIsOverTheCounter()
-    {
+    public function getIsOverTheCounter() {
         return $this->isOverTheCounter;
     }
 
@@ -201,8 +194,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $isOverTheCounter
      * @return $this
      */
-    public function setIsOverTheCounter($isOverTheCounter)
-    {
+    public function setIsOverTheCounter($isOverTheCounter) {
         $this->isOverTheCounter = $isOverTheCounter;
         return $this;
     }
@@ -211,8 +203,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getManufacturer()
-    {
+    public function getManufacturer() {
         return $this->manufacturer;
     }
 
@@ -221,8 +212,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $manufacturer
      * @return $this
      */
-    public function setManufacturer($manufacturer)
-    {
+    public function setManufacturer($manufacturer) {
         $this->manufacturer = $manufacturer;
         return $this;
     }
@@ -231,8 +221,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * Describes the form of the item.  Powder; tablets; capsule.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getForm()
-    {
+    public function getForm() {
         return $this->form;
     }
 
@@ -241,8 +230,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $form
      * @return $this
      */
-    public function setForm($form)
-    {
+    public function setForm($form) {
         $this->form = $form;
         return $this;
     }
@@ -251,8 +239,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * Identifies a particular constituent of interest in the product.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationIngredient[]
      */
-    public function getIngredient()
-    {
+    public function getIngredient() {
         return $this->ingredient;
     }
 
@@ -261,8 +248,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationIngredient $ingredient
      * @return $this
      */
-    public function addIngredient($ingredient)
-    {
+    public function addIngredient($ingredient) {
         $this->ingredient[] = $ingredient;
         return $this;
     }
@@ -271,8 +257,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * Information that only applies to packages (not products).
      * @return \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationPackage
      */
-    public function getPackage()
-    {
+    public function getPackage() {
         return $this->package;
     }
 
@@ -281,8 +266,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationPackage $package
      * @return $this
      */
-    public function setPackage($package)
-    {
+    public function setPackage($package) {
         $this->package = $package;
         return $this;
     }
@@ -291,8 +275,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * Photo(s) or graphic representation(s) of the medication.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
-    public function getImage()
-    {
+    public function getImage() {
         return $this->image;
     }
 
@@ -301,8 +284,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $image
      * @return $this
      */
-    public function addImage($image)
-    {
+    public function addImage($image) {
         $this->image[] = $image;
         return $this;
     }
@@ -310,43 +292,90 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['isBrand'])) {
+                $this->setIsBrand($data['isBrand']);
+            }
+            if (isset($data['isOverTheCounter'])) {
+                $this->setIsOverTheCounter($data['isOverTheCounter']);
+            }
+            if (isset($data['manufacturer'])) {
+                $this->setManufacturer($data['manufacturer']);
+            }
+            if (isset($data['form'])) {
+                $this->setForm($data['form']);
+            }
+            if (isset($data['ingredient'])) {
+                if (is_array($data['ingredient'])) {
+                    foreach($data['ingredient'] as $d) {
+                        $this->addIngredient($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"ingredient" must be array of objects or null, '.gettype($data['ingredient']).' seen.');
+                }
+            }
+            if (isset($data['package'])) {
+                $this->setPackage($data['package']);
+            }
+            if (isset($data['image'])) {
+                if (is_array($data['image'])) {
+                    foreach($data['image'] as $d) {
+                        $this->addImage($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"image" must be array of objects or null, '.gettype($data['image']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->isBrand) $json['isBrand'] = json_encode($this->isBrand);
-        if (null !== $this->isOverTheCounter) $json['isOverTheCounter'] = json_encode($this->isOverTheCounter);
-        if (null !== $this->manufacturer) $json['manufacturer'] = json_encode($this->manufacturer);
-        if (null !== $this->form) $json['form'] = json_encode($this->form);
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->isBrand)) $json['isBrand'] = $this->isBrand;
+        if (isset($this->isOverTheCounter)) $json['isOverTheCounter'] = $this->isOverTheCounter;
+        if (isset($this->manufacturer)) $json['manufacturer'] = $this->manufacturer;
+        if (isset($this->form)) $json['form'] = $this->form;
         if (0 < count($this->ingredient)) {
             $json['ingredient'] = [];
             foreach($this->ingredient as $ingredient) {
-                $json['ingredient'][] = json_encode($ingredient);
+                $json['ingredient'][] = $ingredient;
             }
         }
-        if (null !== $this->package) $json['package'] = json_encode($this->package);
+        if (isset($this->package)) $json['package'] = $this->package;
         if (0 < count($this->image)) {
             $json['image'] = [];
             foreach($this->image as $image) {
-                $json['image'][] = json_encode($image);
+                $json['image'][] = $image;
             }
         }
         return $json;
@@ -357,22 +386,21 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Medication xmlns="http://hl7.org/fhir"></Medication>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->isBrand) $this->isBrand->xmlSerialize(true, $sxe->addChild('isBrand'));
-        if (null !== $this->isOverTheCounter) $this->isOverTheCounter->xmlSerialize(true, $sxe->addChild('isOverTheCounter'));
-        if (null !== $this->manufacturer) $this->manufacturer->xmlSerialize(true, $sxe->addChild('manufacturer'));
-        if (null !== $this->form) $this->form->xmlSerialize(true, $sxe->addChild('form'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->isBrand)) $this->isBrand->xmlSerialize(true, $sxe->addChild('isBrand'));
+        if (isset($this->isOverTheCounter)) $this->isOverTheCounter->xmlSerialize(true, $sxe->addChild('isOverTheCounter'));
+        if (isset($this->manufacturer)) $this->manufacturer->xmlSerialize(true, $sxe->addChild('manufacturer'));
+        if (isset($this->form)) $this->form->xmlSerialize(true, $sxe->addChild('form'));
         if (0 < count($this->ingredient)) {
             foreach($this->ingredient as $ingredient) {
                 $ingredient->xmlSerialize(true, $sxe->addChild('ingredient'));
             }
         }
-        if (null !== $this->package) $this->package->xmlSerialize(true, $sxe->addChild('package'));
+        if (isset($this->package)) $this->package->xmlSerialize(true, $sxe->addChild('package'));
         if (0 < count($this->image)) {
             foreach($this->image as $image) {
                 $image->xmlSerialize(true, $sxe->addChild('image'));

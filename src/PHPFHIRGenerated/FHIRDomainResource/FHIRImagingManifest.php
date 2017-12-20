@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,7 @@ The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions 
      * Study identity and locating information of the DICOM SOP instances in the selection.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRImagingManifest\FHIRImagingManifestStudy[]
      */
-    public $study = array();
+    public $study = [];
 
     /**
      * @var string
@@ -114,8 +114,7 @@ The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions 
      * Unique identifier of the DICOM Key Object Selection (KOS) that this resource represents.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -124,8 +123,7 @@ The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions 
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function setIdentifier($identifier)
-    {
+    public function setIdentifier($identifier) {
         $this->identifier = $identifier;
         return $this;
     }
@@ -134,8 +132,7 @@ The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions 
      * A patient resource reference which is the patient subject of all DICOM SOP Instances in this ImagingManifest.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getPatient()
-    {
+    public function getPatient() {
         return $this->patient;
     }
 
@@ -144,8 +141,7 @@ The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions 
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
      * @return $this
      */
-    public function setPatient($patient)
-    {
+    public function setPatient($patient) {
         $this->patient = $patient;
         return $this;
     }
@@ -154,8 +150,7 @@ The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions 
      * Date and time when the selection of the referenced instances were made. It is (typically) different from the creation date of the selection resource, and from dates associated with the referenced instances (e.g. capture time of the referenced image).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getAuthoringTime()
-    {
+    public function getAuthoringTime() {
         return $this->authoringTime;
     }
 
@@ -164,8 +159,7 @@ The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions 
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $authoringTime
      * @return $this
      */
-    public function setAuthoringTime($authoringTime)
-    {
+    public function setAuthoringTime($authoringTime) {
         $this->authoringTime = $authoringTime;
         return $this;
     }
@@ -174,8 +168,7 @@ The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions 
      * Author of ImagingManifest. It can be a human author or a device which made the decision of the SOP instances selected. For example, a radiologist selected a set of imaging SOP instances to attach in a diagnostic report, and a CAD application may author a selection to describe SOP instances it used to generate a detection conclusion.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getAuthor()
-    {
+    public function getAuthor() {
         return $this->author;
     }
 
@@ -184,8 +177,7 @@ The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions 
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $author
      * @return $this
      */
-    public function setAuthor($author)
-    {
+    public function setAuthor($author) {
         $this->author = $author;
         return $this;
     }
@@ -195,8 +187,7 @@ The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions 
 The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions (e.g. Best in Set, Complete Study Content). Note that those values cover the wide range of uses of the DICOM Key Object Selection object, several of which are not supported by ImagingManifest. Specifically, there is no expected behavior associated with descriptions that suggest referenced images be removed or not used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -206,8 +197,7 @@ The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions 
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -216,8 +206,7 @@ The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions 
      * Study identity and locating information of the DICOM SOP instances in the selection.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRImagingManifest\FHIRImagingManifestStudy[]
      */
-    public function getStudy()
-    {
+    public function getStudy() {
         return $this->study;
     }
 
@@ -226,8 +215,7 @@ The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions 
      * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingManifest\FHIRImagingManifestStudy $study
      * @return $this
      */
-    public function addStudy($study)
-    {
+    public function addStudy($study) {
         $this->study[] = $study;
         return $this;
     }
@@ -235,35 +223,67 @@ The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions 
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                $this->setIdentifier($data['identifier']);
+            }
+            if (isset($data['patient'])) {
+                $this->setPatient($data['patient']);
+            }
+            if (isset($data['authoringTime'])) {
+                $this->setAuthoringTime($data['authoringTime']);
+            }
+            if (isset($data['author'])) {
+                $this->setAuthor($data['author']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['study'])) {
+                if (is_array($data['study'])) {
+                    foreach($data['study'] as $d) {
+                        $this->addStudy($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"study" must be array of objects or null, '.gettype($data['study']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->authoringTime) $json['authoringTime'] = json_encode($this->authoringTime);
-        if (null !== $this->author) $json['author'] = json_encode($this->author);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (isset($this->identifier)) $json['identifier'] = $this->identifier;
+        if (isset($this->patient)) $json['patient'] = $this->patient;
+        if (isset($this->authoringTime)) $json['authoringTime'] = $this->authoringTime;
+        if (isset($this->author)) $json['author'] = $this->author;
+        if (isset($this->description)) $json['description'] = $this->description;
         if (0 < count($this->study)) {
             $json['study'] = [];
             foreach($this->study as $study) {
-                $json['study'][] = json_encode($study);
+                $json['study'][] = $study;
             }
         }
         return $json;
@@ -274,15 +294,14 @@ The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions 
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ImagingManifest xmlns="http://hl7.org/fhir"></ImagingManifest>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
-        if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
-        if (null !== $this->authoringTime) $this->authoringTime->xmlSerialize(true, $sxe->addChild('authoringTime'));
-        if (null !== $this->author) $this->author->xmlSerialize(true, $sxe->addChild('author'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->identifier)) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (isset($this->patient)) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
+        if (isset($this->authoringTime)) $this->authoringTime->xmlSerialize(true, $sxe->addChild('authoringTime'));
+        if (isset($this->author)) $this->author->xmlSerialize(true, $sxe->addChild('author'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->study)) {
             foreach($this->study as $study) {
                 $study->xmlSerialize(true, $sxe->addChild('study'));

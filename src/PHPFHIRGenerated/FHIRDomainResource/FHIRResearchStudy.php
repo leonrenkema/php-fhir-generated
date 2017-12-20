@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,7 +72,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Identifiers assigned to this research study by the sponsor or other systems.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = array();
+    public $identifier = [];
 
     /**
      * A short, descriptive user-friendly label for the study.
@@ -84,13 +84,13 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * The set of steps expected to be performed as part of the execution of the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $protocol = array();
+    public $protocol = [];
 
     /**
      * A larger research study of which this particular study is a component or step.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $partOf = array();
+    public $partOf = [];
 
     /**
      * The current state of the study.
@@ -102,37 +102,37 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Codes categorizing the type of study such as investigational vs. observational, type of blinding, type of randomization, safety vs. efficacy, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $category = array();
+    public $category = [];
 
     /**
      * The condition(s), medication(s), food(s), therapy(ies), device(s) or other concerns or interventions that the study is seeking to gain more information about.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $focus = array();
+    public $focus = [];
 
     /**
      * Contact details to assist a user in learning more about or engaging with the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = array();
+    public $contact = [];
 
     /**
      * Citations, references and other related documents.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact[]
      */
-    public $relatedArtifact = array();
+    public $relatedArtifact = [];
 
     /**
      * Key terms to aid in searching for or filtering the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $keyword = array();
+    public $keyword = [];
 
     /**
      * Indicates a country, state or other region where the study is taking place.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = array();
+    public $jurisdiction = [];
 
     /**
      * A full description of how the study is being conducted.
@@ -144,7 +144,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Reference to a Group that defines the criteria for and quantity of subjects participating in the study.  E.g. " 200 female Europeans between the ages of 20 and 45 with early onset diabetes".
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $enrollment = array();
+    public $enrollment = [];
 
     /**
      * Identifies the start date and the expected (or actual, depending on status) end date for the study.
@@ -168,7 +168,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Clinic, hospital or other healthcare location that is participating in the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $site = array();
+    public $site = [];
 
     /**
      * A description and/or code explaining the premature termination of the study.
@@ -180,13 +180,13 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Comments made about the event by the performer, subject or other participants.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = array();
+    public $note = [];
 
     /**
      * Describes an expected sequence of events for one of the participants of a study.  E.g. Exposure to drug A, wash-out, exposure to drug B, wash-out, follow-up.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRResearchStudy\FHIRResearchStudyArm[]
      */
-    public $arm = array();
+    public $arm = [];
 
     /**
      * @var string
@@ -197,8 +197,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Identifiers assigned to this research study by the sponsor or other systems.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -207,8 +206,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function addIdentifier($identifier)
-    {
+    public function addIdentifier($identifier) {
         $this->identifier[] = $identifier;
         return $this;
     }
@@ -217,8 +215,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * A short, descriptive user-friendly label for the study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -227,8 +224,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
      * @return $this
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
         return $this;
     }
@@ -237,8 +233,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * The set of steps expected to be performed as part of the execution of the study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getProtocol()
-    {
+    public function getProtocol() {
         return $this->protocol;
     }
 
@@ -247,8 +242,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $protocol
      * @return $this
      */
-    public function addProtocol($protocol)
-    {
+    public function addProtocol($protocol) {
         $this->protocol[] = $protocol;
         return $this;
     }
@@ -257,8 +251,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * A larger research study of which this particular study is a component or step.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getPartOf()
-    {
+    public function getPartOf() {
         return $this->partOf;
     }
 
@@ -267,8 +260,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $partOf
      * @return $this
      */
-    public function addPartOf($partOf)
-    {
+    public function addPartOf($partOf) {
         $this->partOf[] = $partOf;
         return $this;
     }
@@ -277,8 +269,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * The current state of the study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRResearchStudyStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -287,8 +278,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRResearchStudyStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -297,8 +287,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Codes categorizing the type of study such as investigational vs. observational, type of blinding, type of randomization, safety vs. efficacy, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getCategory()
-    {
+    public function getCategory() {
         return $this->category;
     }
 
@@ -307,8 +296,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
-    public function addCategory($category)
-    {
+    public function addCategory($category) {
         $this->category[] = $category;
         return $this;
     }
@@ -317,8 +305,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * The condition(s), medication(s), food(s), therapy(ies), device(s) or other concerns or interventions that the study is seeking to gain more information about.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getFocus()
-    {
+    public function getFocus() {
         return $this->focus;
     }
 
@@ -327,8 +314,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $focus
      * @return $this
      */
-    public function addFocus($focus)
-    {
+    public function addFocus($focus) {
         $this->focus[] = $focus;
         return $this;
     }
@@ -337,8 +323,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Contact details to assist a user in learning more about or engaging with the study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public function getContact()
-    {
+    public function getContact() {
         return $this->contact;
     }
 
@@ -347,8 +332,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
-    public function addContact($contact)
-    {
+    public function addContact($contact) {
         $this->contact[] = $contact;
         return $this;
     }
@@ -357,8 +341,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Citations, references and other related documents.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact[]
      */
-    public function getRelatedArtifact()
-    {
+    public function getRelatedArtifact() {
         return $this->relatedArtifact;
     }
 
@@ -367,8 +350,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact $relatedArtifact
      * @return $this
      */
-    public function addRelatedArtifact($relatedArtifact)
-    {
+    public function addRelatedArtifact($relatedArtifact) {
         $this->relatedArtifact[] = $relatedArtifact;
         return $this;
     }
@@ -377,8 +359,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Key terms to aid in searching for or filtering the study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getKeyword()
-    {
+    public function getKeyword() {
         return $this->keyword;
     }
 
@@ -387,8 +368,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $keyword
      * @return $this
      */
-    public function addKeyword($keyword)
-    {
+    public function addKeyword($keyword) {
         $this->keyword[] = $keyword;
         return $this;
     }
@@ -397,8 +377,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Indicates a country, state or other region where the study is taking place.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getJurisdiction()
-    {
+    public function getJurisdiction() {
         return $this->jurisdiction;
     }
 
@@ -407,8 +386,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
-    public function addJurisdiction($jurisdiction)
-    {
+    public function addJurisdiction($jurisdiction) {
         $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
@@ -417,8 +395,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * A full description of how the study is being conducted.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -427,8 +404,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -437,8 +413,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Reference to a Group that defines the criteria for and quantity of subjects participating in the study.  E.g. " 200 female Europeans between the ages of 20 and 45 with early onset diabetes".
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getEnrollment()
-    {
+    public function getEnrollment() {
         return $this->enrollment;
     }
 
@@ -447,8 +422,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $enrollment
      * @return $this
      */
-    public function addEnrollment($enrollment)
-    {
+    public function addEnrollment($enrollment) {
         $this->enrollment[] = $enrollment;
         return $this;
     }
@@ -457,8 +431,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Identifies the start date and the expected (or actual, depending on status) end date for the study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
-    {
+    public function getPeriod() {
         return $this->period;
     }
 
@@ -467,8 +440,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
      * @return $this
      */
-    public function setPeriod($period)
-    {
+    public function setPeriod($period) {
         $this->period = $period;
         return $this;
     }
@@ -477,8 +449,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * The organization responsible for the execution of the study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getSponsor()
-    {
+    public function getSponsor() {
         return $this->sponsor;
     }
 
@@ -487,8 +458,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $sponsor
      * @return $this
      */
-    public function setSponsor($sponsor)
-    {
+    public function setSponsor($sponsor) {
         $this->sponsor = $sponsor;
         return $this;
     }
@@ -497,8 +467,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Indicates the individual who has primary oversite of the execution of the study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getPrincipalInvestigator()
-    {
+    public function getPrincipalInvestigator() {
         return $this->principalInvestigator;
     }
 
@@ -507,8 +476,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $principalInvestigator
      * @return $this
      */
-    public function setPrincipalInvestigator($principalInvestigator)
-    {
+    public function setPrincipalInvestigator($principalInvestigator) {
         $this->principalInvestigator = $principalInvestigator;
         return $this;
     }
@@ -517,8 +485,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Clinic, hospital or other healthcare location that is participating in the study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getSite()
-    {
+    public function getSite() {
         return $this->site;
     }
 
@@ -527,8 +494,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $site
      * @return $this
      */
-    public function addSite($site)
-    {
+    public function addSite($site) {
         $this->site[] = $site;
         return $this;
     }
@@ -537,8 +503,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * A description and/or code explaining the premature termination of the study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getReasonStopped()
-    {
+    public function getReasonStopped() {
         return $this->reasonStopped;
     }
 
@@ -547,8 +512,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonStopped
      * @return $this
      */
-    public function setReasonStopped($reasonStopped)
-    {
+    public function setReasonStopped($reasonStopped) {
         $this->reasonStopped = $reasonStopped;
         return $this;
     }
@@ -557,8 +521,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Comments made about the event by the performer, subject or other participants.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public function getNote()
-    {
+    public function getNote() {
         return $this->note;
     }
 
@@ -567,8 +530,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
-    public function addNote($note)
-    {
+    public function addNote($note) {
         $this->note[] = $note;
         return $this;
     }
@@ -577,8 +539,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * Describes an expected sequence of events for one of the participants of a study.  E.g. Exposure to drug A, wash-out, exposure to drug B, wash-out, follow-up.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRResearchStudy\FHIRResearchStudyArm[]
      */
-    public function getArm()
-    {
+    public function getArm() {
         return $this->arm;
     }
 
@@ -587,8 +548,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRResearchStudy\FHIRResearchStudyArm $arm
      * @return $this
      */
-    public function addArm($arm)
-    {
+    public function addArm($arm) {
         $this->arm[] = $arm;
         return $this;
     }
@@ -596,109 +556,255 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['title'])) {
+                $this->setTitle($data['title']);
+            }
+            if (isset($data['protocol'])) {
+                if (is_array($data['protocol'])) {
+                    foreach($data['protocol'] as $d) {
+                        $this->addProtocol($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"protocol" must be array of objects or null, '.gettype($data['protocol']).' seen.');
+                }
+            }
+            if (isset($data['partOf'])) {
+                if (is_array($data['partOf'])) {
+                    foreach($data['partOf'] as $d) {
+                        $this->addPartOf($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"partOf" must be array of objects or null, '.gettype($data['partOf']).' seen.');
+                }
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['category'])) {
+                if (is_array($data['category'])) {
+                    foreach($data['category'] as $d) {
+                        $this->addCategory($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"category" must be array of objects or null, '.gettype($data['category']).' seen.');
+                }
+            }
+            if (isset($data['focus'])) {
+                if (is_array($data['focus'])) {
+                    foreach($data['focus'] as $d) {
+                        $this->addFocus($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"focus" must be array of objects or null, '.gettype($data['focus']).' seen.');
+                }
+            }
+            if (isset($data['contact'])) {
+                if (is_array($data['contact'])) {
+                    foreach($data['contact'] as $d) {
+                        $this->addContact($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contact" must be array of objects or null, '.gettype($data['contact']).' seen.');
+                }
+            }
+            if (isset($data['relatedArtifact'])) {
+                if (is_array($data['relatedArtifact'])) {
+                    foreach($data['relatedArtifact'] as $d) {
+                        $this->addRelatedArtifact($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"relatedArtifact" must be array of objects or null, '.gettype($data['relatedArtifact']).' seen.');
+                }
+            }
+            if (isset($data['keyword'])) {
+                if (is_array($data['keyword'])) {
+                    foreach($data['keyword'] as $d) {
+                        $this->addKeyword($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"keyword" must be array of objects or null, '.gettype($data['keyword']).' seen.');
+                }
+            }
+            if (isset($data['jurisdiction'])) {
+                if (is_array($data['jurisdiction'])) {
+                    foreach($data['jurisdiction'] as $d) {
+                        $this->addJurisdiction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"jurisdiction" must be array of objects or null, '.gettype($data['jurisdiction']).' seen.');
+                }
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['enrollment'])) {
+                if (is_array($data['enrollment'])) {
+                    foreach($data['enrollment'] as $d) {
+                        $this->addEnrollment($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"enrollment" must be array of objects or null, '.gettype($data['enrollment']).' seen.');
+                }
+            }
+            if (isset($data['period'])) {
+                $this->setPeriod($data['period']);
+            }
+            if (isset($data['sponsor'])) {
+                $this->setSponsor($data['sponsor']);
+            }
+            if (isset($data['principalInvestigator'])) {
+                $this->setPrincipalInvestigator($data['principalInvestigator']);
+            }
+            if (isset($data['site'])) {
+                if (is_array($data['site'])) {
+                    foreach($data['site'] as $d) {
+                        $this->addSite($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"site" must be array of objects or null, '.gettype($data['site']).' seen.');
+                }
+            }
+            if (isset($data['reasonStopped'])) {
+                $this->setReasonStopped($data['reasonStopped']);
+            }
+            if (isset($data['note'])) {
+                if (is_array($data['note'])) {
+                    foreach($data['note'] as $d) {
+                        $this->addNote($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"note" must be array of objects or null, '.gettype($data['note']).' seen.');
+                }
+            }
+            if (isset($data['arm'])) {
+                if (is_array($data['arm'])) {
+                    foreach($data['arm'] as $d) {
+                        $this->addArm($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"arm" must be array of objects or null, '.gettype($data['arm']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
+        if (isset($this->title)) $json['title'] = $this->title;
         if (0 < count($this->protocol)) {
             $json['protocol'] = [];
             foreach($this->protocol as $protocol) {
-                $json['protocol'][] = json_encode($protocol);
+                $json['protocol'][] = $protocol;
             }
         }
         if (0 < count($this->partOf)) {
             $json['partOf'] = [];
             foreach($this->partOf as $partOf) {
-                $json['partOf'][] = json_encode($partOf);
+                $json['partOf'][] = $partOf;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (isset($this->status)) $json['status'] = $this->status;
         if (0 < count($this->category)) {
             $json['category'] = [];
             foreach($this->category as $category) {
-                $json['category'][] = json_encode($category);
+                $json['category'][] = $category;
             }
         }
         if (0 < count($this->focus)) {
             $json['focus'] = [];
             foreach($this->focus as $focus) {
-                $json['focus'][] = json_encode($focus);
+                $json['focus'][] = $focus;
             }
         }
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                $json['contact'][] = $contact;
             }
         }
         if (0 < count($this->relatedArtifact)) {
             $json['relatedArtifact'] = [];
             foreach($this->relatedArtifact as $relatedArtifact) {
-                $json['relatedArtifact'][] = json_encode($relatedArtifact);
+                $json['relatedArtifact'][] = $relatedArtifact;
             }
         }
         if (0 < count($this->keyword)) {
             $json['keyword'] = [];
             foreach($this->keyword as $keyword) {
-                $json['keyword'][] = json_encode($keyword);
+                $json['keyword'][] = $keyword;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                $json['jurisdiction'][] = $jurisdiction;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (isset($this->description)) $json['description'] = $this->description;
         if (0 < count($this->enrollment)) {
             $json['enrollment'] = [];
             foreach($this->enrollment as $enrollment) {
-                $json['enrollment'][] = json_encode($enrollment);
+                $json['enrollment'][] = $enrollment;
             }
         }
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->sponsor) $json['sponsor'] = json_encode($this->sponsor);
-        if (null !== $this->principalInvestigator) $json['principalInvestigator'] = json_encode($this->principalInvestigator);
+        if (isset($this->period)) $json['period'] = $this->period;
+        if (isset($this->sponsor)) $json['sponsor'] = $this->sponsor;
+        if (isset($this->principalInvestigator)) $json['principalInvestigator'] = $this->principalInvestigator;
         if (0 < count($this->site)) {
             $json['site'] = [];
             foreach($this->site as $site) {
-                $json['site'][] = json_encode($site);
+                $json['site'][] = $site;
             }
         }
-        if (null !== $this->reasonStopped) $json['reasonStopped'] = json_encode($this->reasonStopped);
+        if (isset($this->reasonStopped)) $json['reasonStopped'] = $this->reasonStopped;
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         if (0 < count($this->arm)) {
             $json['arm'] = [];
             foreach($this->arm as $arm) {
-                $json['arm'][] = json_encode($arm);
+                $json['arm'][] = $arm;
             }
         }
         return $json;
@@ -709,8 +815,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ResearchStudy xmlns="http://hl7.org/fhir"></ResearchStudy>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->identifier)) {
@@ -718,7 +823,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
+        if (isset($this->title)) $this->title->xmlSerialize(true, $sxe->addChild('title'));
         if (0 < count($this->protocol)) {
             foreach($this->protocol as $protocol) {
                 $protocol->xmlSerialize(true, $sxe->addChild('protocol'));
@@ -729,7 +834,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
                 $partOf->xmlSerialize(true, $sxe->addChild('partOf'));
             }
         }
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (0 < count($this->category)) {
             foreach($this->category as $category) {
                 $category->xmlSerialize(true, $sxe->addChild('category'));
@@ -760,21 +865,21 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
                 $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
             }
         }
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->enrollment)) {
             foreach($this->enrollment as $enrollment) {
                 $enrollment->xmlSerialize(true, $sxe->addChild('enrollment'));
             }
         }
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
-        if (null !== $this->sponsor) $this->sponsor->xmlSerialize(true, $sxe->addChild('sponsor'));
-        if (null !== $this->principalInvestigator) $this->principalInvestigator->xmlSerialize(true, $sxe->addChild('principalInvestigator'));
+        if (isset($this->period)) $this->period->xmlSerialize(true, $sxe->addChild('period'));
+        if (isset($this->sponsor)) $this->sponsor->xmlSerialize(true, $sxe->addChild('sponsor'));
+        if (isset($this->principalInvestigator)) $this->principalInvestigator->xmlSerialize(true, $sxe->addChild('principalInvestigator'));
         if (0 < count($this->site)) {
             foreach($this->site as $site) {
                 $site->xmlSerialize(true, $sxe->addChild('site'));
             }
         }
-        if (null !== $this->reasonStopped) $this->reasonStopped->xmlSerialize(true, $sxe->addChild('reasonStopped'));
+        if (isset($this->reasonStopped)) $this->reasonStopped->xmlSerialize(true, $sxe->addChild('reasonStopped'));
         if (0 < count($this->note)) {
             foreach($this->note as $note) {
                 $note->xmlSerialize(true, $sxe->addChild('note'));

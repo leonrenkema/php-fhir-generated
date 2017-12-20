@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,7 +71,7 @@ class FHIRStructureDefinitionSnapshot extends FHIRBackboneElement implements \Js
      * Captures constraints on each element within the resource.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRElementDefinition[]
      */
-    public $element = array();
+    public $element = [];
 
     /**
      * @var string
@@ -82,8 +82,7 @@ class FHIRStructureDefinitionSnapshot extends FHIRBackboneElement implements \Js
      * Captures constraints on each element within the resource.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRElementDefinition[]
      */
-    public function getElement()
-    {
+    public function getElement() {
         return $this->element;
     }
 
@@ -92,8 +91,7 @@ class FHIRStructureDefinitionSnapshot extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRElementDefinition $element
      * @return $this
      */
-    public function addElement($element)
-    {
+    public function addElement($element) {
         $this->element[] = $element;
         return $this;
     }
@@ -101,29 +99,46 @@ class FHIRStructureDefinitionSnapshot extends FHIRBackboneElement implements \Js
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['element'])) {
+                if (is_array($data['element'])) {
+                    foreach($data['element'] as $d) {
+                        $this->addElement($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"element" must be array of objects or null, '.gettype($data['element']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         if (0 < count($this->element)) {
             $json['element'] = [];
             foreach($this->element as $element) {
-                $json['element'][] = json_encode($element);
+                $json['element'][] = $element;
             }
         }
         return $json;
@@ -134,8 +149,7 @@ class FHIRStructureDefinitionSnapshot extends FHIRBackboneElement implements \Js
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<StructureDefinitionSnapshot xmlns="http://hl7.org/fhir"></StructureDefinitionSnapshot>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->element)) {

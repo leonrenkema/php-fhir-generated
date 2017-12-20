@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,8 +106,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
      * A unique identifier for the population criteria. This identifier is used to report data against this criteria within the measure report.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -116,8 +115,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function setIdentifier($identifier)
-    {
+    public function setIdentifier($identifier) {
         $this->identifier = $identifier;
         return $this;
     }
@@ -126,8 +124,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
      * The type of population criteria.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -136,8 +133,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -146,8 +142,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
      * Optional name or short description of this population.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -156,8 +151,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -166,8 +160,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
      * The human readable description of this population criteria.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -176,8 +169,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -186,8 +178,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
      * The name of a valid referenced CQL expression (may be namespaced) that defines this population criteria.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getCriteria()
-    {
+    public function getCriteria() {
         return $this->criteria;
     }
 
@@ -196,8 +187,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $criteria
      * @return $this
      */
-    public function setCriteria($criteria)
-    {
+    public function setCriteria($criteria) {
         $this->criteria = $criteria;
         return $this;
     }
@@ -205,30 +195,53 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                $this->setIdentifier($data['identifier']);
+            }
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['criteria'])) {
+                $this->setCriteria($data['criteria']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->criteria) $json['criteria'] = json_encode($this->criteria);
+        if (isset($this->identifier)) $json['identifier'] = $this->identifier;
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->criteria)) $json['criteria'] = $this->criteria;
         return $json;
     }
 
@@ -237,15 +250,14 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MeasurePopulation xmlns="http://hl7.org/fhir"></MeasurePopulation>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->criteria) $this->criteria->xmlSerialize(true, $sxe->addChild('criteria'));
+        if (isset($this->identifier)) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->criteria)) $this->criteria->xmlSerialize(true, $sxe->addChild('criteria'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

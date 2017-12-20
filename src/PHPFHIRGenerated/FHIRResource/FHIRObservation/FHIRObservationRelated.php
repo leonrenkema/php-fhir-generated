@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,8 +88,7 @@ class FHIRObservationRelated extends FHIRBackboneElement implements \JsonSeriali
      * A code specifying the kind of relationship that exists with the target resource.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRObservationRelationshipType
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -98,8 +97,7 @@ class FHIRObservationRelated extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRObservationRelationshipType $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRObservationRelated extends FHIRBackboneElement implements \JsonSeriali
      * A reference to the observation or [[[QuestionnaireResponse]]] resource that is related to this observation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getTarget()
-    {
+    public function getTarget() {
         return $this->target;
     }
 
@@ -118,8 +115,7 @@ class FHIRObservationRelated extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $target
      * @return $this
      */
-    public function setTarget($target)
-    {
+    public function setTarget($target) {
         $this->target = $target;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRObservationRelated extends FHIRBackboneElement implements \JsonSeriali
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['target'])) {
+                $this->setTarget($data['target']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->target) $json['target'] = json_encode($this->target);
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->target)) $json['target'] = $this->target;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRObservationRelated extends FHIRBackboneElement implements \JsonSeriali
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ObservationRelated xmlns="http://hl7.org/fhir"></ObservationRelated>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->target) $this->target->xmlSerialize(true, $sxe->addChild('target'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->target)) $this->target->xmlSerialize(true, $sxe->addChild('target'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

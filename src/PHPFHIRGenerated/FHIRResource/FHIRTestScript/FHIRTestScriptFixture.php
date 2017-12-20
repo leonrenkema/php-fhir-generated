@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,8 +94,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement implements \JsonSerializ
      * Whether or not to implicitly create the fixture during setup. If true, the fixture is automatically created on each server being tested during setup, therefore no create operation is required for this fixture in the TestScript.setup section.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getAutocreate()
-    {
+    public function getAutocreate() {
         return $this->autocreate;
     }
 
@@ -104,8 +103,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $autocreate
      * @return $this
      */
-    public function setAutocreate($autocreate)
-    {
+    public function setAutocreate($autocreate) {
         $this->autocreate = $autocreate;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement implements \JsonSerializ
      * Whether or not to implicitly delete the fixture during teardown. If true, the fixture is automatically deleted on each server being tested during teardown, therefore no delete operation is required for this fixture in the TestScript.teardown section.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getAutodelete()
-    {
+    public function getAutodelete() {
         return $this->autodelete;
     }
 
@@ -124,8 +121,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $autodelete
      * @return $this
      */
-    public function setAutodelete($autodelete)
-    {
+    public function setAutodelete($autodelete) {
         $this->autodelete = $autodelete;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement implements \JsonSerializ
      * Reference to the resource (containing the contents of the resource needed for operations).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getResource()
-    {
+    public function getResource() {
         return $this->resource;
     }
 
@@ -144,8 +139,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $resource
      * @return $this
      */
-    public function setResource($resource)
-    {
+    public function setResource($resource) {
         $this->resource = $resource;
         return $this;
     }
@@ -153,28 +147,45 @@ class FHIRTestScriptFixture extends FHIRBackboneElement implements \JsonSerializ
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['autocreate'])) {
+                $this->setAutocreate($data['autocreate']);
+            }
+            if (isset($data['autodelete'])) {
+                $this->setAutodelete($data['autodelete']);
+            }
+            if (isset($data['resource'])) {
+                $this->setResource($data['resource']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->autocreate) $json['autocreate'] = json_encode($this->autocreate);
-        if (null !== $this->autodelete) $json['autodelete'] = json_encode($this->autodelete);
-        if (null !== $this->resource) $json['resource'] = json_encode($this->resource);
+        if (isset($this->autocreate)) $json['autocreate'] = $this->autocreate;
+        if (isset($this->autodelete)) $json['autodelete'] = $this->autodelete;
+        if (isset($this->resource)) $json['resource'] = $this->resource;
         return $json;
     }
 
@@ -183,13 +194,12 @@ class FHIRTestScriptFixture extends FHIRBackboneElement implements \JsonSerializ
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<TestScriptFixture xmlns="http://hl7.org/fhir"></TestScriptFixture>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->autocreate) $this->autocreate->xmlSerialize(true, $sxe->addChild('autocreate'));
-        if (null !== $this->autodelete) $this->autodelete->xmlSerialize(true, $sxe->addChild('autodelete'));
-        if (null !== $this->resource) $this->resource->xmlSerialize(true, $sxe->addChild('resource'));
+        if (isset($this->autocreate)) $this->autocreate->xmlSerialize(true, $sxe->addChild('autocreate'));
+        if (isset($this->autodelete)) $this->autodelete->xmlSerialize(true, $sxe->addChild('autodelete'));
+        if (isset($this->resource)) $this->resource->xmlSerialize(true, $sxe->addChild('resource'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

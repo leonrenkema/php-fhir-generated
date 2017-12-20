@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,8 +88,7 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
      * Date classification of recommendation.  For example, earliest date to give, latest date to give, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -98,8 +97,7 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
      * The date whose meaning is specified by dateCriterion.code.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getValue()
-    {
+    public function getValue() {
         return $this->value;
     }
 
@@ -118,8 +115,7 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $value
      * @return $this
      */
-    public function setValue($value)
-    {
+    public function setValue($value) {
         $this->value = $value;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['value'])) {
+                $this->setValue($data['value']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return (string)$this->getValue();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->value) $json['value'] = json_encode($this->value);
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->value)) $json['value'] = $this->value;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ImmunizationRecommendationDateCriterion xmlns="http://hl7.org/fhir"></ImmunizationRecommendationDateCriterion>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->value) $this->value->xmlSerialize(true, $sxe->addChild('value'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->value)) $this->value->xmlSerialize(true, $sxe->addChild('value'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

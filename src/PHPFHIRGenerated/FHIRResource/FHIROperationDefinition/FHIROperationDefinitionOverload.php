@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,7 +71,7 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
      * Name of parameter to include in overload.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $parameterName = array();
+    public $parameterName = [];
 
     /**
      * Comments to go on overload.
@@ -88,8 +88,7 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
      * Name of parameter to include in overload.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getParameterName()
-    {
+    public function getParameterName() {
         return $this->parameterName;
     }
 
@@ -98,8 +97,7 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $parameterName
      * @return $this
      */
-    public function addParameterName($parameterName)
-    {
+    public function addParameterName($parameterName) {
         $this->parameterName[] = $parameterName;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
      * Comments to go on overload.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getComment()
-    {
+    public function getComment() {
         return $this->comment;
     }
 
@@ -118,8 +115,7 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $comment
      * @return $this
      */
-    public function setComment($comment)
-    {
+    public function setComment($comment) {
         $this->comment = $comment;
         return $this;
     }
@@ -127,32 +123,52 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['parameterName'])) {
+                if (is_array($data['parameterName'])) {
+                    foreach($data['parameterName'] as $d) {
+                        $this->addParameterName($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"parameterName" must be array of objects or null, '.gettype($data['parameterName']).' seen.');
+                }
+            }
+            if (isset($data['comment'])) {
+                $this->setComment($data['comment']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         if (0 < count($this->parameterName)) {
             $json['parameterName'] = [];
             foreach($this->parameterName as $parameterName) {
-                $json['parameterName'][] = json_encode($parameterName);
+                $json['parameterName'][] = $parameterName;
             }
         }
-        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
+        if (isset($this->comment)) $json['comment'] = $this->comment;
         return $json;
     }
 
@@ -161,8 +177,7 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<OperationDefinitionOverload xmlns="http://hl7.org/fhir"></OperationDefinitionOverload>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->parameterName)) {
@@ -170,7 +185,7 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
                 $parameterName->xmlSerialize(true, $sxe->addChild('parameterName'));
             }
         }
-        if (null !== $this->comment) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
+        if (isset($this->comment)) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,37 +83,37 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * Who or what is controlled by this Exception. Use group to identify a set of actors by some property they share (e.g. 'admitting officers').
      * @var \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentActor1[]
      */
-    public $actor = array();
+    public $actor = [];
 
     /**
      * Actions controlled by this Exception.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $action = array();
+    public $action = [];
 
     /**
      * A set of security labels that define which resources are controlled by this exception. If more than one label is specified, all resources must have all the specified labels.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $securityLabel = array();
+    public $securityLabel = [];
 
     /**
      * The context of the activities a user is taking - why the user is accessing the data - that are controlled by this exception.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $purpose = array();
+    public $purpose = [];
 
     /**
      * The class of information covered by this exception. The type can be a FHIR resource type, a profile on a type, or a CDA document, or some other type that indicates what sort of information the consent relates to.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $class = array();
+    public $class = [];
 
     /**
      * If this code is found in an instance, then the exception applies.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $code = array();
+    public $code = [];
 
     /**
      * Clinical or Operational Relevant period of time that bounds the data controlled by this exception.
@@ -125,7 +125,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * The resources controlled by this exception, if specific resources are referenced.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentData1[]
      */
-    public $data = array();
+    public $data = [];
 
     /**
      * @var string
@@ -136,8 +136,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * Action  to take - permit or deny - when the exception conditions are met.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRConsentExceptType
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -146,8 +145,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRConsentExceptType $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -156,8 +154,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * The timeframe in this exception is valid.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
-    {
+    public function getPeriod() {
         return $this->period;
     }
 
@@ -166,8 +163,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
      * @return $this
      */
-    public function setPeriod($period)
-    {
+    public function setPeriod($period) {
         $this->period = $period;
         return $this;
     }
@@ -176,8 +172,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * Who or what is controlled by this Exception. Use group to identify a set of actors by some property they share (e.g. 'admitting officers').
      * @return \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentActor1[]
      */
-    public function getActor()
-    {
+    public function getActor() {
         return $this->actor;
     }
 
@@ -186,8 +181,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentActor1 $actor
      * @return $this
      */
-    public function addActor($actor)
-    {
+    public function addActor($actor) {
         $this->actor[] = $actor;
         return $this;
     }
@@ -196,8 +190,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * Actions controlled by this Exception.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getAction()
-    {
+    public function getAction() {
         return $this->action;
     }
 
@@ -206,8 +199,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $action
      * @return $this
      */
-    public function addAction($action)
-    {
+    public function addAction($action) {
         $this->action[] = $action;
         return $this;
     }
@@ -216,8 +208,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * A set of security labels that define which resources are controlled by this exception. If more than one label is specified, all resources must have all the specified labels.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public function getSecurityLabel()
-    {
+    public function getSecurityLabel() {
         return $this->securityLabel;
     }
 
@@ -226,8 +217,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $securityLabel
      * @return $this
      */
-    public function addSecurityLabel($securityLabel)
-    {
+    public function addSecurityLabel($securityLabel) {
         $this->securityLabel[] = $securityLabel;
         return $this;
     }
@@ -236,8 +226,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * The context of the activities a user is taking - why the user is accessing the data - that are controlled by this exception.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public function getPurpose()
-    {
+    public function getPurpose() {
         return $this->purpose;
     }
 
@@ -246,8 +235,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $purpose
      * @return $this
      */
-    public function addPurpose($purpose)
-    {
+    public function addPurpose($purpose) {
         $this->purpose[] = $purpose;
         return $this;
     }
@@ -256,8 +244,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * The class of information covered by this exception. The type can be a FHIR resource type, a profile on a type, or a CDA document, or some other type that indicates what sort of information the consent relates to.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public function getClass()
-    {
+    public function getClass() {
         return $this->class;
     }
 
@@ -266,8 +253,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $class
      * @return $this
      */
-    public function addClass($class)
-    {
+    public function addClass($class) {
         $this->class[] = $class;
         return $this;
     }
@@ -276,8 +262,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * If this code is found in an instance, then the exception applies.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -286,8 +271,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $code
      * @return $this
      */
-    public function addCode($code)
-    {
+    public function addCode($code) {
         $this->code[] = $code;
         return $this;
     }
@@ -296,8 +280,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * Clinical or Operational Relevant period of time that bounds the data controlled by this exception.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getDataPeriod()
-    {
+    public function getDataPeriod() {
         return $this->dataPeriod;
     }
 
@@ -306,8 +289,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $dataPeriod
      * @return $this
      */
-    public function setDataPeriod($dataPeriod)
-    {
+    public function setDataPeriod($dataPeriod) {
         $this->dataPeriod = $dataPeriod;
         return $this;
     }
@@ -316,8 +298,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * The resources controlled by this exception, if specific resources are referenced.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentData1[]
      */
-    public function getData()
-    {
+    public function getData() {
         return $this->data;
     }
 
@@ -326,8 +307,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentData1 $data
      * @return $this
      */
-    public function addData($data)
-    {
+    public function addData($data) {
         $this->data[] = $data;
         return $this;
     }
@@ -335,68 +315,148 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['period'])) {
+                $this->setPeriod($data['period']);
+            }
+            if (isset($data['actor'])) {
+                if (is_array($data['actor'])) {
+                    foreach($data['actor'] as $d) {
+                        $this->addActor($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"actor" must be array of objects or null, '.gettype($data['actor']).' seen.');
+                }
+            }
+            if (isset($data['action'])) {
+                if (is_array($data['action'])) {
+                    foreach($data['action'] as $d) {
+                        $this->addAction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"action" must be array of objects or null, '.gettype($data['action']).' seen.');
+                }
+            }
+            if (isset($data['securityLabel'])) {
+                if (is_array($data['securityLabel'])) {
+                    foreach($data['securityLabel'] as $d) {
+                        $this->addSecurityLabel($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"securityLabel" must be array of objects or null, '.gettype($data['securityLabel']).' seen.');
+                }
+            }
+            if (isset($data['purpose'])) {
+                if (is_array($data['purpose'])) {
+                    foreach($data['purpose'] as $d) {
+                        $this->addPurpose($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"purpose" must be array of objects or null, '.gettype($data['purpose']).' seen.');
+                }
+            }
+            if (isset($data['class'])) {
+                if (is_array($data['class'])) {
+                    foreach($data['class'] as $d) {
+                        $this->addClass($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"class" must be array of objects or null, '.gettype($data['class']).' seen.');
+                }
+            }
+            if (isset($data['code'])) {
+                if (is_array($data['code'])) {
+                    foreach($data['code'] as $d) {
+                        $this->addCode($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"code" must be array of objects or null, '.gettype($data['code']).' seen.');
+                }
+            }
+            if (isset($data['dataPeriod'])) {
+                $this->setDataPeriod($data['dataPeriod']);
+            }
+            if (isset($data['data'])) {
+                if (is_array($data['data'])) {
+                    foreach($data['data'] as $d) {
+                        $this->addData($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"data" must be array of objects or null, '.gettype($data['data']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->period)) $json['period'] = $this->period;
         if (0 < count($this->actor)) {
             $json['actor'] = [];
             foreach($this->actor as $actor) {
-                $json['actor'][] = json_encode($actor);
+                $json['actor'][] = $actor;
             }
         }
         if (0 < count($this->action)) {
             $json['action'] = [];
             foreach($this->action as $action) {
-                $json['action'][] = json_encode($action);
+                $json['action'][] = $action;
             }
         }
         if (0 < count($this->securityLabel)) {
             $json['securityLabel'] = [];
             foreach($this->securityLabel as $securityLabel) {
-                $json['securityLabel'][] = json_encode($securityLabel);
+                $json['securityLabel'][] = $securityLabel;
             }
         }
         if (0 < count($this->purpose)) {
             $json['purpose'] = [];
             foreach($this->purpose as $purpose) {
-                $json['purpose'][] = json_encode($purpose);
+                $json['purpose'][] = $purpose;
             }
         }
         if (0 < count($this->class)) {
             $json['class'] = [];
             foreach($this->class as $class) {
-                $json['class'][] = json_encode($class);
+                $json['class'][] = $class;
             }
         }
         if (0 < count($this->code)) {
             $json['code'] = [];
             foreach($this->code as $code) {
-                $json['code'][] = json_encode($code);
+                $json['code'][] = $code;
             }
         }
-        if (null !== $this->dataPeriod) $json['dataPeriod'] = json_encode($this->dataPeriod);
+        if (isset($this->dataPeriod)) $json['dataPeriod'] = $this->dataPeriod;
         if (0 < count($this->data)) {
             $json['data'] = [];
             foreach($this->data as $data) {
-                $json['data'][] = json_encode($data);
+                $json['data'][] = $data;
             }
         }
         return $json;
@@ -407,12 +467,11 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ConsentExcept xmlns="http://hl7.org/fhir"></ConsentExcept>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->period)) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if (0 < count($this->actor)) {
             foreach($this->actor as $actor) {
                 $actor->xmlSerialize(true, $sxe->addChild('actor'));
@@ -443,7 +502,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
                 $code->xmlSerialize(true, $sxe->addChild('code'));
             }
         }
-        if (null !== $this->dataPeriod) $this->dataPeriod->xmlSerialize(true, $sxe->addChild('dataPeriod'));
+        if (isset($this->dataPeriod)) $this->dataPeriod->xmlSerialize(true, $sxe->addChild('dataPeriod'));
         if (0 < count($this->data)) {
             foreach($this->data as $data) {
                 $data->xmlSerialize(true, $sxe->addChild('data'));

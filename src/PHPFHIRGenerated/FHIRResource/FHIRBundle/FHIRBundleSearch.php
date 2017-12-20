@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,8 +88,7 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
      * Why this entry is in the result set - whether it's included as a match or because of an _include requirement.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSearchEntryMode
      */
-    public function getMode()
-    {
+    public function getMode() {
         return $this->mode;
     }
 
@@ -98,8 +97,7 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSearchEntryMode $mode
      * @return $this
      */
-    public function setMode($mode)
-    {
+    public function setMode($mode) {
         $this->mode = $mode;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
      * When searching, the server's search ranking score for the entry.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public function getScore()
-    {
+    public function getScore() {
         return $this->score;
     }
 
@@ -118,8 +115,7 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $score
      * @return $this
      */
-    public function setScore($score)
-    {
+    public function setScore($score) {
         $this->score = $score;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['mode'])) {
+                $this->setMode($data['mode']);
+            }
+            if (isset($data['score'])) {
+                $this->setScore($data['score']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->mode) $json['mode'] = json_encode($this->mode);
-        if (null !== $this->score) $json['score'] = json_encode($this->score);
+        if (isset($this->mode)) $json['mode'] = $this->mode;
+        if (isset($this->score)) $json['score'] = $this->score;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<BundleSearch xmlns="http://hl7.org/fhir"></BundleSearch>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->mode) $this->mode->xmlSerialize(true, $sxe->addChild('mode'));
-        if (null !== $this->score) $this->score->xmlSerialize(true, $sxe->addChild('score'));
+        if (isset($this->mode)) $this->mode->xmlSerialize(true, $sxe->addChild('mode'));
+        if (isset($this->score)) $this->score->xmlSerialize(true, $sxe->addChild('score'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

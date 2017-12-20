@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,8 +88,7 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
      * The document or URL of the document along with critical metadata to prove content has integrity.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public function getAttachment()
-    {
+    public function getAttachment() {
         return $this->attachment;
     }
 
@@ -98,8 +97,7 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $attachment
      * @return $this
      */
-    public function setAttachment($attachment)
-    {
+    public function setAttachment($attachment) {
         $this->attachment = $attachment;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
      * An identifier of the document encoding, structure, and template that the document conforms to beyond the base format indicated in the mimeType.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public function getFormat()
-    {
+    public function getFormat() {
         return $this->format;
     }
 
@@ -118,8 +115,7 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $format
      * @return $this
      */
-    public function setFormat($format)
-    {
+    public function setFormat($format) {
         $this->format = $format;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['attachment'])) {
+                $this->setAttachment($data['attachment']);
+            }
+            if (isset($data['format'])) {
+                $this->setFormat($data['format']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->attachment) $json['attachment'] = json_encode($this->attachment);
-        if (null !== $this->format) $json['format'] = json_encode($this->format);
+        if (isset($this->attachment)) $json['attachment'] = $this->attachment;
+        if (isset($this->format)) $json['format'] = $this->format;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<DocumentReferenceContent xmlns="http://hl7.org/fhir"></DocumentReferenceContent>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->attachment) $this->attachment->xmlSerialize(true, $sxe->addChild('attachment'));
-        if (null !== $this->format) $this->format->xmlSerialize(true, $sxe->addChild('format'));
+        if (isset($this->attachment)) $this->attachment->xmlSerialize(true, $sxe->addChild('attachment'));
+        if (isset($this->format)) $this->format->xmlSerialize(true, $sxe->addChild('format'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -118,8 +118,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
      * A coded identifier of a supported messaging event.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -128,8 +127,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -138,8 +136,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
      * The impact of the content of the message.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMessageSignificanceCategory
      */
-    public function getCategory()
-    {
+    public function getCategory() {
         return $this->category;
     }
 
@@ -148,8 +145,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMessageSignificanceCategory $category
      * @return $this
      */
-    public function setCategory($category)
-    {
+    public function setCategory($category) {
         $this->category = $category;
         return $this;
     }
@@ -158,8 +154,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
      * The mode of this event declaration - whether an application is a sender or receiver.
      * @return \PHPFHIRGenerated\FHIRElement\FHIREventCapabilityMode
      */
-    public function getMode()
-    {
+    public function getMode() {
         return $this->mode;
     }
 
@@ -168,8 +163,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIREventCapabilityMode $mode
      * @return $this
      */
-    public function setMode($mode)
-    {
+    public function setMode($mode) {
         $this->mode = $mode;
         return $this;
     }
@@ -178,8 +172,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
      * A resource associated with the event.  This is the resource that defines the event.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
-    public function getFocus()
-    {
+    public function getFocus() {
         return $this->focus;
     }
 
@@ -188,8 +181,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceType $focus
      * @return $this
      */
-    public function setFocus($focus)
-    {
+    public function setFocus($focus) {
         $this->focus = $focus;
         return $this;
     }
@@ -198,8 +190,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
      * Information about the request for this event.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getRequest()
-    {
+    public function getRequest() {
         return $this->request;
     }
 
@@ -208,8 +199,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $request
      * @return $this
      */
-    public function setRequest($request)
-    {
+    public function setRequest($request) {
         $this->request = $request;
         return $this;
     }
@@ -218,8 +208,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
      * Information about the response for this event.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getResponse()
-    {
+    public function getResponse() {
         return $this->response;
     }
 
@@ -228,8 +217,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $response
      * @return $this
      */
-    public function setResponse($response)
-    {
+    public function setResponse($response) {
         $this->response = $response;
         return $this;
     }
@@ -238,8 +226,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
      * Guidance on how this event is handled, such as internal system trigger points, business rules, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDocumentation()
-    {
+    public function getDocumentation() {
         return $this->documentation;
     }
 
@@ -248,8 +235,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $documentation
      * @return $this
      */
-    public function setDocumentation($documentation)
-    {
+    public function setDocumentation($documentation) {
         $this->documentation = $documentation;
         return $this;
     }
@@ -257,32 +243,61 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['category'])) {
+                $this->setCategory($data['category']);
+            }
+            if (isset($data['mode'])) {
+                $this->setMode($data['mode']);
+            }
+            if (isset($data['focus'])) {
+                $this->setFocus($data['focus']);
+            }
+            if (isset($data['request'])) {
+                $this->setRequest($data['request']);
+            }
+            if (isset($data['response'])) {
+                $this->setResponse($data['response']);
+            }
+            if (isset($data['documentation'])) {
+                $this->setDocumentation($data['documentation']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->mode) $json['mode'] = json_encode($this->mode);
-        if (null !== $this->focus) $json['focus'] = json_encode($this->focus);
-        if (null !== $this->request) $json['request'] = json_encode($this->request);
-        if (null !== $this->response) $json['response'] = json_encode($this->response);
-        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->category)) $json['category'] = $this->category;
+        if (isset($this->mode)) $json['mode'] = $this->mode;
+        if (isset($this->focus)) $json['focus'] = $this->focus;
+        if (isset($this->request)) $json['request'] = $this->request;
+        if (isset($this->response)) $json['response'] = $this->response;
+        if (isset($this->documentation)) $json['documentation'] = $this->documentation;
         return $json;
     }
 
@@ -291,17 +306,16 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<CapabilityStatementEvent xmlns="http://hl7.org/fhir"></CapabilityStatementEvent>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->category) $this->category->xmlSerialize(true, $sxe->addChild('category'));
-        if (null !== $this->mode) $this->mode->xmlSerialize(true, $sxe->addChild('mode'));
-        if (null !== $this->focus) $this->focus->xmlSerialize(true, $sxe->addChild('focus'));
-        if (null !== $this->request) $this->request->xmlSerialize(true, $sxe->addChild('request'));
-        if (null !== $this->response) $this->response->xmlSerialize(true, $sxe->addChild('response'));
-        if (null !== $this->documentation) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->category)) $this->category->xmlSerialize(true, $sxe->addChild('category'));
+        if (isset($this->mode)) $this->mode->xmlSerialize(true, $sxe->addChild('mode'));
+        if (isset($this->focus)) $this->focus->xmlSerialize(true, $sxe->addChild('focus'));
+        if (isset($this->request)) $this->request->xmlSerialize(true, $sxe->addChild('request'));
+        if (isset($this->response)) $this->response->xmlSerialize(true, $sxe->addChild('response'));
+        if (isset($this->documentation)) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

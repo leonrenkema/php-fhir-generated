@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,13 +74,11 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
     public $code = null;
 
     /**
-     * The target composition/document of this relationship. (choose any one of target*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $targetIdentifier = null;
 
     /**
-     * The target composition/document of this relationship. (choose any one of target*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $targetReference = null;
@@ -94,8 +92,7 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
      * The type of relationship that this composition has with anther composition or document.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDocumentRelationshipType
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -104,48 +101,39 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDocumentRelationshipType $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
 
     /**
-     * The target composition/document of this relationship. (choose any one of target*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getTargetIdentifier()
-    {
+    public function getTargetIdentifier() {
         return $this->targetIdentifier;
     }
 
     /**
-     * The target composition/document of this relationship. (choose any one of target*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $targetIdentifier
      * @return $this
      */
-    public function setTargetIdentifier($targetIdentifier)
-    {
+    public function setTargetIdentifier($targetIdentifier) {
         $this->targetIdentifier = $targetIdentifier;
         return $this;
     }
 
     /**
-     * The target composition/document of this relationship. (choose any one of target*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getTargetReference()
-    {
+    public function getTargetReference() {
         return $this->targetReference;
     }
 
     /**
-     * The target composition/document of this relationship. (choose any one of target*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $targetReference
      * @return $this
      */
-    public function setTargetReference($targetReference)
-    {
+    public function setTargetReference($targetReference) {
         $this->targetReference = $targetReference;
         return $this;
     }
@@ -153,28 +141,45 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['targetIdentifier'])) {
+                $this->setTargetIdentifier($data['targetIdentifier']);
+            }
+            if (isset($data['targetReference'])) {
+                $this->setTargetReference($data['targetReference']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->targetIdentifier) $json['targetIdentifier'] = json_encode($this->targetIdentifier);
-        if (null !== $this->targetReference) $json['targetReference'] = json_encode($this->targetReference);
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->targetIdentifier)) $json['targetIdentifier'] = $this->targetIdentifier;
+        if (isset($this->targetReference)) $json['targetReference'] = $this->targetReference;
         return $json;
     }
 
@@ -183,13 +188,12 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<CompositionRelatesTo xmlns="http://hl7.org/fhir"></CompositionRelatesTo>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->targetIdentifier) $this->targetIdentifier->xmlSerialize(true, $sxe->addChild('targetIdentifier'));
-        if (null !== $this->targetReference) $this->targetReference->xmlSerialize(true, $sxe->addChild('targetReference'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->targetIdentifier)) $this->targetIdentifier->xmlSerialize(true, $sxe->addChild('targetIdentifier'));
+        if (isset($this->targetReference)) $this->targetReference->xmlSerialize(true, $sxe->addChild('targetReference'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,7 +72,7 @@ class FHIRParameters extends FHIRResource implements \JsonSerializable
      * A parameter passed to or received from the operation.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRParameters\FHIRParametersParameter[]
      */
-    public $parameter = array();
+    public $parameter = [];
 
     /**
      * @var string
@@ -83,8 +83,7 @@ class FHIRParameters extends FHIRResource implements \JsonSerializable
      * A parameter passed to or received from the operation.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRParameters\FHIRParametersParameter[]
      */
-    public function getParameter()
-    {
+    public function getParameter() {
         return $this->parameter;
     }
 
@@ -93,8 +92,7 @@ class FHIRParameters extends FHIRResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRParameters\FHIRParametersParameter $parameter
      * @return $this
      */
-    public function addParameter($parameter)
-    {
+    public function addParameter($parameter) {
         $this->parameter[] = $parameter;
         return $this;
     }
@@ -102,30 +100,47 @@ class FHIRParameters extends FHIRResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['parameter'])) {
+                if (is_array($data['parameter'])) {
+                    foreach($data['parameter'] as $d) {
+                        $this->addParameter($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"parameter" must be array of objects or null, '.gettype($data['parameter']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->parameter)) {
             $json['parameter'] = [];
             foreach($this->parameter as $parameter) {
-                $json['parameter'][] = json_encode($parameter);
+                $json['parameter'][] = $parameter;
             }
         }
         return $json;
@@ -136,8 +151,7 @@ class FHIRParameters extends FHIRResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Parameters xmlns="http://hl7.org/fhir"></Parameters>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->parameter)) {

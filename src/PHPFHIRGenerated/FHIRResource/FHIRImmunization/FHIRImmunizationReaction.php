@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,8 +94,7 @@ class FHIRImmunizationReaction extends FHIRBackboneElement implements \JsonSeria
      * Date of reaction to the immunization.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -104,8 +103,7 @@ class FHIRImmunizationReaction extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRImmunizationReaction extends FHIRBackboneElement implements \JsonSeria
      * Details of the reaction.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getDetail()
-    {
+    public function getDetail() {
         return $this->detail;
     }
 
@@ -124,8 +121,7 @@ class FHIRImmunizationReaction extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $detail
      * @return $this
      */
-    public function setDetail($detail)
-    {
+    public function setDetail($detail) {
         $this->detail = $detail;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRImmunizationReaction extends FHIRBackboneElement implements \JsonSeria
      * Self-reported indicator.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getReported()
-    {
+    public function getReported() {
         return $this->reported;
     }
 
@@ -144,8 +139,7 @@ class FHIRImmunizationReaction extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $reported
      * @return $this
      */
-    public function setReported($reported)
-    {
+    public function setReported($reported) {
         $this->reported = $reported;
         return $this;
     }
@@ -153,28 +147,45 @@ class FHIRImmunizationReaction extends FHIRBackboneElement implements \JsonSeria
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['detail'])) {
+                $this->setDetail($data['detail']);
+            }
+            if (isset($data['reported'])) {
+                $this->setReported($data['reported']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->detail) $json['detail'] = json_encode($this->detail);
-        if (null !== $this->reported) $json['reported'] = json_encode($this->reported);
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->detail)) $json['detail'] = $this->detail;
+        if (isset($this->reported)) $json['reported'] = $this->reported;
         return $json;
     }
 
@@ -183,13 +194,12 @@ class FHIRImmunizationReaction extends FHIRBackboneElement implements \JsonSeria
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ImmunizationReaction xmlns="http://hl7.org/fhir"></ImmunizationReaction>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->detail) $this->detail->xmlSerialize(true, $sxe->addChild('detail'));
-        if (null !== $this->reported) $this->reported->xmlSerialize(true, $sxe->addChild('reported'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->detail)) $this->detail->xmlSerialize(true, $sxe->addChild('detail'));
+        if (isset($this->reported)) $this->reported->xmlSerialize(true, $sxe->addChild('reported'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,8 +88,7 @@ class FHIRTestReportAction1 extends FHIRBackboneElement implements \JsonSerializ
      * An operation would involve a REST request to a server.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestReport\FHIRTestReportOperation
      */
-    public function getOperation()
-    {
+    public function getOperation() {
         return $this->operation;
     }
 
@@ -98,8 +97,7 @@ class FHIRTestReportAction1 extends FHIRBackboneElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestReport\FHIRTestReportOperation $operation
      * @return $this
      */
-    public function setOperation($operation)
-    {
+    public function setOperation($operation) {
         $this->operation = $operation;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRTestReportAction1 extends FHIRBackboneElement implements \JsonSerializ
      * The results of the assertion performed on the previous operations.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestReport\FHIRTestReportAssert
      */
-    public function getAssert()
-    {
+    public function getAssert() {
         return $this->assert;
     }
 
@@ -118,8 +115,7 @@ class FHIRTestReportAction1 extends FHIRBackboneElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestReport\FHIRTestReportAssert $assert
      * @return $this
      */
-    public function setAssert($assert)
-    {
+    public function setAssert($assert) {
         $this->assert = $assert;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRTestReportAction1 extends FHIRBackboneElement implements \JsonSerializ
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['operation'])) {
+                $this->setOperation($data['operation']);
+            }
+            if (isset($data['assert'])) {
+                $this->setAssert($data['assert']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->operation) $json['operation'] = json_encode($this->operation);
-        if (null !== $this->assert) $json['assert'] = json_encode($this->assert);
+        if (isset($this->operation)) $json['operation'] = $this->operation;
+        if (isset($this->assert)) $json['assert'] = $this->assert;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRTestReportAction1 extends FHIRBackboneElement implements \JsonSerializ
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<TestReportAction1 xmlns="http://hl7.org/fhir"></TestReportAction1>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->operation) $this->operation->xmlSerialize(true, $sxe->addChild('operation'));
-        if (null !== $this->assert) $this->assert->xmlSerialize(true, $sxe->addChild('assert'));
+        if (isset($this->operation)) $this->operation->xmlSerialize(true, $sxe->addChild('operation'));
+        if (isset($this->assert)) $this->assert->xmlSerialize(true, $sxe->addChild('assert'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

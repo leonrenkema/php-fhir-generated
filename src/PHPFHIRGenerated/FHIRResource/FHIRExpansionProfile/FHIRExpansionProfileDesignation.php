@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,8 +88,7 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement implements \Js
      * Designations to be included.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRExpansionProfile\FHIRExpansionProfileInclude
      */
-    public function getInclude()
-    {
+    public function getInclude() {
         return $this->include;
     }
 
@@ -98,8 +97,7 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRResource\FHIRExpansionProfile\FHIRExpansionProfileInclude $include
      * @return $this
      */
-    public function setInclude($include)
-    {
+    public function setInclude($include) {
         $this->include = $include;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement implements \Js
      * Designations to be excluded.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRExpansionProfile\FHIRExpansionProfileExclude
      */
-    public function getExclude()
-    {
+    public function getExclude() {
         return $this->exclude;
     }
 
@@ -118,8 +115,7 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRResource\FHIRExpansionProfile\FHIRExpansionProfileExclude $exclude
      * @return $this
      */
-    public function setExclude($exclude)
-    {
+    public function setExclude($exclude) {
         $this->exclude = $exclude;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement implements \Js
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['include'])) {
+                $this->setInclude($data['include']);
+            }
+            if (isset($data['exclude'])) {
+                $this->setExclude($data['exclude']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->include) $json['include'] = json_encode($this->include);
-        if (null !== $this->exclude) $json['exclude'] = json_encode($this->exclude);
+        if (isset($this->include)) $json['include'] = $this->include;
+        if (isset($this->exclude)) $json['exclude'] = $this->exclude;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement implements \Js
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ExpansionProfileDesignation xmlns="http://hl7.org/fhir"></ExpansionProfileDesignation>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->include) $this->include->xmlSerialize(true, $sxe->addChild('include'));
-        if (null !== $this->exclude) $this->exclude->xmlSerialize(true, $sxe->addChild('exclude'));
+        if (isset($this->include)) $this->include->xmlSerialize(true, $sxe->addChild('include'));
+        if (isset($this->exclude)) $this->exclude->xmlSerialize(true, $sxe->addChild('exclude'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,13 +74,11 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
     public $sequence = null;
 
     /**
-     * The diagnosis. (choose any one of diagnosis*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $diagnosisCodeableConcept = null;
 
     /**
-     * The diagnosis. (choose any one of diagnosis*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $diagnosisReference = null;
@@ -89,7 +87,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
      * The type of the Diagnosis, for example: admitting, primary, secondary, discharge.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $type = array();
+    public $type = [];
 
     /**
      * The package billing code, for example DRG, based on the assigned grouping code system.
@@ -106,8 +104,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
      * Sequence of diagnosis which serves to provide a link.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public function getSequence()
-    {
+    public function getSequence() {
         return $this->sequence;
     }
 
@@ -116,48 +113,39 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $sequence
      * @return $this
      */
-    public function setSequence($sequence)
-    {
+    public function setSequence($sequence) {
         $this->sequence = $sequence;
         return $this;
     }
 
     /**
-     * The diagnosis. (choose any one of diagnosis*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getDiagnosisCodeableConcept()
-    {
+    public function getDiagnosisCodeableConcept() {
         return $this->diagnosisCodeableConcept;
     }
 
     /**
-     * The diagnosis. (choose any one of diagnosis*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $diagnosisCodeableConcept
      * @return $this
      */
-    public function setDiagnosisCodeableConcept($diagnosisCodeableConcept)
-    {
+    public function setDiagnosisCodeableConcept($diagnosisCodeableConcept) {
         $this->diagnosisCodeableConcept = $diagnosisCodeableConcept;
         return $this;
     }
 
     /**
-     * The diagnosis. (choose any one of diagnosis*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getDiagnosisReference()
-    {
+    public function getDiagnosisReference() {
         return $this->diagnosisReference;
     }
 
     /**
-     * The diagnosis. (choose any one of diagnosis*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $diagnosisReference
      * @return $this
      */
-    public function setDiagnosisReference($diagnosisReference)
-    {
+    public function setDiagnosisReference($diagnosisReference) {
         $this->diagnosisReference = $diagnosisReference;
         return $this;
     }
@@ -166,8 +154,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
      * The type of the Diagnosis, for example: admitting, primary, secondary, discharge.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -176,8 +163,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
-    public function addType($type)
-    {
+    public function addType($type) {
         $this->type[] = $type;
         return $this;
     }
@@ -186,8 +172,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
      * The package billing code, for example DRG, based on the assigned grouping code system.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getPackageCode()
-    {
+    public function getPackageCode() {
         return $this->packageCode;
     }
 
@@ -196,8 +181,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $packageCode
      * @return $this
      */
-    public function setPackageCode($packageCode)
-    {
+    public function setPackageCode($packageCode) {
         $this->packageCode = $packageCode;
         return $this;
     }
@@ -205,35 +189,64 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['sequence'])) {
+                $this->setSequence($data['sequence']);
+            }
+            if (isset($data['diagnosisCodeableConcept'])) {
+                $this->setDiagnosisCodeableConcept($data['diagnosisCodeableConcept']);
+            }
+            if (isset($data['diagnosisReference'])) {
+                $this->setDiagnosisReference($data['diagnosisReference']);
+            }
+            if (isset($data['type'])) {
+                if (is_array($data['type'])) {
+                    foreach($data['type'] as $d) {
+                        $this->addType($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"type" must be array of objects or null, '.gettype($data['type']).' seen.');
+                }
+            }
+            if (isset($data['packageCode'])) {
+                $this->setPackageCode($data['packageCode']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
-        if (null !== $this->diagnosisCodeableConcept) $json['diagnosisCodeableConcept'] = json_encode($this->diagnosisCodeableConcept);
-        if (null !== $this->diagnosisReference) $json['diagnosisReference'] = json_encode($this->diagnosisReference);
+        if (isset($this->sequence)) $json['sequence'] = $this->sequence;
+        if (isset($this->diagnosisCodeableConcept)) $json['diagnosisCodeableConcept'] = $this->diagnosisCodeableConcept;
+        if (isset($this->diagnosisReference)) $json['diagnosisReference'] = $this->diagnosisReference;
         if (0 < count($this->type)) {
             $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = json_encode($type);
+                $json['type'][] = $type;
             }
         }
-        if (null !== $this->packageCode) $json['packageCode'] = json_encode($this->packageCode);
+        if (isset($this->packageCode)) $json['packageCode'] = $this->packageCode;
         return $json;
     }
 
@@ -242,19 +255,18 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ExplanationOfBenefitDiagnosis xmlns="http://hl7.org/fhir"></ExplanationOfBenefitDiagnosis>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->sequence) $this->sequence->xmlSerialize(true, $sxe->addChild('sequence'));
-        if (null !== $this->diagnosisCodeableConcept) $this->diagnosisCodeableConcept->xmlSerialize(true, $sxe->addChild('diagnosisCodeableConcept'));
-        if (null !== $this->diagnosisReference) $this->diagnosisReference->xmlSerialize(true, $sxe->addChild('diagnosisReference'));
+        if (isset($this->sequence)) $this->sequence->xmlSerialize(true, $sxe->addChild('sequence'));
+        if (isset($this->diagnosisCodeableConcept)) $this->diagnosisCodeableConcept->xmlSerialize(true, $sxe->addChild('diagnosisCodeableConcept'));
+        if (isset($this->diagnosisReference)) $this->diagnosisReference->xmlSerialize(true, $sxe->addChild('diagnosisReference'));
         if (0 < count($this->type)) {
             foreach($this->type as $type) {
                 $type->xmlSerialize(true, $sxe->addChild('type'));
             }
         }
-        if (null !== $this->packageCode) $this->packageCode->xmlSerialize(true, $sxe->addChild('packageCode'));
+        if (isset($this->packageCode)) $this->packageCode->xmlSerialize(true, $sxe->addChild('packageCode'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

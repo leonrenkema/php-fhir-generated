@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * The targeted disease.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $targetDisease = array();
+    public $targetDisease = [];
 
     /**
      * Indicates if the immunization event should "count" against  the protocol.
@@ -124,8 +124,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * Nominal position in a series.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public function getDoseSequence()
-    {
+    public function getDoseSequence() {
         return $this->doseSequence;
     }
 
@@ -134,8 +133,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $doseSequence
      * @return $this
      */
-    public function setDoseSequence($doseSequence)
-    {
+    public function setDoseSequence($doseSequence) {
         $this->doseSequence = $doseSequence;
         return $this;
     }
@@ -144,8 +142,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * Contains the description about the protocol under which the vaccine was administered.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -154,8 +151,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -164,8 +160,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * Indicates the authority who published the protocol.  E.g. ACIP.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getAuthority()
-    {
+    public function getAuthority() {
         return $this->authority;
     }
 
@@ -174,8 +169,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $authority
      * @return $this
      */
-    public function setAuthority($authority)
-    {
+    public function setAuthority($authority) {
         $this->authority = $authority;
         return $this;
     }
@@ -184,8 +178,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * One possible path to achieve presumed immunity against a disease - within the context of an authority.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getSeries()
-    {
+    public function getSeries() {
         return $this->series;
     }
 
@@ -194,8 +187,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $series
      * @return $this
      */
-    public function setSeries($series)
-    {
+    public function setSeries($series) {
         $this->series = $series;
         return $this;
     }
@@ -204,8 +196,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * The recommended number of doses to achieve immunity.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public function getSeriesDoses()
-    {
+    public function getSeriesDoses() {
         return $this->seriesDoses;
     }
 
@@ -214,8 +205,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $seriesDoses
      * @return $this
      */
-    public function setSeriesDoses($seriesDoses)
-    {
+    public function setSeriesDoses($seriesDoses) {
         $this->seriesDoses = $seriesDoses;
         return $this;
     }
@@ -224,8 +214,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * The targeted disease.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getTargetDisease()
-    {
+    public function getTargetDisease() {
         return $this->targetDisease;
     }
 
@@ -234,8 +223,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $targetDisease
      * @return $this
      */
-    public function addTargetDisease($targetDisease)
-    {
+    public function addTargetDisease($targetDisease) {
         $this->targetDisease[] = $targetDisease;
         return $this;
     }
@@ -244,8 +232,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * Indicates if the immunization event should "count" against  the protocol.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getDoseStatus()
-    {
+    public function getDoseStatus() {
         return $this->doseStatus;
     }
 
@@ -254,8 +241,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $doseStatus
      * @return $this
      */
-    public function setDoseStatus($doseStatus)
-    {
+    public function setDoseStatus($doseStatus) {
         $this->doseStatus = $doseStatus;
         return $this;
     }
@@ -264,8 +250,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * Provides an explanation as to why an immunization event should or should not count against the protocol.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getDoseStatusReason()
-    {
+    public function getDoseStatusReason() {
         return $this->doseStatusReason;
     }
 
@@ -274,8 +259,7 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $doseStatusReason
      * @return $this
      */
-    public function setDoseStatusReason($doseStatusReason)
-    {
+    public function setDoseStatusReason($doseStatusReason) {
         $this->doseStatusReason = $doseStatusReason;
         return $this;
     }
@@ -283,38 +267,76 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['doseSequence'])) {
+                $this->setDoseSequence($data['doseSequence']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['authority'])) {
+                $this->setAuthority($data['authority']);
+            }
+            if (isset($data['series'])) {
+                $this->setSeries($data['series']);
+            }
+            if (isset($data['seriesDoses'])) {
+                $this->setSeriesDoses($data['seriesDoses']);
+            }
+            if (isset($data['targetDisease'])) {
+                if (is_array($data['targetDisease'])) {
+                    foreach($data['targetDisease'] as $d) {
+                        $this->addTargetDisease($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"targetDisease" must be array of objects or null, '.gettype($data['targetDisease']).' seen.');
+                }
+            }
+            if (isset($data['doseStatus'])) {
+                $this->setDoseStatus($data['doseStatus']);
+            }
+            if (isset($data['doseStatusReason'])) {
+                $this->setDoseStatusReason($data['doseStatusReason']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->doseSequence) $json['doseSequence'] = json_encode($this->doseSequence);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->authority) $json['authority'] = json_encode($this->authority);
-        if (null !== $this->series) $json['series'] = json_encode($this->series);
-        if (null !== $this->seriesDoses) $json['seriesDoses'] = json_encode($this->seriesDoses);
+        if (isset($this->doseSequence)) $json['doseSequence'] = $this->doseSequence;
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->authority)) $json['authority'] = $this->authority;
+        if (isset($this->series)) $json['series'] = $this->series;
+        if (isset($this->seriesDoses)) $json['seriesDoses'] = $this->seriesDoses;
         if (0 < count($this->targetDisease)) {
             $json['targetDisease'] = [];
             foreach($this->targetDisease as $targetDisease) {
-                $json['targetDisease'][] = json_encode($targetDisease);
+                $json['targetDisease'][] = $targetDisease;
             }
         }
-        if (null !== $this->doseStatus) $json['doseStatus'] = json_encode($this->doseStatus);
-        if (null !== $this->doseStatusReason) $json['doseStatusReason'] = json_encode($this->doseStatusReason);
+        if (isset($this->doseStatus)) $json['doseStatus'] = $this->doseStatus;
+        if (isset($this->doseStatusReason)) $json['doseStatusReason'] = $this->doseStatusReason;
         return $json;
     }
 
@@ -323,22 +345,21 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ImmunizationVaccinationProtocol xmlns="http://hl7.org/fhir"></ImmunizationVaccinationProtocol>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->doseSequence) $this->doseSequence->xmlSerialize(true, $sxe->addChild('doseSequence'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->authority) $this->authority->xmlSerialize(true, $sxe->addChild('authority'));
-        if (null !== $this->series) $this->series->xmlSerialize(true, $sxe->addChild('series'));
-        if (null !== $this->seriesDoses) $this->seriesDoses->xmlSerialize(true, $sxe->addChild('seriesDoses'));
+        if (isset($this->doseSequence)) $this->doseSequence->xmlSerialize(true, $sxe->addChild('doseSequence'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->authority)) $this->authority->xmlSerialize(true, $sxe->addChild('authority'));
+        if (isset($this->series)) $this->series->xmlSerialize(true, $sxe->addChild('series'));
+        if (isset($this->seriesDoses)) $this->seriesDoses->xmlSerialize(true, $sxe->addChild('seriesDoses'));
         if (0 < count($this->targetDisease)) {
             foreach($this->targetDisease as $targetDisease) {
                 $targetDisease->xmlSerialize(true, $sxe->addChild('targetDisease'));
             }
         }
-        if (null !== $this->doseStatus) $this->doseStatus->xmlSerialize(true, $sxe->addChild('doseStatus'));
-        if (null !== $this->doseStatusReason) $this->doseStatusReason->xmlSerialize(true, $sxe->addChild('doseStatusReason'));
+        if (isset($this->doseStatus)) $this->doseStatus->xmlSerialize(true, $sxe->addChild('doseStatus'));
+        if (isset($this->doseStatusReason)) $this->doseStatusReason->xmlSerialize(true, $sxe->addChild('doseStatusReason'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

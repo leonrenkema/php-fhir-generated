@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,19 +68,16 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRCommunicationPayload extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * A communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $contentString = null;
 
     /**
-     * A communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $contentAttachment = null;
 
     /**
-     * A communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $contentReference = null;
@@ -91,61 +88,49 @@ class FHIRCommunicationPayload extends FHIRBackboneElement implements \JsonSeria
     private $_fhirElementName = 'Communication.Payload';
 
     /**
-     * A communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getContentString()
-    {
+    public function getContentString() {
         return $this->contentString;
     }
 
     /**
-     * A communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $contentString
      * @return $this
      */
-    public function setContentString($contentString)
-    {
+    public function setContentString($contentString) {
         $this->contentString = $contentString;
         return $this;
     }
 
     /**
-     * A communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public function getContentAttachment()
-    {
+    public function getContentAttachment() {
         return $this->contentAttachment;
     }
 
     /**
-     * A communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $contentAttachment
      * @return $this
      */
-    public function setContentAttachment($contentAttachment)
-    {
+    public function setContentAttachment($contentAttachment) {
         $this->contentAttachment = $contentAttachment;
         return $this;
     }
 
     /**
-     * A communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getContentReference()
-    {
+    public function getContentReference() {
         return $this->contentReference;
     }
 
     /**
-     * A communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $contentReference
      * @return $this
      */
-    public function setContentReference($contentReference)
-    {
+    public function setContentReference($contentReference) {
         $this->contentReference = $contentReference;
         return $this;
     }
@@ -153,28 +138,45 @@ class FHIRCommunicationPayload extends FHIRBackboneElement implements \JsonSeria
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['contentString'])) {
+                $this->setContentString($data['contentString']);
+            }
+            if (isset($data['contentAttachment'])) {
+                $this->setContentAttachment($data['contentAttachment']);
+            }
+            if (isset($data['contentReference'])) {
+                $this->setContentReference($data['contentReference']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->contentString) $json['contentString'] = json_encode($this->contentString);
-        if (null !== $this->contentAttachment) $json['contentAttachment'] = json_encode($this->contentAttachment);
-        if (null !== $this->contentReference) $json['contentReference'] = json_encode($this->contentReference);
+        if (isset($this->contentString)) $json['contentString'] = $this->contentString;
+        if (isset($this->contentAttachment)) $json['contentAttachment'] = $this->contentAttachment;
+        if (isset($this->contentReference)) $json['contentReference'] = $this->contentReference;
         return $json;
     }
 
@@ -183,13 +185,12 @@ class FHIRCommunicationPayload extends FHIRBackboneElement implements \JsonSeria
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<CommunicationPayload xmlns="http://hl7.org/fhir"></CommunicationPayload>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->contentString) $this->contentString->xmlSerialize(true, $sxe->addChild('contentString'));
-        if (null !== $this->contentAttachment) $this->contentAttachment->xmlSerialize(true, $sxe->addChild('contentAttachment'));
-        if (null !== $this->contentReference) $this->contentReference->xmlSerialize(true, $sxe->addChild('contentReference'));
+        if (isset($this->contentString)) $this->contentString->xmlSerialize(true, $sxe->addChild('contentString'));
+        if (isset($this->contentAttachment)) $this->contentAttachment->xmlSerialize(true, $sxe->addChild('contentAttachment'));
+        if (isset($this->contentReference)) $this->contentReference->xmlSerialize(true, $sxe->addChild('contentReference'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

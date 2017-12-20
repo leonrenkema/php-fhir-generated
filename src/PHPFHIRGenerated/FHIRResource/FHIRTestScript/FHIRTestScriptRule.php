@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,7 +77,7 @@ class FHIRTestScriptRule extends FHIRBackboneElement implements \JsonSerializabl
      * Each rule template can take one or more parameters for rule evaluation.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptParam[]
      */
-    public $param = array();
+    public $param = [];
 
     /**
      * @var string
@@ -88,8 +88,7 @@ class FHIRTestScriptRule extends FHIRBackboneElement implements \JsonSerializabl
      * Reference to the resource (containing the contents of the rule needed for assertions).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getResource()
-    {
+    public function getResource() {
         return $this->resource;
     }
 
@@ -98,8 +97,7 @@ class FHIRTestScriptRule extends FHIRBackboneElement implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $resource
      * @return $this
      */
-    public function setResource($resource)
-    {
+    public function setResource($resource) {
         $this->resource = $resource;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRTestScriptRule extends FHIRBackboneElement implements \JsonSerializabl
      * Each rule template can take one or more parameters for rule evaluation.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptParam[]
      */
-    public function getParam()
-    {
+    public function getParam() {
         return $this->param;
     }
 
@@ -118,8 +115,7 @@ class FHIRTestScriptRule extends FHIRBackboneElement implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptParam $param
      * @return $this
      */
-    public function addParam($param)
-    {
+    public function addParam($param) {
         $this->param[] = $param;
         return $this;
     }
@@ -127,30 +123,50 @@ class FHIRTestScriptRule extends FHIRBackboneElement implements \JsonSerializabl
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['resource'])) {
+                $this->setResource($data['resource']);
+            }
+            if (isset($data['param'])) {
+                if (is_array($data['param'])) {
+                    foreach($data['param'] as $d) {
+                        $this->addParam($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"param" must be array of objects or null, '.gettype($data['param']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->resource) $json['resource'] = json_encode($this->resource);
+        if (isset($this->resource)) $json['resource'] = $this->resource;
         if (0 < count($this->param)) {
             $json['param'] = [];
             foreach($this->param as $param) {
-                $json['param'][] = json_encode($param);
+                $json['param'][] = $param;
             }
         }
         return $json;
@@ -161,11 +177,10 @@ class FHIRTestScriptRule extends FHIRBackboneElement implements \JsonSerializabl
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<TestScriptRule xmlns="http://hl7.org/fhir"></TestScriptRule>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->resource) $this->resource->xmlSerialize(true, $sxe->addChild('resource'));
+        if (isset($this->resource)) $this->resource->xmlSerialize(true, $sxe->addChild('resource'));
         if (0 < count($this->param)) {
             foreach($this->param as $param) {
                 $param->xmlSerialize(true, $sxe->addChild('param'));

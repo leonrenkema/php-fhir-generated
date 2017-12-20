@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,7 +72,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * Identifier for this instance of the anatomical location.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = array();
+    public $identifier = [];
 
     /**
      * Whether this body site is in active use.
@@ -90,7 +90,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * Qualifier to refine the anatomical location.  These include qualifiers for laterality, relative location, directionality, number, and plane.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $qualifier = array();
+    public $qualifier = [];
 
     /**
      * A summary, charactarization or explanation of the anatomic location.
@@ -102,7 +102,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * Image or images used to identify a location.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
-    public $image = array();
+    public $image = [];
 
     /**
      * The person to which the body site belongs.
@@ -119,8 +119,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * Identifier for this instance of the anatomical location.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -129,8 +128,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function addIdentifier($identifier)
-    {
+    public function addIdentifier($identifier) {
         $this->identifier[] = $identifier;
         return $this;
     }
@@ -139,8 +137,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * Whether this body site is in active use.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getActive()
-    {
+    public function getActive() {
         return $this->active;
     }
 
@@ -149,8 +146,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $active
      * @return $this
      */
-    public function setActive($active)
-    {
+    public function setActive($active) {
         $this->active = $active;
         return $this;
     }
@@ -159,8 +155,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * Named anatomical location - ideally coded where possible.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -169,8 +164,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -179,8 +173,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * Qualifier to refine the anatomical location.  These include qualifiers for laterality, relative location, directionality, number, and plane.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getQualifier()
-    {
+    public function getQualifier() {
         return $this->qualifier;
     }
 
@@ -189,8 +182,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $qualifier
      * @return $this
      */
-    public function addQualifier($qualifier)
-    {
+    public function addQualifier($qualifier) {
         $this->qualifier[] = $qualifier;
         return $this;
     }
@@ -199,8 +191,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * A summary, charactarization or explanation of the anatomic location.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -209,8 +200,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -219,8 +209,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * Image or images used to identify a location.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
-    public function getImage()
-    {
+    public function getImage() {
         return $this->image;
     }
 
@@ -229,8 +218,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $image
      * @return $this
      */
-    public function addImage($image)
-    {
+    public function addImage($image) {
         $this->image[] = $image;
         return $this;
     }
@@ -239,8 +227,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * The person to which the body site belongs.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getPatient()
-    {
+    public function getPatient() {
         return $this->patient;
     }
 
@@ -249,8 +236,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
      * @return $this
      */
-    public function setPatient($patient)
-    {
+    public function setPatient($patient) {
         $this->patient = $patient;
         return $this;
     }
@@ -258,48 +244,95 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['active'])) {
+                $this->setActive($data['active']);
+            }
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['qualifier'])) {
+                if (is_array($data['qualifier'])) {
+                    foreach($data['qualifier'] as $d) {
+                        $this->addQualifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"qualifier" must be array of objects or null, '.gettype($data['qualifier']).' seen.');
+                }
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['image'])) {
+                if (is_array($data['image'])) {
+                    foreach($data['image'] as $d) {
+                        $this->addImage($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"image" must be array of objects or null, '.gettype($data['image']).' seen.');
+                }
+            }
+            if (isset($data['patient'])) {
+                $this->setPatient($data['patient']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->active) $json['active'] = json_encode($this->active);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (isset($this->active)) $json['active'] = $this->active;
+        if (isset($this->code)) $json['code'] = $this->code;
         if (0 < count($this->qualifier)) {
             $json['qualifier'] = [];
             foreach($this->qualifier as $qualifier) {
-                $json['qualifier'][] = json_encode($qualifier);
+                $json['qualifier'][] = $qualifier;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (isset($this->description)) $json['description'] = $this->description;
         if (0 < count($this->image)) {
             $json['image'] = [];
             foreach($this->image as $image) {
-                $json['image'][] = json_encode($image);
+                $json['image'][] = $image;
             }
         }
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (isset($this->patient)) $json['patient'] = $this->patient;
         return $json;
     }
 
@@ -308,8 +341,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<BodySite xmlns="http://hl7.org/fhir"></BodySite>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->identifier)) {
@@ -317,20 +349,20 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->active) $this->active->xmlSerialize(true, $sxe->addChild('active'));
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->active)) $this->active->xmlSerialize(true, $sxe->addChild('active'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if (0 < count($this->qualifier)) {
             foreach($this->qualifier as $qualifier) {
                 $qualifier->xmlSerialize(true, $sxe->addChild('qualifier'));
             }
         }
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->image)) {
             foreach($this->image as $image) {
                 $image->xmlSerialize(true, $sxe->addChild('image'));
             }
         }
-        if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
+        if (isset($this->patient)) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

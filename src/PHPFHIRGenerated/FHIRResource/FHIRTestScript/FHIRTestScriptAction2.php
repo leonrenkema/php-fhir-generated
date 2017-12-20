@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,8 +82,7 @@ class FHIRTestScriptAction2 extends FHIRBackboneElement implements \JsonSerializ
      * An operation would involve a REST request to a server.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptOperation
      */
-    public function getOperation()
-    {
+    public function getOperation() {
         return $this->operation;
     }
 
@@ -92,8 +91,7 @@ class FHIRTestScriptAction2 extends FHIRBackboneElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptOperation $operation
      * @return $this
      */
-    public function setOperation($operation)
-    {
+    public function setOperation($operation) {
         $this->operation = $operation;
         return $this;
     }
@@ -101,26 +99,37 @@ class FHIRTestScriptAction2 extends FHIRBackboneElement implements \JsonSerializ
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['operation'])) {
+                $this->setOperation($data['operation']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->operation) $json['operation'] = json_encode($this->operation);
+        if (isset($this->operation)) $json['operation'] = $this->operation;
         return $json;
     }
 
@@ -129,11 +138,10 @@ class FHIRTestScriptAction2 extends FHIRBackboneElement implements \JsonSerializ
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<TestScriptAction2 xmlns="http://hl7.org/fhir"></TestScriptAction2>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->operation) $this->operation->xmlSerialize(true, $sxe->addChild('operation'));
+        if (isset($this->operation)) $this->operation->xmlSerialize(true, $sxe->addChild('operation'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

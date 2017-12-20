@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,8 +82,7 @@ class FHIRProcessRequestItem extends FHIRBackboneElement implements \JsonSeriali
      * A service line number.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public function getSequenceLinkId()
-    {
+    public function getSequenceLinkId() {
         return $this->sequenceLinkId;
     }
 
@@ -92,8 +91,7 @@ class FHIRProcessRequestItem extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $sequenceLinkId
      * @return $this
      */
-    public function setSequenceLinkId($sequenceLinkId)
-    {
+    public function setSequenceLinkId($sequenceLinkId) {
         $this->sequenceLinkId = $sequenceLinkId;
         return $this;
     }
@@ -101,26 +99,37 @@ class FHIRProcessRequestItem extends FHIRBackboneElement implements \JsonSeriali
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['sequenceLinkId'])) {
+                $this->setSequenceLinkId($data['sequenceLinkId']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequenceLinkId) $json['sequenceLinkId'] = json_encode($this->sequenceLinkId);
+        if (isset($this->sequenceLinkId)) $json['sequenceLinkId'] = $this->sequenceLinkId;
         return $json;
     }
 
@@ -129,11 +138,10 @@ class FHIRProcessRequestItem extends FHIRBackboneElement implements \JsonSeriali
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ProcessRequestItem xmlns="http://hl7.org/fhir"></ProcessRequestItem>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->sequenceLinkId) $this->sequenceLinkId->xmlSerialize(true, $sxe->addChild('sequenceLinkId'));
+        if (isset($this->sequenceLinkId)) $this->sequenceLinkId->xmlSerialize(true, $sxe->addChild('sequenceLinkId'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

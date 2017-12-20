@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,8 +88,7 @@ class FHIRImplementationGuideDependency extends FHIRBackboneElement implements \
      * How the dependency is represented when the guide is published.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRGuideDependencyType
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -98,8 +97,7 @@ class FHIRImplementationGuideDependency extends FHIRBackboneElement implements \
      * @param \PHPFHIRGenerated\FHIRElement\FHIRGuideDependencyType $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRImplementationGuideDependency extends FHIRBackboneElement implements \
      * Where the dependency is located.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getUri()
-    {
+    public function getUri() {
         return $this->uri;
     }
 
@@ -118,8 +115,7 @@ class FHIRImplementationGuideDependency extends FHIRBackboneElement implements \
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $uri
      * @return $this
      */
-    public function setUri($uri)
-    {
+    public function setUri($uri) {
         $this->uri = $uri;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRImplementationGuideDependency extends FHIRBackboneElement implements \
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['uri'])) {
+                $this->setUri($data['uri']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->uri) $json['uri'] = json_encode($this->uri);
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->uri)) $json['uri'] = $this->uri;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRImplementationGuideDependency extends FHIRBackboneElement implements \
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ImplementationGuideDependency xmlns="http://hl7.org/fhir"></ImplementationGuideDependency>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->uri) $this->uri->xmlSerialize(true, $sxe->addChild('uri'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->uri)) $this->uri->xmlSerialize(true, $sxe->addChild('uri'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

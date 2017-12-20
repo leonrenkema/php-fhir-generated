@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,13 +75,11 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
     public $path = null;
 
     /**
-     * The valueset for the code filter. The valueSet and value elements are exclusive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset. (choose any one of valueSet*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $valueSetString = null;
 
     /**
-     * The valueset for the code filter. The valueSet and value elements are exclusive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset. (choose any one of valueSet*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $valueSetReference = null;
@@ -90,19 +88,19 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
      * The codes for the code filter. Only one of valueSet, valueCode, valueCoding, or valueCodeableConcept may be specified. If values are given, the filter will return only those data items for which the code-valued attribute specified by the path has a value that is one of the specified codes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode[]
      */
-    public $valueCode = array();
+    public $valueCode = [];
 
     /**
      * The Codings for the code filter. Only one of valueSet, valueCode, valueConding, or valueCodeableConcept may be specified. If values are given, the filter will return only those data items for which the code-valued attribute specified by the path has a value that is one of the specified Codings.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $valueCoding = array();
+    public $valueCoding = [];
 
     /**
      * The CodeableConcepts for the code filter. Only one of valueSet, valueCode, valueConding, or valueCodeableConcept may be specified. If values are given, the filter will return only those data items for which the code-valued attribute specified by the path has a value that is one of the specified CodeableConcepts.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $valueCodeableConcept = array();
+    public $valueCodeableConcept = [];
 
     /**
      * @var string
@@ -113,8 +111,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
      * The code-valued attribute of the filter. The specified path must be resolvable from the type of the required data. The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements. Note that the index must be an integer constant. The path must resolve to an element of type code, Coding, or CodeableConcept.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPath()
-    {
+    public function getPath() {
         return $this->path;
     }
 
@@ -123,48 +120,39 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $path
      * @return $this
      */
-    public function setPath($path)
-    {
+    public function setPath($path) {
         $this->path = $path;
         return $this;
     }
 
     /**
-     * The valueset for the code filter. The valueSet and value elements are exclusive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset. (choose any one of valueSet*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getValueSetString()
-    {
+    public function getValueSetString() {
         return $this->valueSetString;
     }
 
     /**
-     * The valueset for the code filter. The valueSet and value elements are exclusive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset. (choose any one of valueSet*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $valueSetString
      * @return $this
      */
-    public function setValueSetString($valueSetString)
-    {
+    public function setValueSetString($valueSetString) {
         $this->valueSetString = $valueSetString;
         return $this;
     }
 
     /**
-     * The valueset for the code filter. The valueSet and value elements are exclusive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset. (choose any one of valueSet*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getValueSetReference()
-    {
+    public function getValueSetReference() {
         return $this->valueSetReference;
     }
 
     /**
-     * The valueset for the code filter. The valueSet and value elements are exclusive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset. (choose any one of valueSet*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $valueSetReference
      * @return $this
      */
-    public function setValueSetReference($valueSetReference)
-    {
+    public function setValueSetReference($valueSetReference) {
         $this->valueSetReference = $valueSetReference;
         return $this;
     }
@@ -173,8 +161,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
      * The codes for the code filter. Only one of valueSet, valueCode, valueCoding, or valueCodeableConcept may be specified. If values are given, the filter will return only those data items for which the code-valued attribute specified by the path has a value that is one of the specified codes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode[]
      */
-    public function getValueCode()
-    {
+    public function getValueCode() {
         return $this->valueCode;
     }
 
@@ -183,8 +170,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $valueCode
      * @return $this
      */
-    public function addValueCode($valueCode)
-    {
+    public function addValueCode($valueCode) {
         $this->valueCode[] = $valueCode;
         return $this;
     }
@@ -193,8 +179,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
      * The Codings for the code filter. Only one of valueSet, valueCode, valueConding, or valueCodeableConcept may be specified. If values are given, the filter will return only those data items for which the code-valued attribute specified by the path has a value that is one of the specified Codings.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public function getValueCoding()
-    {
+    public function getValueCoding() {
         return $this->valueCoding;
     }
 
@@ -203,8 +188,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $valueCoding
      * @return $this
      */
-    public function addValueCoding($valueCoding)
-    {
+    public function addValueCoding($valueCoding) {
         $this->valueCoding[] = $valueCoding;
         return $this;
     }
@@ -213,8 +197,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
      * The CodeableConcepts for the code filter. Only one of valueSet, valueCode, valueConding, or valueCodeableConcept may be specified. If values are given, the filter will return only those data items for which the code-valued attribute specified by the path has a value that is one of the specified CodeableConcepts.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getValueCodeableConcept()
-    {
+    public function getValueCodeableConcept() {
         return $this->valueCodeableConcept;
     }
 
@@ -223,8 +206,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return $this
      */
-    public function addValueCodeableConcept($valueCodeableConcept)
-    {
+    public function addValueCodeableConcept($valueCodeableConcept) {
         $this->valueCodeableConcept[] = $valueCodeableConcept;
         return $this;
     }
@@ -232,44 +214,88 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['path'])) {
+                $this->setPath($data['path']);
+            }
+            if (isset($data['valueSetString'])) {
+                $this->setValueSetString($data['valueSetString']);
+            }
+            if (isset($data['valueSetReference'])) {
+                $this->setValueSetReference($data['valueSetReference']);
+            }
+            if (isset($data['valueCode'])) {
+                if (is_array($data['valueCode'])) {
+                    foreach($data['valueCode'] as $d) {
+                        $this->addValueCode($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"valueCode" must be array of objects or null, '.gettype($data['valueCode']).' seen.');
+                }
+            }
+            if (isset($data['valueCoding'])) {
+                if (is_array($data['valueCoding'])) {
+                    foreach($data['valueCoding'] as $d) {
+                        $this->addValueCoding($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"valueCoding" must be array of objects or null, '.gettype($data['valueCoding']).' seen.');
+                }
+            }
+            if (isset($data['valueCodeableConcept'])) {
+                if (is_array($data['valueCodeableConcept'])) {
+                    foreach($data['valueCodeableConcept'] as $d) {
+                        $this->addValueCodeableConcept($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"valueCodeableConcept" must be array of objects or null, '.gettype($data['valueCodeableConcept']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->path) $json['path'] = json_encode($this->path);
-        if (null !== $this->valueSetString) $json['valueSetString'] = json_encode($this->valueSetString);
-        if (null !== $this->valueSetReference) $json['valueSetReference'] = json_encode($this->valueSetReference);
+        if (isset($this->path)) $json['path'] = $this->path;
+        if (isset($this->valueSetString)) $json['valueSetString'] = $this->valueSetString;
+        if (isset($this->valueSetReference)) $json['valueSetReference'] = $this->valueSetReference;
         if (0 < count($this->valueCode)) {
             $json['valueCode'] = [];
             foreach($this->valueCode as $valueCode) {
-                $json['valueCode'][] = json_encode($valueCode);
+                $json['valueCode'][] = $valueCode;
             }
         }
         if (0 < count($this->valueCoding)) {
             $json['valueCoding'] = [];
             foreach($this->valueCoding as $valueCoding) {
-                $json['valueCoding'][] = json_encode($valueCoding);
+                $json['valueCoding'][] = $valueCoding;
             }
         }
         if (0 < count($this->valueCodeableConcept)) {
             $json['valueCodeableConcept'] = [];
             foreach($this->valueCodeableConcept as $valueCodeableConcept) {
-                $json['valueCodeableConcept'][] = json_encode($valueCodeableConcept);
+                $json['valueCodeableConcept'][] = $valueCodeableConcept;
             }
         }
         return $json;
@@ -280,13 +306,12 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<DataRequirementCodeFilter xmlns="http://hl7.org/fhir"></DataRequirementCodeFilter>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->path) $this->path->xmlSerialize(true, $sxe->addChild('path'));
-        if (null !== $this->valueSetString) $this->valueSetString->xmlSerialize(true, $sxe->addChild('valueSetString'));
-        if (null !== $this->valueSetReference) $this->valueSetReference->xmlSerialize(true, $sxe->addChild('valueSetReference'));
+        if (isset($this->path)) $this->path->xmlSerialize(true, $sxe->addChild('path'));
+        if (isset($this->valueSetString)) $this->valueSetString->xmlSerialize(true, $sxe->addChild('valueSetString'));
+        if (isset($this->valueSetReference)) $this->valueSetReference->xmlSerialize(true, $sxe->addChild('valueSetReference'));
         if (0 < count($this->valueCode)) {
             foreach($this->valueCode as $valueCode) {
                 $valueCode->xmlSerialize(true, $sxe->addChild('valueCode'));

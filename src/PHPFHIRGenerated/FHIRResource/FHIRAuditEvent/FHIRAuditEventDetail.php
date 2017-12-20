@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,8 +88,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
      * The type of extra detail provided in the value.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -98,8 +97,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
      * The details, base64 encoded. Used to carry bulk information.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
-    public function getValue()
-    {
+    public function getValue() {
         return $this->value;
     }
 
@@ -118,8 +115,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $value
      * @return $this
      */
-    public function setValue($value)
-    {
+    public function setValue($value) {
         $this->value = $value;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['value'])) {
+                $this->setValue($data['value']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return (string)$this->getValue();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->value) $json['value'] = json_encode($this->value);
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->value)) $json['value'] = $this->value;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<AuditEventDetail xmlns="http://hl7.org/fhir"></AuditEventDetail>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->value) $this->value->xmlSerialize(true, $sxe->addChild('value'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->value)) $this->value->xmlSerialize(true, $sxe->addChild('value'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

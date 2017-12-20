@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,13 +80,11 @@ class FHIRClaimProcedure extends FHIRBackboneElement implements \JsonSerializabl
     public $date = null;
 
     /**
-     * The procedure code. (choose any one of procedure*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $procedureCodeableConcept = null;
 
     /**
-     * The procedure code. (choose any one of procedure*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $procedureReference = null;
@@ -100,8 +98,7 @@ class FHIRClaimProcedure extends FHIRBackboneElement implements \JsonSerializabl
      * Sequence of procedures which serves to order and provide a link.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public function getSequence()
-    {
+    public function getSequence() {
         return $this->sequence;
     }
 
@@ -110,8 +107,7 @@ class FHIRClaimProcedure extends FHIRBackboneElement implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $sequence
      * @return $this
      */
-    public function setSequence($sequence)
-    {
+    public function setSequence($sequence) {
         $this->sequence = $sequence;
         return $this;
     }
@@ -120,8 +116,7 @@ class FHIRClaimProcedure extends FHIRBackboneElement implements \JsonSerializabl
      * Date and optionally time the procedure was performed .
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -130,48 +125,39 @@ class FHIRClaimProcedure extends FHIRBackboneElement implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
 
     /**
-     * The procedure code. (choose any one of procedure*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getProcedureCodeableConcept()
-    {
+    public function getProcedureCodeableConcept() {
         return $this->procedureCodeableConcept;
     }
 
     /**
-     * The procedure code. (choose any one of procedure*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $procedureCodeableConcept
      * @return $this
      */
-    public function setProcedureCodeableConcept($procedureCodeableConcept)
-    {
+    public function setProcedureCodeableConcept($procedureCodeableConcept) {
         $this->procedureCodeableConcept = $procedureCodeableConcept;
         return $this;
     }
 
     /**
-     * The procedure code. (choose any one of procedure*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getProcedureReference()
-    {
+    public function getProcedureReference() {
         return $this->procedureReference;
     }
 
     /**
-     * The procedure code. (choose any one of procedure*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $procedureReference
      * @return $this
      */
-    public function setProcedureReference($procedureReference)
-    {
+    public function setProcedureReference($procedureReference) {
         $this->procedureReference = $procedureReference;
         return $this;
     }
@@ -179,29 +165,49 @@ class FHIRClaimProcedure extends FHIRBackboneElement implements \JsonSerializabl
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['sequence'])) {
+                $this->setSequence($data['sequence']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['procedureCodeableConcept'])) {
+                $this->setProcedureCodeableConcept($data['procedureCodeableConcept']);
+            }
+            if (isset($data['procedureReference'])) {
+                $this->setProcedureReference($data['procedureReference']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->procedureCodeableConcept) $json['procedureCodeableConcept'] = json_encode($this->procedureCodeableConcept);
-        if (null !== $this->procedureReference) $json['procedureReference'] = json_encode($this->procedureReference);
+        if (isset($this->sequence)) $json['sequence'] = $this->sequence;
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->procedureCodeableConcept)) $json['procedureCodeableConcept'] = $this->procedureCodeableConcept;
+        if (isset($this->procedureReference)) $json['procedureReference'] = $this->procedureReference;
         return $json;
     }
 
@@ -210,14 +216,13 @@ class FHIRClaimProcedure extends FHIRBackboneElement implements \JsonSerializabl
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ClaimProcedure xmlns="http://hl7.org/fhir"></ClaimProcedure>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->sequence) $this->sequence->xmlSerialize(true, $sxe->addChild('sequence'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->procedureCodeableConcept) $this->procedureCodeableConcept->xmlSerialize(true, $sxe->addChild('procedureCodeableConcept'));
-        if (null !== $this->procedureReference) $this->procedureReference->xmlSerialize(true, $sxe->addChild('procedureReference'));
+        if (isset($this->sequence)) $this->sequence->xmlSerialize(true, $sxe->addChild('sequence'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->procedureCodeableConcept)) $this->procedureCodeableConcept->xmlSerialize(true, $sxe->addChild('procedureCodeableConcept'));
+        if (isset($this->procedureReference)) $this->procedureReference->xmlSerialize(true, $sxe->addChild('procedureReference'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

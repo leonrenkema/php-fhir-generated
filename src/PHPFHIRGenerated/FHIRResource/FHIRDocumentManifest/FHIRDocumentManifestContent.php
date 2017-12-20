@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,13 +68,11 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRDocumentManifestContent extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The list of references to document content, or Attachment that consist of the parts of this document manifest. Usually, these would be document references, but direct references to Media or Attachments are also allowed. (choose any one of p*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $pAttachment = null;
 
     /**
-     * The list of references to document content, or Attachment that consist of the parts of this document manifest. Usually, these would be document references, but direct references to Media or Attachments are also allowed. (choose any one of p*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $pReference = null;
@@ -85,41 +83,33 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement implements \JsonSe
     private $_fhirElementName = 'DocumentManifest.Content';
 
     /**
-     * The list of references to document content, or Attachment that consist of the parts of this document manifest. Usually, these would be document references, but direct references to Media or Attachments are also allowed. (choose any one of p*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public function getPAttachment()
-    {
+    public function getPAttachment() {
         return $this->pAttachment;
     }
 
     /**
-     * The list of references to document content, or Attachment that consist of the parts of this document manifest. Usually, these would be document references, but direct references to Media or Attachments are also allowed. (choose any one of p*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $pAttachment
      * @return $this
      */
-    public function setPAttachment($pAttachment)
-    {
+    public function setPAttachment($pAttachment) {
         $this->pAttachment = $pAttachment;
         return $this;
     }
 
     /**
-     * The list of references to document content, or Attachment that consist of the parts of this document manifest. Usually, these would be document references, but direct references to Media or Attachments are also allowed. (choose any one of p*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getPReference()
-    {
+    public function getPReference() {
         return $this->pReference;
     }
 
     /**
-     * The list of references to document content, or Attachment that consist of the parts of this document manifest. Usually, these would be document references, but direct references to Media or Attachments are also allowed. (choose any one of p*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $pReference
      * @return $this
      */
-    public function setPReference($pReference)
-    {
+    public function setPReference($pReference) {
         $this->pReference = $pReference;
         return $this;
     }
@@ -127,27 +117,41 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement implements \JsonSe
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['pAttachment'])) {
+                $this->setPAttachment($data['pAttachment']);
+            }
+            if (isset($data['pReference'])) {
+                $this->setPReference($data['pReference']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->pAttachment) $json['pAttachment'] = json_encode($this->pAttachment);
-        if (null !== $this->pReference) $json['pReference'] = json_encode($this->pReference);
+        if (isset($this->pAttachment)) $json['pAttachment'] = $this->pAttachment;
+        if (isset($this->pReference)) $json['pReference'] = $this->pReference;
         return $json;
     }
 
@@ -156,12 +160,11 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement implements \JsonSe
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<DocumentManifestContent xmlns="http://hl7.org/fhir"></DocumentManifestContent>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->pAttachment) $this->pAttachment->xmlSerialize(true, $sxe->addChild('pAttachment'));
-        if (null !== $this->pReference) $this->pReference->xmlSerialize(true, $sxe->addChild('pReference'));
+        if (isset($this->pAttachment)) $this->pAttachment->xmlSerialize(true, $sxe->addChild('pAttachment'));
+        if (isset($this->pReference)) $this->pReference->xmlSerialize(true, $sxe->addChild('pReference'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

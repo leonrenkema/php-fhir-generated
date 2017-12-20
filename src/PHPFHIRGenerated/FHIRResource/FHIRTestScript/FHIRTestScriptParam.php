@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,8 +88,7 @@ class FHIRTestScriptParam extends FHIRBackboneElement implements \JsonSerializab
      * Descriptive name for this parameter that matches the external assert rule parameter name.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -98,8 +97,7 @@ class FHIRTestScriptParam extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRTestScriptParam extends FHIRBackboneElement implements \JsonSerializab
      * The explicit or dynamic value for the parameter that will be passed on to the external rule template.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getValue()
-    {
+    public function getValue() {
         return $this->value;
     }
 
@@ -118,8 +115,7 @@ class FHIRTestScriptParam extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $value
      * @return $this
      */
-    public function setValue($value)
-    {
+    public function setValue($value) {
         $this->value = $value;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRTestScriptParam extends FHIRBackboneElement implements \JsonSerializab
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['value'])) {
+                $this->setValue($data['value']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return (string)$this->getValue();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->value) $json['value'] = json_encode($this->value);
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->value)) $json['value'] = $this->value;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRTestScriptParam extends FHIRBackboneElement implements \JsonSerializab
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<TestScriptParam xmlns="http://hl7.org/fhir"></TestScriptParam>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->value) $this->value->xmlSerialize(true, $sxe->addChild('value'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->value)) $this->value->xmlSerialize(true, $sxe->addChild('value'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

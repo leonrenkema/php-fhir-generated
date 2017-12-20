@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,7 +72,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * The main (and possibly only) identifier for the coverage - often referred to as a Member Id, Certificate number, Personal Health Number or Case ID. May be constructed as the concatination of the Coverage.SubscriberID and the Coverage.dependant.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = array();
+    public $identifier = [];
 
     /**
      * The status of the resource instance.
@@ -126,7 +126,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * The program or plan underwriter or payor including both insurance and non-insurance agreements, such as patient-pay agreements. May provide multiple identifiers such as insurance company identifier or business identifier (BIN number).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $payor = array();
+    public $payor = [];
 
     /**
      * A suite of underwrite specific classifiers, for example may be used to identify a class of coverage or employer group, Policy, Plan.
@@ -162,7 +162,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * The policy(s) which constitute this insurance coverage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $contract = array();
+    public $contract = [];
 
     /**
      * @var string
@@ -173,8 +173,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * The main (and possibly only) identifier for the coverage - often referred to as a Member Id, Certificate number, Personal Health Number or Case ID. May be constructed as the concatination of the Coverage.SubscriberID and the Coverage.dependant.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -183,8 +182,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function addIdentifier($identifier)
-    {
+    public function addIdentifier($identifier) {
         $this->identifier[] = $identifier;
         return $this;
     }
@@ -193,8 +191,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * The status of the resource instance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -203,8 +200,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -213,8 +209,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * The type of coverage: social program, medical plan, accident coverage (workers compensation, auto), group health or payment by an individual or organization.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -223,8 +218,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -233,8 +227,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * The party who 'owns' the insurance policy,  may be an individual, corporation or the subscriber's employer.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getPolicyHolder()
-    {
+    public function getPolicyHolder() {
         return $this->policyHolder;
     }
 
@@ -243,8 +236,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $policyHolder
      * @return $this
      */
-    public function setPolicyHolder($policyHolder)
-    {
+    public function setPolicyHolder($policyHolder) {
         $this->policyHolder = $policyHolder;
         return $this;
     }
@@ -253,8 +245,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * The party who has signed-up for or 'owns' the contractual relationship to the policy or to whom the benefit of the policy for services rendered to them or their family is due.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getSubscriber()
-    {
+    public function getSubscriber() {
         return $this->subscriber;
     }
 
@@ -263,8 +254,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subscriber
      * @return $this
      */
-    public function setSubscriber($subscriber)
-    {
+    public function setSubscriber($subscriber) {
         $this->subscriber = $subscriber;
         return $this;
     }
@@ -273,8 +263,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * The insurer assigned ID for the Subscriber.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getSubscriberId()
-    {
+    public function getSubscriberId() {
         return $this->subscriberId;
     }
 
@@ -283,8 +272,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $subscriberId
      * @return $this
      */
-    public function setSubscriberId($subscriberId)
-    {
+    public function setSubscriberId($subscriberId) {
         $this->subscriberId = $subscriberId;
         return $this;
     }
@@ -293,8 +281,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * The party who benefits from the insurance coverage., the patient when services are provided.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getBeneficiary()
-    {
+    public function getBeneficiary() {
         return $this->beneficiary;
     }
 
@@ -303,8 +290,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $beneficiary
      * @return $this
      */
-    public function setBeneficiary($beneficiary)
-    {
+    public function setBeneficiary($beneficiary) {
         $this->beneficiary = $beneficiary;
         return $this;
     }
@@ -313,8 +299,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * The relationship of beneficiary (patient) to the subscriber.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getRelationship()
-    {
+    public function getRelationship() {
         return $this->relationship;
     }
 
@@ -323,8 +308,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $relationship
      * @return $this
      */
-    public function setRelationship($relationship)
-    {
+    public function setRelationship($relationship) {
         $this->relationship = $relationship;
         return $this;
     }
@@ -333,8 +317,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * Time period during which the coverage is in force. A missing start date indicates the start date isn't known, a missing end date means the coverage is continuing to be in force.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
-    {
+    public function getPeriod() {
         return $this->period;
     }
 
@@ -343,8 +326,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
      * @return $this
      */
-    public function setPeriod($period)
-    {
+    public function setPeriod($period) {
         $this->period = $period;
         return $this;
     }
@@ -353,8 +335,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * The program or plan underwriter or payor including both insurance and non-insurance agreements, such as patient-pay agreements. May provide multiple identifiers such as insurance company identifier or business identifier (BIN number).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getPayor()
-    {
+    public function getPayor() {
         return $this->payor;
     }
 
@@ -363,8 +344,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $payor
      * @return $this
      */
-    public function addPayor($payor)
-    {
+    public function addPayor($payor) {
         $this->payor[] = $payor;
         return $this;
     }
@@ -373,8 +353,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * A suite of underwrite specific classifiers, for example may be used to identify a class of coverage or employer group, Policy, Plan.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRCoverage\FHIRCoverageGrouping
      */
-    public function getGrouping()
-    {
+    public function getGrouping() {
         return $this->grouping;
     }
 
@@ -383,8 +362,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRCoverage\FHIRCoverageGrouping $grouping
      * @return $this
      */
-    public function setGrouping($grouping)
-    {
+    public function setGrouping($grouping) {
         $this->grouping = $grouping;
         return $this;
     }
@@ -393,8 +371,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * A unique identifier for a dependent under the coverage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDependent()
-    {
+    public function getDependent() {
         return $this->dependent;
     }
 
@@ -403,8 +380,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $dependent
      * @return $this
      */
-    public function setDependent($dependent)
-    {
+    public function setDependent($dependent) {
         $this->dependent = $dependent;
         return $this;
     }
@@ -413,8 +389,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * An optional counter for a particular instance of the identified coverage which increments upon each renewal.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getSequence()
-    {
+    public function getSequence() {
         return $this->sequence;
     }
 
@@ -423,8 +398,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $sequence
      * @return $this
      */
-    public function setSequence($sequence)
-    {
+    public function setSequence($sequence) {
         $this->sequence = $sequence;
         return $this;
     }
@@ -433,8 +407,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * The order of applicability of this coverage relative to other coverages which are currently inforce. Note, there may be gaps in the numbering and this does not imply primary, secondard etc. as the specific positioning of coverages depends upon the episode of care.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public function getOrder()
-    {
+    public function getOrder() {
         return $this->order;
     }
 
@@ -443,8 +416,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $order
      * @return $this
      */
-    public function setOrder($order)
-    {
+    public function setOrder($order) {
         $this->order = $order;
         return $this;
     }
@@ -453,8 +425,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * The insurer-specific identifier for the insurer-defined network of providers to which the beneficiary may seek treatment which will be covered at the 'in-network' rate, otherwise 'out of network' terms and conditions apply.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getNetwork()
-    {
+    public function getNetwork() {
         return $this->network;
     }
 
@@ -463,8 +434,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $network
      * @return $this
      */
-    public function setNetwork($network)
-    {
+    public function setNetwork($network) {
         $this->network = $network;
         return $this;
     }
@@ -473,8 +443,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * The policy(s) which constitute this insurance coverage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getContract()
-    {
+    public function getContract() {
         return $this->contract;
     }
 
@@ -483,8 +452,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $contract
      * @return $this
      */
-    public function addContract($contract)
-    {
+    public function addContract($contract) {
         $this->contract[] = $contract;
         return $this;
     }
@@ -492,55 +460,129 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['policyHolder'])) {
+                $this->setPolicyHolder($data['policyHolder']);
+            }
+            if (isset($data['subscriber'])) {
+                $this->setSubscriber($data['subscriber']);
+            }
+            if (isset($data['subscriberId'])) {
+                $this->setSubscriberId($data['subscriberId']);
+            }
+            if (isset($data['beneficiary'])) {
+                $this->setBeneficiary($data['beneficiary']);
+            }
+            if (isset($data['relationship'])) {
+                $this->setRelationship($data['relationship']);
+            }
+            if (isset($data['period'])) {
+                $this->setPeriod($data['period']);
+            }
+            if (isset($data['payor'])) {
+                if (is_array($data['payor'])) {
+                    foreach($data['payor'] as $d) {
+                        $this->addPayor($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"payor" must be array of objects or null, '.gettype($data['payor']).' seen.');
+                }
+            }
+            if (isset($data['grouping'])) {
+                $this->setGrouping($data['grouping']);
+            }
+            if (isset($data['dependent'])) {
+                $this->setDependent($data['dependent']);
+            }
+            if (isset($data['sequence'])) {
+                $this->setSequence($data['sequence']);
+            }
+            if (isset($data['order'])) {
+                $this->setOrder($data['order']);
+            }
+            if (isset($data['network'])) {
+                $this->setNetwork($data['network']);
+            }
+            if (isset($data['contract'])) {
+                if (is_array($data['contract'])) {
+                    foreach($data['contract'] as $d) {
+                        $this->addContract($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contract" must be array of objects or null, '.gettype($data['contract']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->policyHolder) $json['policyHolder'] = json_encode($this->policyHolder);
-        if (null !== $this->subscriber) $json['subscriber'] = json_encode($this->subscriber);
-        if (null !== $this->subscriberId) $json['subscriberId'] = json_encode($this->subscriberId);
-        if (null !== $this->beneficiary) $json['beneficiary'] = json_encode($this->beneficiary);
-        if (null !== $this->relationship) $json['relationship'] = json_encode($this->relationship);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->policyHolder)) $json['policyHolder'] = $this->policyHolder;
+        if (isset($this->subscriber)) $json['subscriber'] = $this->subscriber;
+        if (isset($this->subscriberId)) $json['subscriberId'] = $this->subscriberId;
+        if (isset($this->beneficiary)) $json['beneficiary'] = $this->beneficiary;
+        if (isset($this->relationship)) $json['relationship'] = $this->relationship;
+        if (isset($this->period)) $json['period'] = $this->period;
         if (0 < count($this->payor)) {
             $json['payor'] = [];
             foreach($this->payor as $payor) {
-                $json['payor'][] = json_encode($payor);
+                $json['payor'][] = $payor;
             }
         }
-        if (null !== $this->grouping) $json['grouping'] = json_encode($this->grouping);
-        if (null !== $this->dependent) $json['dependent'] = json_encode($this->dependent);
-        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
-        if (null !== $this->order) $json['order'] = json_encode($this->order);
-        if (null !== $this->network) $json['network'] = json_encode($this->network);
+        if (isset($this->grouping)) $json['grouping'] = $this->grouping;
+        if (isset($this->dependent)) $json['dependent'] = $this->dependent;
+        if (isset($this->sequence)) $json['sequence'] = $this->sequence;
+        if (isset($this->order)) $json['order'] = $this->order;
+        if (isset($this->network)) $json['network'] = $this->network;
         if (0 < count($this->contract)) {
             $json['contract'] = [];
             foreach($this->contract as $contract) {
-                $json['contract'][] = json_encode($contract);
+                $json['contract'][] = $contract;
             }
         }
         return $json;
@@ -551,8 +593,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Coverage xmlns="http://hl7.org/fhir"></Coverage>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->identifier)) {
@@ -560,24 +601,24 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->policyHolder) $this->policyHolder->xmlSerialize(true, $sxe->addChild('policyHolder'));
-        if (null !== $this->subscriber) $this->subscriber->xmlSerialize(true, $sxe->addChild('subscriber'));
-        if (null !== $this->subscriberId) $this->subscriberId->xmlSerialize(true, $sxe->addChild('subscriberId'));
-        if (null !== $this->beneficiary) $this->beneficiary->xmlSerialize(true, $sxe->addChild('beneficiary'));
-        if (null !== $this->relationship) $this->relationship->xmlSerialize(true, $sxe->addChild('relationship'));
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->policyHolder)) $this->policyHolder->xmlSerialize(true, $sxe->addChild('policyHolder'));
+        if (isset($this->subscriber)) $this->subscriber->xmlSerialize(true, $sxe->addChild('subscriber'));
+        if (isset($this->subscriberId)) $this->subscriberId->xmlSerialize(true, $sxe->addChild('subscriberId'));
+        if (isset($this->beneficiary)) $this->beneficiary->xmlSerialize(true, $sxe->addChild('beneficiary'));
+        if (isset($this->relationship)) $this->relationship->xmlSerialize(true, $sxe->addChild('relationship'));
+        if (isset($this->period)) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if (0 < count($this->payor)) {
             foreach($this->payor as $payor) {
                 $payor->xmlSerialize(true, $sxe->addChild('payor'));
             }
         }
-        if (null !== $this->grouping) $this->grouping->xmlSerialize(true, $sxe->addChild('grouping'));
-        if (null !== $this->dependent) $this->dependent->xmlSerialize(true, $sxe->addChild('dependent'));
-        if (null !== $this->sequence) $this->sequence->xmlSerialize(true, $sxe->addChild('sequence'));
-        if (null !== $this->order) $this->order->xmlSerialize(true, $sxe->addChild('order'));
-        if (null !== $this->network) $this->network->xmlSerialize(true, $sxe->addChild('network'));
+        if (isset($this->grouping)) $this->grouping->xmlSerialize(true, $sxe->addChild('grouping'));
+        if (isset($this->dependent)) $this->dependent->xmlSerialize(true, $sxe->addChild('dependent'));
+        if (isset($this->sequence)) $this->sequence->xmlSerialize(true, $sxe->addChild('sequence'));
+        if (isset($this->order)) $this->order->xmlSerialize(true, $sxe->addChild('order'));
+        if (isset($this->network)) $this->network->xmlSerialize(true, $sxe->addChild('network'));
         if (0 < count($this->contract)) {
             foreach($this->contract as $contract) {
                 $contract->xmlSerialize(true, $sxe->addChild('contract'));

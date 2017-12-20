@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,19 +74,16 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
     public $role = null;
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $whatUri = null;
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $whatReference = null;
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $whatIdentifier = null;
@@ -95,7 +92,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
      * The entity is attributed to an agent to express the agent's responsibility for that entity, possibly along with other agents. This description can be understood as shorthand for saying that the agent was responsible for the activity which generated the entity.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRProvenance\FHIRProvenanceAgent[]
      */
-    public $agent = array();
+    public $agent = [];
 
     /**
      * @var string
@@ -106,8 +103,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
      * How the entity was used during the activity.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRProvenanceEntityRole
      */
-    public function getRole()
-    {
+    public function getRole() {
         return $this->role;
     }
 
@@ -116,68 +112,55 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRProvenanceEntityRole $role
      * @return $this
      */
-    public function setRole($role)
-    {
+    public function setRole($role) {
         $this->role = $role;
         return $this;
     }
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getWhatUri()
-    {
+    public function getWhatUri() {
         return $this->whatUri;
     }
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $whatUri
      * @return $this
      */
-    public function setWhatUri($whatUri)
-    {
+    public function setWhatUri($whatUri) {
         $this->whatUri = $whatUri;
         return $this;
     }
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getWhatReference()
-    {
+    public function getWhatReference() {
         return $this->whatReference;
     }
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $whatReference
      * @return $this
      */
-    public function setWhatReference($whatReference)
-    {
+    public function setWhatReference($whatReference) {
         $this->whatReference = $whatReference;
         return $this;
     }
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getWhatIdentifier()
-    {
+    public function getWhatIdentifier() {
         return $this->whatIdentifier;
     }
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $whatIdentifier
      * @return $this
      */
-    public function setWhatIdentifier($whatIdentifier)
-    {
+    public function setWhatIdentifier($whatIdentifier) {
         $this->whatIdentifier = $whatIdentifier;
         return $this;
     }
@@ -186,8 +169,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
      * The entity is attributed to an agent to express the agent's responsibility for that entity, possibly along with other agents. This description can be understood as shorthand for saying that the agent was responsible for the activity which generated the entity.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRProvenance\FHIRProvenanceAgent[]
      */
-    public function getAgent()
-    {
+    public function getAgent() {
         return $this->agent;
     }
 
@@ -196,8 +178,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRResource\FHIRProvenance\FHIRProvenanceAgent $agent
      * @return $this
      */
-    public function addAgent($agent)
-    {
+    public function addAgent($agent) {
         $this->agent[] = $agent;
         return $this;
     }
@@ -205,33 +186,62 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['role'])) {
+                $this->setRole($data['role']);
+            }
+            if (isset($data['whatUri'])) {
+                $this->setWhatUri($data['whatUri']);
+            }
+            if (isset($data['whatReference'])) {
+                $this->setWhatReference($data['whatReference']);
+            }
+            if (isset($data['whatIdentifier'])) {
+                $this->setWhatIdentifier($data['whatIdentifier']);
+            }
+            if (isset($data['agent'])) {
+                if (is_array($data['agent'])) {
+                    foreach($data['agent'] as $d) {
+                        $this->addAgent($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"agent" must be array of objects or null, '.gettype($data['agent']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->role) $json['role'] = json_encode($this->role);
-        if (null !== $this->whatUri) $json['whatUri'] = json_encode($this->whatUri);
-        if (null !== $this->whatReference) $json['whatReference'] = json_encode($this->whatReference);
-        if (null !== $this->whatIdentifier) $json['whatIdentifier'] = json_encode($this->whatIdentifier);
+        if (isset($this->role)) $json['role'] = $this->role;
+        if (isset($this->whatUri)) $json['whatUri'] = $this->whatUri;
+        if (isset($this->whatReference)) $json['whatReference'] = $this->whatReference;
+        if (isset($this->whatIdentifier)) $json['whatIdentifier'] = $this->whatIdentifier;
         if (0 < count($this->agent)) {
             $json['agent'] = [];
             foreach($this->agent as $agent) {
-                $json['agent'][] = json_encode($agent);
+                $json['agent'][] = $agent;
             }
         }
         return $json;
@@ -242,14 +252,13 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ProvenanceEntity xmlns="http://hl7.org/fhir"></ProvenanceEntity>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->role) $this->role->xmlSerialize(true, $sxe->addChild('role'));
-        if (null !== $this->whatUri) $this->whatUri->xmlSerialize(true, $sxe->addChild('whatUri'));
-        if (null !== $this->whatReference) $this->whatReference->xmlSerialize(true, $sxe->addChild('whatReference'));
-        if (null !== $this->whatIdentifier) $this->whatIdentifier->xmlSerialize(true, $sxe->addChild('whatIdentifier'));
+        if (isset($this->role)) $this->role->xmlSerialize(true, $sxe->addChild('role'));
+        if (isset($this->whatUri)) $this->whatUri->xmlSerialize(true, $sxe->addChild('whatUri'));
+        if (isset($this->whatReference)) $this->whatReference->xmlSerialize(true, $sxe->addChild('whatReference'));
+        if (isset($this->whatIdentifier)) $this->whatIdentifier->xmlSerialize(true, $sxe->addChild('whatIdentifier'));
         if (0 < count($this->agent)) {
             foreach($this->agent as $agent) {
                 $agent->xmlSerialize(true, $sxe->addChild('agent'));

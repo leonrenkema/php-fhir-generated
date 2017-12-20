@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,8 +100,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement impleme
      * Indicates the nominal position in a series of the next dose.  This is the recommended dose number as per a specified protocol.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public function getDoseSequence()
-    {
+    public function getDoseSequence() {
         return $this->doseSequence;
     }
 
@@ -110,8 +109,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement impleme
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $doseSequence
      * @return $this
      */
-    public function setDoseSequence($doseSequence)
-    {
+    public function setDoseSequence($doseSequence) {
         $this->doseSequence = $doseSequence;
         return $this;
     }
@@ -120,8 +118,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement impleme
      * Contains the description about the protocol under which the vaccine was administered.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -130,8 +127,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement impleme
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -140,8 +136,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement impleme
      * Indicates the authority who published the protocol.  For example, ACIP.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getAuthority()
-    {
+    public function getAuthority() {
         return $this->authority;
     }
 
@@ -150,8 +145,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement impleme
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $authority
      * @return $this
      */
-    public function setAuthority($authority)
-    {
+    public function setAuthority($authority) {
         $this->authority = $authority;
         return $this;
     }
@@ -160,8 +154,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement impleme
      * One possible path to achieve presumed immunity against a disease - within the context of an authority.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getSeries()
-    {
+    public function getSeries() {
         return $this->series;
     }
 
@@ -170,8 +163,7 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement impleme
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $series
      * @return $this
      */
-    public function setSeries($series)
-    {
+    public function setSeries($series) {
         $this->series = $series;
         return $this;
     }
@@ -179,29 +171,49 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement impleme
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['doseSequence'])) {
+                $this->setDoseSequence($data['doseSequence']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['authority'])) {
+                $this->setAuthority($data['authority']);
+            }
+            if (isset($data['series'])) {
+                $this->setSeries($data['series']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->doseSequence) $json['doseSequence'] = json_encode($this->doseSequence);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->authority) $json['authority'] = json_encode($this->authority);
-        if (null !== $this->series) $json['series'] = json_encode($this->series);
+        if (isset($this->doseSequence)) $json['doseSequence'] = $this->doseSequence;
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->authority)) $json['authority'] = $this->authority;
+        if (isset($this->series)) $json['series'] = $this->series;
         return $json;
     }
 
@@ -210,14 +222,13 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement impleme
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ImmunizationRecommendationProtocol xmlns="http://hl7.org/fhir"></ImmunizationRecommendationProtocol>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->doseSequence) $this->doseSequence->xmlSerialize(true, $sxe->addChild('doseSequence'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->authority) $this->authority->xmlSerialize(true, $sxe->addChild('authority'));
-        if (null !== $this->series) $this->series->xmlSerialize(true, $sxe->addChild('series'));
+        if (isset($this->doseSequence)) $this->doseSequence->xmlSerialize(true, $sxe->addChild('doseSequence'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->authority)) $this->authority->xmlSerialize(true, $sxe->addChild('authority'));
+        if (isset($this->series)) $this->series->xmlSerialize(true, $sxe->addChild('series'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

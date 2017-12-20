@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,13 +77,13 @@ class FHIRMedicationPackage extends FHIRBackboneElement implements \JsonSerializ
      * A set of components that go to make up the described item.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationContent[]
      */
-    public $content = array();
+    public $content = [];
 
     /**
      * Information about a group of medication produced or packaged from one production run.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationBatch[]
      */
-    public $batch = array();
+    public $batch = [];
 
     /**
      * @var string
@@ -94,8 +94,7 @@ class FHIRMedicationPackage extends FHIRBackboneElement implements \JsonSerializ
      * The kind of container that this package comes as.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getContainer()
-    {
+    public function getContainer() {
         return $this->container;
     }
 
@@ -104,8 +103,7 @@ class FHIRMedicationPackage extends FHIRBackboneElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $container
      * @return $this
      */
-    public function setContainer($container)
-    {
+    public function setContainer($container) {
         $this->container = $container;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRMedicationPackage extends FHIRBackboneElement implements \JsonSerializ
      * A set of components that go to make up the described item.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationContent[]
      */
-    public function getContent()
-    {
+    public function getContent() {
         return $this->content;
     }
 
@@ -124,8 +121,7 @@ class FHIRMedicationPackage extends FHIRBackboneElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationContent $content
      * @return $this
      */
-    public function addContent($content)
-    {
+    public function addContent($content) {
         $this->content[] = $content;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRMedicationPackage extends FHIRBackboneElement implements \JsonSerializ
      * Information about a group of medication produced or packaged from one production run.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationBatch[]
      */
-    public function getBatch()
-    {
+    public function getBatch() {
         return $this->batch;
     }
 
@@ -144,8 +139,7 @@ class FHIRMedicationPackage extends FHIRBackboneElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationBatch $batch
      * @return $this
      */
-    public function addBatch($batch)
-    {
+    public function addBatch($batch) {
         $this->batch[] = $batch;
         return $this;
     }
@@ -153,36 +147,65 @@ class FHIRMedicationPackage extends FHIRBackboneElement implements \JsonSerializ
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['container'])) {
+                $this->setContainer($data['container']);
+            }
+            if (isset($data['content'])) {
+                if (is_array($data['content'])) {
+                    foreach($data['content'] as $d) {
+                        $this->addContent($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"content" must be array of objects or null, '.gettype($data['content']).' seen.');
+                }
+            }
+            if (isset($data['batch'])) {
+                if (is_array($data['batch'])) {
+                    foreach($data['batch'] as $d) {
+                        $this->addBatch($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"batch" must be array of objects or null, '.gettype($data['batch']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->container) $json['container'] = json_encode($this->container);
+        if (isset($this->container)) $json['container'] = $this->container;
         if (0 < count($this->content)) {
             $json['content'] = [];
             foreach($this->content as $content) {
-                $json['content'][] = json_encode($content);
+                $json['content'][] = $content;
             }
         }
         if (0 < count($this->batch)) {
             $json['batch'] = [];
             foreach($this->batch as $batch) {
-                $json['batch'][] = json_encode($batch);
+                $json['batch'][] = $batch;
             }
         }
         return $json;
@@ -193,11 +216,10 @@ class FHIRMedicationPackage extends FHIRBackboneElement implements \JsonSerializ
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MedicationPackage xmlns="http://hl7.org/fhir"></MedicationPackage>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->container) $this->container->xmlSerialize(true, $sxe->addChild('container'));
+        if (isset($this->container)) $this->container->xmlSerialize(true, $sxe->addChild('container'));
         if (0 < count($this->content)) {
             foreach($this->content as $content) {
                 $content->xmlSerialize(true, $sxe->addChild('content'));

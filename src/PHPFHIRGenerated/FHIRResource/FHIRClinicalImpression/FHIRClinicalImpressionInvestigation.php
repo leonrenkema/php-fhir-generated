@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,7 +77,7 @@ class FHIRClinicalImpressionInvestigation extends FHIRBackboneElement implements
      * A record of a specific investigation that was undertaken.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $item = array();
+    public $item = [];
 
     /**
      * @var string
@@ -88,8 +88,7 @@ class FHIRClinicalImpressionInvestigation extends FHIRBackboneElement implements
      * A name/code for the group ("set") of investigations. Typically, this will be something like "signs", "symptoms", "clinical", "diagnostic", but the list is not constrained, and others such groups such as (exposure|family|travel|nutitirional) history may be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -98,8 +97,7 @@ class FHIRClinicalImpressionInvestigation extends FHIRBackboneElement implements
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRClinicalImpressionInvestigation extends FHIRBackboneElement implements
      * A record of a specific investigation that was undertaken.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getItem()
-    {
+    public function getItem() {
         return $this->item;
     }
 
@@ -118,8 +115,7 @@ class FHIRClinicalImpressionInvestigation extends FHIRBackboneElement implements
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $item
      * @return $this
      */
-    public function addItem($item)
-    {
+    public function addItem($item) {
         $this->item[] = $item;
         return $this;
     }
@@ -127,30 +123,50 @@ class FHIRClinicalImpressionInvestigation extends FHIRBackboneElement implements
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['item'])) {
+                if (is_array($data['item'])) {
+                    foreach($data['item'] as $d) {
+                        $this->addItem($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"item" must be array of objects or null, '.gettype($data['item']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (isset($this->code)) $json['code'] = $this->code;
         if (0 < count($this->item)) {
             $json['item'] = [];
             foreach($this->item as $item) {
-                $json['item'][] = json_encode($item);
+                $json['item'][] = $item;
             }
         }
         return $json;
@@ -161,11 +177,10 @@ class FHIRClinicalImpressionInvestigation extends FHIRBackboneElement implements
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ClinicalImpressionInvestigation xmlns="http://hl7.org/fhir"></ClinicalImpressionInvestigation>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if (0 < count($this->item)) {
             foreach($this->item as $item) {
                 $item->xmlSerialize(true, $sxe->addChild('item'));

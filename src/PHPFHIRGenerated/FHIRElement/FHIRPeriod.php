@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,8 +89,7 @@ class FHIRPeriod extends FHIRElement implements \JsonSerializable
      * The start of the period. The boundary is inclusive.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getStart()
-    {
+    public function getStart() {
         return $this->start;
     }
 
@@ -99,8 +98,7 @@ class FHIRPeriod extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $start
      * @return $this
      */
-    public function setStart($start)
-    {
+    public function setStart($start) {
         $this->start = $start;
         return $this;
     }
@@ -109,8 +107,7 @@ class FHIRPeriod extends FHIRElement implements \JsonSerializable
      * The end of the period. If the end of the period is missing, it means that the period is ongoing. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getEnd()
-    {
+    public function getEnd() {
         return $this->end;
     }
 
@@ -119,8 +116,7 @@ class FHIRPeriod extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $end
      * @return $this
      */
-    public function setEnd($end)
-    {
+    public function setEnd($end) {
         $this->end = $end;
         return $this;
     }
@@ -128,27 +124,41 @@ class FHIRPeriod extends FHIRElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['start'])) {
+                $this->setStart($data['start']);
+            }
+            if (isset($data['end'])) {
+                $this->setEnd($data['end']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->start) $json['start'] = json_encode($this->start);
-        if (null !== $this->end) $json['end'] = json_encode($this->end);
+        if (isset($this->start)) $json['start'] = $this->start;
+        if (isset($this->end)) $json['end'] = $this->end;
         return $json;
     }
 
@@ -157,12 +167,11 @@ class FHIRPeriod extends FHIRElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Period xmlns="http://hl7.org/fhir"></Period>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->start) $this->start->xmlSerialize(true, $sxe->addChild('start'));
-        if (null !== $this->end) $this->end->xmlSerialize(true, $sxe->addChild('end'));
+        if (isset($this->start)) $this->start->xmlSerialize(true, $sxe->addChild('start'));
+        if (isset($this->end)) $this->end->xmlSerialize(true, $sxe->addChild('end'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

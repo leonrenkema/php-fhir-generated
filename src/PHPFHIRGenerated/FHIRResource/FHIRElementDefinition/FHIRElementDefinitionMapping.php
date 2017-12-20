@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,8 +101,7 @@ class FHIRElementDefinitionMapping extends FHIRElement implements \JsonSerializa
      * An internal reference to the definition of a mapping.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public function getIdentity()
-    {
+    public function getIdentity() {
         return $this->identity;
     }
 
@@ -111,8 +110,7 @@ class FHIRElementDefinitionMapping extends FHIRElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $identity
      * @return $this
      */
-    public function setIdentity($identity)
-    {
+    public function setIdentity($identity) {
         $this->identity = $identity;
         return $this;
     }
@@ -121,8 +119,7 @@ class FHIRElementDefinitionMapping extends FHIRElement implements \JsonSerializa
      * Identifies the computable language in which mapping.map is expressed.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getLanguage()
-    {
+    public function getLanguage() {
         return $this->language;
     }
 
@@ -131,8 +128,7 @@ class FHIRElementDefinitionMapping extends FHIRElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $language
      * @return $this
      */
-    public function setLanguage($language)
-    {
+    public function setLanguage($language) {
         $this->language = $language;
         return $this;
     }
@@ -141,8 +137,7 @@ class FHIRElementDefinitionMapping extends FHIRElement implements \JsonSerializa
      * Expresses what part of the target specification corresponds to this element.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getMap()
-    {
+    public function getMap() {
         return $this->map;
     }
 
@@ -151,8 +146,7 @@ class FHIRElementDefinitionMapping extends FHIRElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $map
      * @return $this
      */
-    public function setMap($map)
-    {
+    public function setMap($map) {
         $this->map = $map;
         return $this;
     }
@@ -161,8 +155,7 @@ class FHIRElementDefinitionMapping extends FHIRElement implements \JsonSerializa
      * Comments that provide information about the mapping or its use.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getComment()
-    {
+    public function getComment() {
         return $this->comment;
     }
 
@@ -171,8 +164,7 @@ class FHIRElementDefinitionMapping extends FHIRElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $comment
      * @return $this
      */
-    public function setComment($comment)
-    {
+    public function setComment($comment) {
         $this->comment = $comment;
         return $this;
     }
@@ -180,29 +172,49 @@ class FHIRElementDefinitionMapping extends FHIRElement implements \JsonSerializa
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identity'])) {
+                $this->setIdentity($data['identity']);
+            }
+            if (isset($data['language'])) {
+                $this->setLanguage($data['language']);
+            }
+            if (isset($data['map'])) {
+                $this->setMap($data['map']);
+            }
+            if (isset($data['comment'])) {
+                $this->setComment($data['comment']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->identity) $json['identity'] = json_encode($this->identity);
-        if (null !== $this->language) $json['language'] = json_encode($this->language);
-        if (null !== $this->map) $json['map'] = json_encode($this->map);
-        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
+        if (isset($this->identity)) $json['identity'] = $this->identity;
+        if (isset($this->language)) $json['language'] = $this->language;
+        if (isset($this->map)) $json['map'] = $this->map;
+        if (isset($this->comment)) $json['comment'] = $this->comment;
         return $json;
     }
 
@@ -211,14 +223,13 @@ class FHIRElementDefinitionMapping extends FHIRElement implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ElementDefinitionMapping xmlns="http://hl7.org/fhir"></ElementDefinitionMapping>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->identity) $this->identity->xmlSerialize(true, $sxe->addChild('identity'));
-        if (null !== $this->language) $this->language->xmlSerialize(true, $sxe->addChild('language'));
-        if (null !== $this->map) $this->map->xmlSerialize(true, $sxe->addChild('map'));
-        if (null !== $this->comment) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
+        if (isset($this->identity)) $this->identity->xmlSerialize(true, $sxe->addChild('identity'));
+        if (isset($this->language)) $this->language->xmlSerialize(true, $sxe->addChild('language'));
+        if (isset($this->map)) $this->map->xmlSerialize(true, $sxe->addChild('map'));
+        if (isset($this->comment)) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

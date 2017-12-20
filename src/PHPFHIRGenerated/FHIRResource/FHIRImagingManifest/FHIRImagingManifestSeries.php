@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,13 +77,13 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement implements \JsonSeri
      * The network service providing access (e.g., query, view, or retrieval) for this series. See implementation notes for information about using DICOM endpoints. A series-level endpoint, if present, has precedence over a study-level endpoint with the same Endpoint.type.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $endpoint = array();
+    public $endpoint = [];
 
     /**
      * Identity and locating information of the selected DICOM SOP instances.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRImagingManifest\FHIRImagingManifestInstance[]
      */
-    public $instance = array();
+    public $instance = [];
 
     /**
      * @var string
@@ -94,8 +94,7 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement implements \JsonSeri
      * Series instance UID of the SOP instances in the selection.
      * @return \PHPFHIRGenerated\FHIRElement\FHIROid
      */
-    public function getUid()
-    {
+    public function getUid() {
         return $this->uid;
     }
 
@@ -104,8 +103,7 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIROid $uid
      * @return $this
      */
-    public function setUid($uid)
-    {
+    public function setUid($uid) {
         $this->uid = $uid;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement implements \JsonSeri
      * The network service providing access (e.g., query, view, or retrieval) for this series. See implementation notes for information about using DICOM endpoints. A series-level endpoint, if present, has precedence over a study-level endpoint with the same Endpoint.type.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getEndpoint()
-    {
+    public function getEndpoint() {
         return $this->endpoint;
     }
 
@@ -124,8 +121,7 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $endpoint
      * @return $this
      */
-    public function addEndpoint($endpoint)
-    {
+    public function addEndpoint($endpoint) {
         $this->endpoint[] = $endpoint;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement implements \JsonSeri
      * Identity and locating information of the selected DICOM SOP instances.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRImagingManifest\FHIRImagingManifestInstance[]
      */
-    public function getInstance()
-    {
+    public function getInstance() {
         return $this->instance;
     }
 
@@ -144,8 +139,7 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingManifest\FHIRImagingManifestInstance $instance
      * @return $this
      */
-    public function addInstance($instance)
-    {
+    public function addInstance($instance) {
         $this->instance[] = $instance;
         return $this;
     }
@@ -153,36 +147,65 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement implements \JsonSeri
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['uid'])) {
+                $this->setUid($data['uid']);
+            }
+            if (isset($data['endpoint'])) {
+                if (is_array($data['endpoint'])) {
+                    foreach($data['endpoint'] as $d) {
+                        $this->addEndpoint($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"endpoint" must be array of objects or null, '.gettype($data['endpoint']).' seen.');
+                }
+            }
+            if (isset($data['instance'])) {
+                if (is_array($data['instance'])) {
+                    foreach($data['instance'] as $d) {
+                        $this->addInstance($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"instance" must be array of objects or null, '.gettype($data['instance']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->uid) $json['uid'] = json_encode($this->uid);
+        if (isset($this->uid)) $json['uid'] = $this->uid;
         if (0 < count($this->endpoint)) {
             $json['endpoint'] = [];
             foreach($this->endpoint as $endpoint) {
-                $json['endpoint'][] = json_encode($endpoint);
+                $json['endpoint'][] = $endpoint;
             }
         }
         if (0 < count($this->instance)) {
             $json['instance'] = [];
             foreach($this->instance as $instance) {
-                $json['instance'][] = json_encode($instance);
+                $json['instance'][] = $instance;
             }
         }
         return $json;
@@ -193,11 +216,10 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement implements \JsonSeri
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ImagingManifestSeries xmlns="http://hl7.org/fhir"></ImagingManifestSeries>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->uid) $this->uid->xmlSerialize(true, $sxe->addChild('uid'));
+        if (isset($this->uid)) $this->uid->xmlSerialize(true, $sxe->addChild('uid'));
         if (0 < count($this->endpoint)) {
             foreach($this->endpoint as $endpoint) {
                 $endpoint->xmlSerialize(true, $sxe->addChild('endpoint'));

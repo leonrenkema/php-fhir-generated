@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: December 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,25 +81,21 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     public $eventName = null;
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $eventTimingTiming = null;
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $eventTimingReference = null;
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $eventTimingDate = null;
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $eventTimingDateTime = null;
@@ -119,8 +115,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
      * The type of triggering event.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTriggerType
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -129,8 +124,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTriggerType $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -139,8 +133,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
      * The name of the event (if this is a named-event trigger).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getEventName()
-    {
+    public function getEventName() {
         return $this->eventName;
     }
 
@@ -149,88 +142,71 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $eventName
      * @return $this
      */
-    public function setEventName($eventName)
-    {
+    public function setEventName($eventName) {
         $this->eventName = $eventName;
         return $this;
     }
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
-    public function getEventTimingTiming()
-    {
+    public function getEventTimingTiming() {
         return $this->eventTimingTiming;
     }
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $eventTimingTiming
      * @return $this
      */
-    public function setEventTimingTiming($eventTimingTiming)
-    {
+    public function setEventTimingTiming($eventTimingTiming) {
         $this->eventTimingTiming = $eventTimingTiming;
         return $this;
     }
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getEventTimingReference()
-    {
+    public function getEventTimingReference() {
         return $this->eventTimingReference;
     }
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $eventTimingReference
      * @return $this
      */
-    public function setEventTimingReference($eventTimingReference)
-    {
+    public function setEventTimingReference($eventTimingReference) {
         $this->eventTimingReference = $eventTimingReference;
         return $this;
     }
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public function getEventTimingDate()
-    {
+    public function getEventTimingDate() {
         return $this->eventTimingDate;
     }
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $eventTimingDate
      * @return $this
      */
-    public function setEventTimingDate($eventTimingDate)
-    {
+    public function setEventTimingDate($eventTimingDate) {
         $this->eventTimingDate = $eventTimingDate;
         return $this;
     }
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getEventTimingDateTime()
-    {
+    public function getEventTimingDateTime() {
         return $this->eventTimingDateTime;
     }
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $eventTimingDateTime
      * @return $this
      */
-    public function setEventTimingDateTime($eventTimingDateTime)
-    {
+    public function setEventTimingDateTime($eventTimingDateTime) {
         $this->eventTimingDateTime = $eventTimingDateTime;
         return $this;
     }
@@ -239,8 +215,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
      * The triggering data of the event (if this is a data trigger).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement
      */
-    public function getEventData()
-    {
+    public function getEventData() {
         return $this->eventData;
     }
 
@@ -249,8 +224,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement $eventData
      * @return $this
      */
-    public function setEventData($eventData)
-    {
+    public function setEventData($eventData) {
         $this->eventData = $eventData;
         return $this;
     }
@@ -258,32 +232,61 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['eventName'])) {
+                $this->setEventName($data['eventName']);
+            }
+            if (isset($data['eventTimingTiming'])) {
+                $this->setEventTimingTiming($data['eventTimingTiming']);
+            }
+            if (isset($data['eventTimingReference'])) {
+                $this->setEventTimingReference($data['eventTimingReference']);
+            }
+            if (isset($data['eventTimingDate'])) {
+                $this->setEventTimingDate($data['eventTimingDate']);
+            }
+            if (isset($data['eventTimingDateTime'])) {
+                $this->setEventTimingDateTime($data['eventTimingDateTime']);
+            }
+            if (isset($data['eventData'])) {
+                $this->setEventData($data['eventData']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->eventName) $json['eventName'] = json_encode($this->eventName);
-        if (null !== $this->eventTimingTiming) $json['eventTimingTiming'] = json_encode($this->eventTimingTiming);
-        if (null !== $this->eventTimingReference) $json['eventTimingReference'] = json_encode($this->eventTimingReference);
-        if (null !== $this->eventTimingDate) $json['eventTimingDate'] = json_encode($this->eventTimingDate);
-        if (null !== $this->eventTimingDateTime) $json['eventTimingDateTime'] = json_encode($this->eventTimingDateTime);
-        if (null !== $this->eventData) $json['eventData'] = json_encode($this->eventData);
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->eventName)) $json['eventName'] = $this->eventName;
+        if (isset($this->eventTimingTiming)) $json['eventTimingTiming'] = $this->eventTimingTiming;
+        if (isset($this->eventTimingReference)) $json['eventTimingReference'] = $this->eventTimingReference;
+        if (isset($this->eventTimingDate)) $json['eventTimingDate'] = $this->eventTimingDate;
+        if (isset($this->eventTimingDateTime)) $json['eventTimingDateTime'] = $this->eventTimingDateTime;
+        if (isset($this->eventData)) $json['eventData'] = $this->eventData;
         return $json;
     }
 
@@ -292,17 +295,16 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<TriggerDefinition xmlns="http://hl7.org/fhir"></TriggerDefinition>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->eventName) $this->eventName->xmlSerialize(true, $sxe->addChild('eventName'));
-        if (null !== $this->eventTimingTiming) $this->eventTimingTiming->xmlSerialize(true, $sxe->addChild('eventTimingTiming'));
-        if (null !== $this->eventTimingReference) $this->eventTimingReference->xmlSerialize(true, $sxe->addChild('eventTimingReference'));
-        if (null !== $this->eventTimingDate) $this->eventTimingDate->xmlSerialize(true, $sxe->addChild('eventTimingDate'));
-        if (null !== $this->eventTimingDateTime) $this->eventTimingDateTime->xmlSerialize(true, $sxe->addChild('eventTimingDateTime'));
-        if (null !== $this->eventData) $this->eventData->xmlSerialize(true, $sxe->addChild('eventData'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->eventName)) $this->eventName->xmlSerialize(true, $sxe->addChild('eventName'));
+        if (isset($this->eventTimingTiming)) $this->eventTimingTiming->xmlSerialize(true, $sxe->addChild('eventTimingTiming'));
+        if (isset($this->eventTimingReference)) $this->eventTimingReference->xmlSerialize(true, $sxe->addChild('eventTimingReference'));
+        if (isset($this->eventTimingDate)) $this->eventTimingDate->xmlSerialize(true, $sxe->addChild('eventTimingDate'));
+        if (isset($this->eventTimingDateTime)) $this->eventTimingDateTime->xmlSerialize(true, $sxe->addChild('eventTimingDateTime'));
+        if (isset($this->eventData)) $this->eventData->xmlSerialize(true, $sxe->addChild('eventData'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }
