@@ -1128,8 +1128,8 @@ class FHIRExtension extends FHIRElement implements \JsonSerializable
         if (isset($this->valueTiming)) $this->valueTiming->xmlSerialize(true, $sxe->addChild('valueTiming'));
         if (isset($this->valueMeta)) $this->valueMeta->xmlSerialize(true, $sxe->addChild('valueMeta'));
         if (isset($this->url)) {
-            $urlElement = $sxe->addChild('url');
-            $urlElement->addAttribute('value', (string)$this->url);
+            //$urlElement = $sxe->addChild('url');
+            $sxe->addAttribute('url', (string)$this->url);
         }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();

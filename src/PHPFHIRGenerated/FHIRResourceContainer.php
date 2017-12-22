@@ -2534,21 +2534,21 @@ class FHIRResourceContainer implements \JsonSerializable
     /**
      * @param mixed $data
      */
-    public function __construct($data = []) {
-        if (is_object($data)) {
-            $n = ltrim(strrchr(get_class($data)), "\FHIR");
-            $this->{"set{$n}"}($data);
-        } else if (is_array($data)) {
-            if (($cnt = count($data)) > 1) {
-                throw new \InvalidArgumentException("ResourceContainers may only contain 1 object, \"{$cnt}\" values provided");
-            } else {
-                $k = key($data);
-                $this->{"set{$k}"}($data);
-            }
-        } else if (null !== $data) {
-            throw new \InvalidArgumentException('$data expected to be object or array, saw '.gettype($data));
-        }
-    }
+//    public function __construct($data = []) {
+//        if (is_object($data)) {
+//            $n = ltrim(strrchr(get_class($data)), "\FHIR");
+//            $this->{"set{$n}"}($data);
+//        } else if (is_array($data)) {
+//            if (($cnt = count($data)) > 1) {
+//                throw new \InvalidArgumentException("ResourceContainers may only contain 1 object, \"{$cnt}\" values provided");
+//            } else {
+//                $k = key($data);
+//                $this->{"set{$k}"}($data);
+//            }
+//        } else if (null !== $data) {
+//            throw new \InvalidArgumentException('$data expected to be object or array, saw '.gettype($data));
+//        }
+//    }
 
     /**
      * @return string
